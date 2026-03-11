@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PTO Calculator - Calculate Paid Time Off Balance Online Free"; // You may Change the Title here
 $page_description = "Free PTO calculator online. Calculate Paid Time Off accrual, balance, and usage for employees. Track vacation days, sick leave, and personal time off."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "pto calculator - calculate paid time off balance, pto, calculator, calculate, paid, time, off, balance, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

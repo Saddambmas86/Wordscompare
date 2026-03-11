@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "QR Code Generator - Create Custom QR Codes Online Free"; // You may Change the Title here
 $page_description = "Free QR code generator online. Create custom QR codes for URLs, text, WiFi, contact info, and more. Download as PNG or SVG. No sign-up required."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "qr code generator - create custom qr codes, code, generator, create, custom, codes, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

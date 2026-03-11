@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PNR to PDF Converter - Generate PDF from PNR Online Free"; // You may Change the Title here
 $page_description = "Convert PNR to PDF online for free. Generate PDF travel documents from PNR booking codes. Ideal for ticket printing and travel records. Instant conversion."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "pnr to pdf converter - generate pdf from pnr, pnr, pdf, converter, generate, from, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

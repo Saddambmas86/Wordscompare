@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF to PSD Converter - Convert PDF to Photoshop Online Free"; // You may Change the Title here
 $page_description = "Convert PDF to PSD online for free. Transform PDF files into editable Photoshop PSD format. Preserve layers and design elements. Instant, free conversion."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "pdf to psd converter - convert pdf to photoshop, pdf, psd, converter, convert, photoshop, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

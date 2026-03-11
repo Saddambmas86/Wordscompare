@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Car Loan EMI Calculator - Calculate Auto Loan Installments";
 $page_description = "Free car loan EMI calculator. Calculate your monthly car loan installments, total interest payable, and amortization schedule. Plan your auto financing smartly.";
-$page_keywords = "$kw";
+$page_keywords = "car loan emi calculator - calculate auto loan installments, car, loan, emi, calculator, calculate, auto, installments, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Gratuity Calculator - Calculate Gratuity Amount Online Free"; // You may Change the Title here
 $page_description = "Free gratuity calculator online. Calculate your gratuity amount based on years of service and last drawn salary. Know your end-of-service benefits instantly."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "gratuity calculator - calculate gratuity amount, gratuity, calculator, calculate, amount, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF to CSV Converter - Extract PDF Data to CSV Online Free"; // You may Change the Title here
 $page_description = "Convert PDF to CSV online for free. Extract tables and data from PDF files into CSV spreadsheet format. Accurate data extraction for analysis. Fast and secure."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "pdf to csv converter - extract pdf data to csv, pdf, csv, converter, extract, data, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

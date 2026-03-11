@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF to Excel Converter - Extract PDF Tables to XLS Online"; // You may Change the Title here
 $page_description = "Convert PDF to Excel online for free. Extract tables from PDF into editable XLS/XLSX spreadsheets. Accurate data extraction with formatting preserved."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "pdf to excel converter - extract pdf tables to xls online, pdf, excel, converter, extract, tables, xls, online, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

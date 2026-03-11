@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Unlock PDF Online Free - Remove PDF Password & Restrictions"; // You may Change the Title here
 $page_description = "Unlock PDF online for free. Remove password protection and restrictions from PDF files instantly. Access locked PDFs without software. Fast and secure."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "unlock pdf  - remove pdf password & restrictions, unlock, pdf, remove, password, restrictions, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

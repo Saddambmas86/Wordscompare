@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Calendar Generator - Create Printable Calendars Online Free"; // You may Change the Title here
 $page_description = "Free online calendar generator. Create and download printable monthly or yearly calendars in PDF format. Customize with events and holidays instantly."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "calendar generator - create printable calendars, calendar, generator, create, printable, calendars, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

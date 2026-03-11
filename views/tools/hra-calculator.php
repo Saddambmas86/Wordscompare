@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "HRA Calculator - House Rent Allowance Exemption Calculator"; // You may Change the Title here
 $page_description = "Free HRA calculator online. Calculate your House Rent Allowance tax exemption as per Income Tax rules. Know the exact HRA deduction you are eligible for."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "hra calculator - house rent allowance exemption calculator, hra, calculator, house, rent, allowance, exemption, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

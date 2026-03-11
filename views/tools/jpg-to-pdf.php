@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "JPG to PDF Converter - Convert JPEG Images to PDF Online Free"; // You may Change the Title here
 $page_description = "Convert JPG to PDF online for free. Transform JPEG images into PDF documents instantly. Merge multiple JPG files into one PDF. Secure and fast."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "jpg to pdf converter - convert jpeg images to pdf, jpg, pdf, converter, convert, jpeg, images, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Tax Calculator India FY 2024-25 - Income Tax Calculator Online"; // You may Change the Title here
 $page_description = "Free tax calculator online. Calculate income tax, deductions, and net tax payable under India's old and new tax regime for FY 2024-25. Accurate and instant."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "tax calculator india fy 2024-25 - income tax calculator online, tax, calculator, india, 2024-25, income, online, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

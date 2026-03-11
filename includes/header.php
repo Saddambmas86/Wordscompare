@@ -7,7 +7,6 @@ include_once __DIR__ . '/config.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title><?php echo isset($page_title) ? $page_title : 'Free Online Tools'; ?></title> -->
     <title><?= htmlspecialchars(empty($page_title) ? "$site_name - $default_title_suffix" : "$page_title | $site_name") ?></title>
     <meta name="description" content="<?php echo $page_description; ?>">
     <meta name="keywords" content="<?php echo $page_keywords; ?>">
@@ -26,23 +25,30 @@ include_once __DIR__ . '/config.php';
     <meta property="og:type" content="website">
     <meta name='theme-color' content='#dc3545'/>
 
-    <!-- Bootstrap CSS -->
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+
+    <!-- Bootstrap CSS (Critical) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Font Awesome -->
+    <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- SweetAlert2 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
     
-    <!-- Minimal Custom CSS -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/style.css">
-    
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/homepage.css">
+
     <!-- Favicon -->
     <link rel="icon" href="<?php echo $base_url; ?>assets/img/logo.ico" type="image/x-icon">
     <link rel="shortcut icon" href="<?php echo $base_url; ?>assets/img/logo.ico" type="image/x-icon">
 
-    <!-- Organization Schema Markup -->
+    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -55,20 +61,10 @@ include_once __DIR__ . '/config.php';
     }
     </script>
 
-<!-- Bootstrap JS -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
-
-<!-- Font Awesome JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-
-<!-- Sweetalert JS -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-<!-- JavaScript Libraries -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    
-<link rel="stylesheet" href="assets/css/homepage.css">
+    <!-- Essential Libraries (Synchronous to avoid breaking tool scripts) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 </head>
 <body>
@@ -90,7 +86,7 @@ include_once __DIR__ . '/config.php';
                         </a>
                     </li>
 
-                    <!-- PDF Tools Dropdown - 4 Column Grid Layout -->
+                    <!-- PDF Tools Dropdown -->
                     <li class="nav-item dropdown">
                         <button class="category-dropdown-toggle" id="pdfDropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-file-pdf"></i>PDF Tools
@@ -100,22 +96,18 @@ include_once __DIR__ . '/config.php';
                                 <input type="text" placeholder="Search PDF tools..." class="search-input" data-category="pdf">
                             </div>
 
-                            <!-- Column 1: Office Converters -->
                             <div class="dropdown-column">
                                 <div class="grid-column-header"><i class="fas fa-file-contract"></i>Office</div>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-to-csv"><i class="fas fa-file-csv text-danger"></i><span>PDF to CSV</span></a>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>csv-to-pdf"><i class="fas fa-file-csv text-danger"></i><span>CSV to PDF</span></a>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-to-excel"><i class="fas fa-file-excel text-success"></i><span>PDF to Excel</span></a>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>excel-to-pdf"><i class="fas fa-file-excel text-success"></i><span>Excel to PDF</span></a>
-                                <!-- <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-to-word"><i class="fas fa-file-word text-primary"></i><span>PDF to Word</span></a> -->
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-to-ppt"><i class="fas fa-file-powerpoint text-danger"></i><span>PDF to PPT</span></a>
-                                <!-- <a class="dropdown-item-custom" href="<?php echo $base_url; ?>ppt-to-pdf"><i class="fas fa-file-powerpoint text-danger"></i><span>PPT to PDF</span></a> -->
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-to-html"><i class="fas fa-html5 text-danger"></i><span>PDF to HTML</span></a>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>html-to-pdf"><i class="fas fa-html5 text-danger"></i><span>HTML to PDF</span></a>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>rtf-to-pdf"><i class="fas fa-file-pdf text-primary"></i><span>RTF to PDF</span></a>
                             </div>
 
-                            <!-- Column 2: Data Formats -->
                             <div class="dropdown-column">
                                 <div class="grid-column-header"><i class="fas fa-code"></i>Data</div>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-to-json"><i class="fas fa-code text-info"></i><span>PDF to JSON</span></a>
@@ -124,13 +116,10 @@ include_once __DIR__ . '/config.php';
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>xml-to-pdf"><i class="fas fa-file-code text-secondary"></i><span>XML to PDF</span></a>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-to-text"><i class="fas fa-file-alt text-dark"></i><span>PDF to Text</span></a>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>text-to-pdf"><i class="fas fa-file-alt text-muted"></i><span>Text to PDF</span></a>
-                                <!-- <a class="dropdown-item-custom" href="<?php echo $base_url; ?>markdown-to-pdf"><i class="fas fa-file-pdf text-primary"></i><span>Markdown to PDF</span></a> -->
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-to-markdown"><i class="fas fa-file-alt text-secondary"></i><span>PDF to Markdown</span></a>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-to-json"><i class="fas fa-code text-info"></i><span>PDF to OCR</span></a>
-                                <!-- <a class="dropdown-item-custom" href="<?php echo $base_url; ?>speech-to-pdf"><i class="fas fa-microphone text-info"></i><span>Speech to PDF</span></a> -->
                             </div>
 
-                            <!-- Column 3: Image Formats -->
                             <div class="dropdown-column">
                                 <div class="grid-column-header"><i class="fas fa-image"></i>Images</div>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-to-jpg"><i class="fas fa-file-image text-warning"></i><span>PDF to JPG</span></a>
@@ -142,16 +131,12 @@ include_once __DIR__ . '/config.php';
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-to-svg"><i class="fas fa-bezier-curve text-success"></i><span>PDF to SVG</span></a>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>svg-to-pdf"><i class="fas fa-file-pdf text-primary"></i><span>SVG to PDF</span></a>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-to-tiff"><i class="fas fa-file-image text-danger"></i><span>PDF to TIFF</span></a>
-                                <!-- <a class="dropdown-item-custom" href="<?php echo $base_url; ?>tiff-to-pdf"><i class="fas fa-file-pdf text-primary"></i><span>TIFF to PDF</span></a> -->
                             </div>
 
-                            <!-- Column 4: E-Books & Special -->
                             <div class="dropdown-column">
                                 <div class="grid-column-header"><i class="fas fa-book"></i>E-Books & More</div>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>epub-to-pdf"><i class="fas fa-file-pdf text-primary"></i><span>EPUB to PDF</span></a>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-to-epub"><i class="fas fa-book-reader text-success"></i><span>PDF to EPUB</span></a>
-                                <!-- <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-to-mobi"><i class="fas fa-mobile-alt text-dark"></i><span>PDF to Mobi</span></a> -->
-                                <!-- <a class="dropdown-item-custom" href="<?php echo $base_url; ?>mobi-to-pdf"><i class="fas fa-file-pdf text-primary"></i><span>Mobi to PDF</span></a> -->
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>ipynb-to-pdf"><i class="fas fa-file-pdf text-primary"></i><span>IPYNB to PDF</span></a>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-to-ipynb"><i class="fas fa-file-code text-info"></i><span>PDF to IPYNB</span></a>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pnr-to-pdf"><i class="fas fa-file-pdf text-primary"></i><span>PNR to PDF</span></a>
@@ -160,7 +145,6 @@ include_once __DIR__ . '/config.php';
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>shreelipi-to-pdf"><i class="fas fa-file-pdf text-primary"></i><span>Shreelipi to PDF</span></a>
                             </div>
 
-                            <!-- Column 5: PDF Tools (wraps to new row) -->
                             <div class="dropdown-column">
                                 <div class="grid-column-header"><i class="fas fa-tools"></i>PDF Tools</div>
                                 <a class="dropdown-item-custom" href="<?php echo $base_url; ?>pdf-metadata-editor"><i class="fas fa-edit text-primary"></i><span>Metadata Editor</span></a>
@@ -312,55 +296,3 @@ include_once __DIR__ . '/config.php';
             </div>
         </div>
     </nav>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Close dropdown when item is clicked
-        document.querySelectorAll('.dropdown-item-custom').forEach(function(item) {
-            item.addEventListener('click', function() {
-                const dropdownElement = this.closest('.dropdown-menu');
-                if (dropdownElement) {
-                    const toggleBtn = document.querySelector('[aria-labelledby="' + dropdownElement.id + '"]');
-                    if (toggleBtn) {
-                        bootstrap.Dropdown.getInstance(toggleBtn).hide();
-                    }
-                }
-            });
-        });
-
-        // Search functionality
-        document.querySelectorAll('.search-input').forEach(function(input) {
-            input.addEventListener('keyup', function() {
-                const searchText = this.value.toLowerCase();
-                const dropdownMenu = this.closest('.dropdown-menu');
-                const items = dropdownMenu.querySelectorAll('.dropdown-item-custom');
-                const headers = dropdownMenu.querySelectorAll('.dropdown-category-header, .grid-column-header');
-                const dividers = dropdownMenu.querySelectorAll('.dropdown-divider');
-
-                let visibleCount = 0;
-                
-                items.forEach(function(item) {
-                    const text = item.textContent.toLowerCase();
-                    if (text.includes(searchText) || searchText === '') {
-                        item.style.display = 'flex';
-                        visibleCount++;
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-
-                // Show/hide headers based on search
-                headers.forEach(function(header) {
-                    header.style.display = visibleCount > 0 ? 'flex' : 'none';
-                });
-
-                dividers.forEach(function(divider) {
-                    divider.style.display = visibleCount > 0 ? 'block' : 'none';
-                });
-            });
-        });
-    });
-    </script>
-</body>
-</html>

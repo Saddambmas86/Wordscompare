@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Discount Calculator - Calculate Sale Price & Savings Online"; // You may Change the Title here
 $page_description = "Free discount calculator online. Calculate sale price, discount amount, and savings percentage instantly. Perfect for shopping, retail pricing, and deals."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "discount calculator - calculate sale price & savings online, discount, calculator, calculate, sale, price, savings, online, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

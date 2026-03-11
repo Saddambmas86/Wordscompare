@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Sukanya Samriddhi Yojana Calculator - SSY Returns Online"; // You may Change the Title here
 $page_description = "Free Sukanya Samriddhi Yojana (SSY) calculator. Calculate maturity amount and interest for your daughter's SSY account. Government-backed tax-free savings scheme."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "sukanya samriddhi yojana calculator - ssy returns online, sukanya, samriddhi, yojana, calculator, ssy, returns, online, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

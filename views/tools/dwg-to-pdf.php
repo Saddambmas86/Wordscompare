@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "DWG to PDF Converter - Convert AutoCAD Files to PDF Online"; // You may Change the Title here
 $page_description = "Convert DWG to PDF online for free. Transform AutoCAD DWG and DXF files into PDF documents. Fast, secure conversion with high-quality output."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "dwg to pdf converter - convert autocad files to pdf online, dwg, pdf, converter, convert, autocad, files, online, free online tools, pdf tools";
 
 // Remembered user preference for article section column width
 $article_column_class = "col-lg-8";

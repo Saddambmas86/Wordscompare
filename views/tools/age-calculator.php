@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Age Calculator - Calculate Exact Age Online Free"; // You may Change the Title here
 $page_description = "Free age calculator online. Calculate your exact age in years, months, days, hours, and minutes from your date of birth. Instant results, no sign-up required.";  // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "age calculator - calculate exact age, age, calculator, calculate, exact, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "EPUB to PDF Converter - Convert eBook to PDF Online Free"; // You may Change the Title here
 $page_description = "Convert EPUB to PDF online for free. Transform e-book EPUB files into PDF documents instantly. Preserve formatting, fonts, and images. No software needed."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "epub to pdf converter - convert ebook to pdf, epub, pdf, converter, convert, ebook, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

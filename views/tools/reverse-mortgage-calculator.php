@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Reverse Mortgage Calculator - HECM Loan Calculator Online"; // You may Change the Title here
 $page_description = "Free reverse mortgage calculator for seniors 62+. Calculate HECM loan limits, monthly income, and tenure. Plan your retirement income from home equity."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "reverse mortgage calculator - hecm loan calculator online, reverse, mortgage, calculator, hecm, loan, online, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

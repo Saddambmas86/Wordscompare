@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF OCR - Extract Text from Scanned PDF Online Free"; // You may Change the Title here
 $page_description = "PDF OCR converter online for free. Extract and recognize text from scanned PDFs using Optical Character Recognition. Convert image PDFs to searchable text."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "pdf ocr - extract text from scanned pdf, pdf, ocr, extract, text, from, scanned, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

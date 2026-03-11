@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Find and Replace Text Online Free - WordsCompare"; // You may Change the Title here
 $page_description = "Free Find and Replace text tool online. Search and replace words, phrases, or characters in bulk. Supports case-sensitive, regex, and whole-word replacements."; // You may Change the Title here
-$page_keywords = "$kw";
+$page_keywords = "find and replace text, find, and, replace, text, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

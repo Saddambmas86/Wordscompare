@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "NPS Calculator - National Pension System Calculator Online"; // You may Change the Title here
 $page_description = "Free NPS calculator online. Calculate National Pension System maturity corpus, monthly pension, and returns. Plan your retirement with India NPS scheme."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "nps calculator - national pension system calculator online, nps, calculator, national, pension, system, online, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

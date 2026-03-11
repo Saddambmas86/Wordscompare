@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF to Markdown Converter - Convert PDF to MD Online Free"; // You may Change the Title here
 $page_description = "Convert PDF to Markdown online for free. Transform PDF documents into clean Markdown text. Preserve headings, lists, and structure. Perfect for developers."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "pdf to markdown converter - convert pdf to md, pdf, markdown, converter, convert, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

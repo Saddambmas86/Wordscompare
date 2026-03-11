@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF Metadata Editor - Edit PDF Properties Online Free"; // You may Change the Title here
 $page_description = "Free PDF metadata editor online. View and edit PDF title, author, subject, keywords, and creation date. Update document properties without Adobe Acrobat."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "pdf metadata editor - edit pdf properties, pdf, metadata, editor, edit, properties, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

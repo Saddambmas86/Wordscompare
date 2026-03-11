@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "NSC Calculator - National Savings Certificate Calculator"; // You may Change the Title here
 $page_description = "Free NSC calculator online. Calculate National Savings Certificate maturity amount, interest earned at 5-year tenure. Secure government-backed investment planning."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "nsc calculator - national savings certificate calculator, nsc, calculator, national, savings, certificate, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

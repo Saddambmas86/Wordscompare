@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Shreelipi to PDF Converter - Convert Shreelipi Fonts to PDF"; // You may Change the Title here
 $page_description = "Convert Shreelipi text to PDF online for free. Transform Shreelipi font documents into PDF files instantly. Preserve Gujarati and other Indian language fonts."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "shreelipi to pdf converter - convert shreelipi fonts to pdf, shreelipi, pdf, converter, convert, fonts, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

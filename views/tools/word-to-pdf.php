@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Word to PDF Converter - Convert DOC/DOCX to PDF Online Free"; // You may Change the Title here
 $page_description = "Convert Word to PDF online for free. Transform DOC and DOCX files into PDF documents. Preserve fonts, tables, images, and formatting. Fast and secure."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "word to pdf converter - convert doc/docx to pdf, word, pdf, converter, convert, doc/docx, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

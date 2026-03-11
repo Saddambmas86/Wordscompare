@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Flat vs Reducing Rate Calculator - Compare Loan Rates"; // You may Change the Title here
 $page_description = "Free flat vs reducing rate calculator. Compare flat interest rates and reducing balance rates on loans. Find the true cost of your loan and make smarter decisions."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "flat vs reducing rate calculator - compare loan rates, flat, reducing, rate, calculator, compare, loan, rates, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

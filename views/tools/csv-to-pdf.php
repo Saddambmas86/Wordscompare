@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "CSV to PDF Converter - Convert CSV Files to PDF Online Free"; // You may Change the Title here
 $page_description = "Convert CSV to PDF online for free. Turn spreadsheet data and CSV files into professional PDF documents instantly. No software downloads required."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "csv to pdf converter - convert csv files to pdf, csv, pdf, converter, convert, files, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

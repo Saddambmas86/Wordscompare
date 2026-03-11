@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF to PowerPoint Converter - Convert PDF to PPTX Online Free"; // You may Change the Title here
 $page_description = "Convert PDF to PowerPoint (PPT/PPTX) online for free. Transform PDF slides into editable presentations. Preserve layout and images. Fast and accurate."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "pdf to powerpoint converter - convert pdf to pptx, pdf, powerpoint, converter, convert, pptx, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

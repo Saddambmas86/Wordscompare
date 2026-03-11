@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Margin Calculator - Calculate Profit Margin & Markup Online"; // You may Change the Title here
 $page_description = "Free margin calculator online. Calculate profit margin, markup percentage, and gross margin for products and services. Essential for pricing and business planning."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "margin calculator - calculate profit margin & markup online, margin, calculator, calculate, profit, markup, online, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Remove Extra Spaces from Text Online Free - WordsCompare"; // You may Change the Title here
 $page_description = "Free online tool to remove extra spaces from text. Trim leading, trailing, and multiple spaces between words instantly. Clean and format text effortlessly."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "remove extra spaces from text, remove, extra, spaces, from, text, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

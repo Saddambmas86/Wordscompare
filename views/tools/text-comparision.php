@@ -1,7 +1,7 @@
 <?php
 $page_title = "Text Comparison Tool - Compare Two Texts Online Free";
 $page_description = "Free text comparison tool online. Compare two texts side by side and highlight differences, additions, and deletions. Perfect for proofreading and code review.";
-$page_keywords = "$kw";
+$page_keywords = "text comparison tool - compare two texts, text, comparison, tool, compare, two, texts, free online tools, pdf tools";
 $page_key = 'text-comparision';
 include '../../includes/header.php';
 ?>

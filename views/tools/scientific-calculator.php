@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Scientific Calculator Online Free - Advanced Math Calculator"; // You may Change the Title here
 $page_description = "Free scientific calculator online. Advanced math with trigonometry, logarithms, exponents, factorial, and more. Perfect for students, engineers, and scientists."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "scientific calculator  - advanced math calculator, scientific, calculator, advanced, math, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

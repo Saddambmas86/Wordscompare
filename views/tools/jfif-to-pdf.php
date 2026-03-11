@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "JFIF to PDF Converter - Convert JFIF Images to PDF Online"; // You may Change the Title here
 $page_description = "Convert JFIF to PDF online for free. Transform JFIF image files into PDF documents instantly. Combine multiple images into one PDF. No software needed."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "jfif to pdf converter - convert jfif images to pdf online, jfif, pdf, converter, convert, images, online, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

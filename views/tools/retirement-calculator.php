@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Retirement Calculator - Plan Your Retirement Savings Online"; // You may Change the Title here
 $page_description = "Free retirement calculator online. Calculate how much you need to save for a comfortable retirement. Factor in inflation, life expectancy, and investment returns."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "retirement calculator - plan your retirement savings online, retirement, calculator, plan, your, savings, online, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

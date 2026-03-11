@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Excel to PDF Converter - Convert XLS/XLSX to PDF Online Free"; // You may Change the Title here
 $page_description = "Convert Excel to PDF online for free. Transform XLS and XLSX spreadsheets into PDF documents. Preserve formatting, charts, and formulas. Fast and secure."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "excel to pdf converter - convert xls/xlsx to pdf, excel, pdf, converter, convert, xls/xlsx, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

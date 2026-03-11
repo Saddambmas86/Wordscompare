@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Step-Up SIP Calculator - Calculate Increasing SIP Returns"; // You may Change the Title here
 $page_description = "Free Step-Up SIP calculator. Calculate returns with annually increasing SIP contributions. See how top-up SIP accelerates your wealth creation over time."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "step-up sip calculator - calculate increasing sip returns, step-up, sip, calculator, calculate, increasing, returns, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

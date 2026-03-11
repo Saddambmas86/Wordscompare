@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PPF Calculator - Public Provident Fund Calculator Online"; // You may Change the Title here
 $page_description = "Free PPF calculator online. Calculate Public Provident Fund maturity amount, yearly interest, and 15-year returns. Tax-free investment under Section 80C."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "ppf calculator - public provident fund calculator online, ppf, calculator, public, provident, fund, online, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

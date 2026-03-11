@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Brokerage Calculator - Calculate Stock Trading Fees Online"; // You may Change the Title here
 $page_description = "Free brokerage calculator online. Calculate stock trading brokerage fees, taxes, and net profit/loss for NSE, BSE, MCX trades. Compare brokers instantly."; // Put your Description here
-$page_keywords = "$kw";
+$page_keywords = "brokerage calculator - calculate stock trading fees online, brokerage, calculator, calculate, stock, trading, fees, online, free online tools, pdf tools";
 
 // Include common header
 include '../../includes/header.php';

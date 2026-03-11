@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PDF Editor"; // You may Change the Title here
-$page_description = "PDF Editor Online."; // Put your Description here
+$page_title = "PDF Editor Online Free - Edit PDF Files in Your Browser"; // You may Change the Title here
+$page_description = "Free PDF editor online. Edit PDF text, images, and pages directly in your browser. Add annotations, fill forms, and modify PDF files without software."; // Put your Description here
 $page_keywords = "PDF editor, edit PDF, free PDF editor, online PDF editor, add text to PDF, add image to PDF, rotate PDF, delete PDF pages, reorder PDF pages";
 
 // Include common header

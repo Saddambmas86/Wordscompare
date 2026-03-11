@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "APY Calculator - Annual Percentage Yield Calculator Online"; // You may Change the Title here
+$page_description = "Free APY calculator online. Calculate Annual Percentage Yield on savings accounts, CDs, and investments. Compare APY vs APR and maximize your returns."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

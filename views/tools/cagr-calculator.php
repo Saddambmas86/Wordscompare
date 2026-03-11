@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "CAGR Calculator - Compound Annual Growth Rate Calculator"; // You may Change the Title here
+$page_description = "Free CAGR calculator online. Calculate Compound Annual Growth Rate for investments, revenue, and portfolios. Understand your true investment growth rate."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

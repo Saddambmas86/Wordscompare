@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Step-Up SIP Calculator - Calculate Increasing SIP Returns"; // You may Change the Title here
+$page_description = "Free Step-Up SIP calculator. Calculate returns with annually increasing SIP contributions. See how top-up SIP accelerates your wealth creation over time."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

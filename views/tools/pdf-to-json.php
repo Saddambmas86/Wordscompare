@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "PDF to JSON Converter - Extract PDF Data to JSON Online Free"; // You may Change the Title here
+$page_description = "Convert PDF to JSON online for free. Extract structured text and data from PDF files into JSON format. Ideal for developers and data processing pipelines."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

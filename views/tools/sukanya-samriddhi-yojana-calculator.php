@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Sukanya Samriddhi Yojana Calculator - SSY Returns Online"; // You may Change the Title here
+$page_description = "Free Sukanya Samriddhi Yojana (SSY) calculator. Calculate maturity amount and interest for your daughter's SSY account. Government-backed tax-free savings scheme."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

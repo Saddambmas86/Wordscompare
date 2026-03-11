@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "PDF to Excel Converter - Extract PDF Tables to XLS Online"; // You may Change the Title here
+$page_description = "Convert PDF to Excel online for free. Extract tables from PDF into editable XLS/XLSX spreadsheets. Accurate data extraction with formatting preserved."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

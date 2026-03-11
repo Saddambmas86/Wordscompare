@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Inflation Calculator - Calculate Purchasing Power Online"; // You may Change the Title here
+$page_description = "Free inflation calculator online. Calculate the real value of money over time, purchasing power loss, and future price using historical inflation rates."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Case Converter - Convert Text Case Online Free"; // You may Change the Title here
+$page_description = "Free case converter online. Convert text to UPPERCASE, lowercase, Title Case, camelCase, snake_case, and more instantly. Perfect for developers and writers."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

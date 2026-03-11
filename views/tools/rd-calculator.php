@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "RD Calculator - Recurring Deposit Maturity Calculator Online"; // You may Change the Title here
+$page_description = "Free RD calculator online. Calculate Recurring Deposit maturity amount and interest earned with quarterly compounding. Plan your monthly savings goal."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

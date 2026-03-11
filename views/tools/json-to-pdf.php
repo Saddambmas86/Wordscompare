@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "JSON to PDF Converter - Convert JSON Data to PDF Online Free"; // You may Change the Title here
+$page_description = "Convert JSON to PDF online for free. Transform JSON data files into formatted PDF documents instantly. Easy conversion with clean output. No sign-up needed."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

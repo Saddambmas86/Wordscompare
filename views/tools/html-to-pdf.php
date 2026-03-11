@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "HTML to PDF Converter - Convert Web Pages to PDF Online Free"; // You may Change the Title here
+$page_description = "Convert HTML to PDF online for free. Transform web pages and HTML files into PDF documents. Preserve styling, images, and layout. Instant conversion."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

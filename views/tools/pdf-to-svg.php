@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "PDF to SVG Converter - Convert PDF to Vector Graphics Online"; // You may Change the Title here
+$page_description = "Convert PDF to SVG online for free. Transform PDF files into scalable vector graphics. Perfect for web use, printing, and design workflows. No sign-up needed."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

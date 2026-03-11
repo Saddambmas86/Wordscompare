@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Add Watermark to PDF Online Free - WordsCompare"; // You may Change the Title here
+$page_description = "Add text or image watermarks to PDF files online for free. Customize opacity, position, and font. Secure, instant, no software required."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Shreelipi to PDF Converter - Convert Shreelipi Fonts to PDF"; // You may Change the Title here
+$page_description = "Convert Shreelipi text to PDF online for free. Transform Shreelipi font documents into PDF files instantly. Preserve Gujarati and other Indian language fonts."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

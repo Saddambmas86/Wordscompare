@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title";
-$page_description = "$desc";
+$page_title = "Car Loan EMI Calculator - Calculate Auto Loan Installments";
+$page_description = "Free car loan EMI calculator. Calculate your monthly car loan installments, total interest payable, and amortization schedule. Plan your auto financing smartly.";
 $page_keywords = "$kw";
 
 // Include common header

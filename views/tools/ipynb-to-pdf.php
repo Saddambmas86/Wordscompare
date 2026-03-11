@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "IPYNB to PDF - Convert Jupyter Notebook to PDF Online Free"; // You may Change the Title here
+$page_description = "Convert IPYNB to PDF online for free. Transform Jupyter Notebook files into PDF documents. Preserve code cells, outputs, and markdown. Fast and secure."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

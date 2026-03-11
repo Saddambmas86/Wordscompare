@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "FD Calculator - Fixed Deposit Maturity Calculator Online"; // You may Change the Title here
+$page_description = "Free FD calculator online. Calculate Fixed Deposit maturity amount, interest earned, and returns for any bank. Compare FD rates and plan your savings."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

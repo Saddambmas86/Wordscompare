@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Mutual Fund Returns Calculator - Calculate MF Returns Online"; // You may Change the Title here
+$page_description = "Free mutual fund returns calculator. Calculate absolute returns, CAGR, and wealth gained on your mutual fund investments. Analyze SIP and lump sum performance."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

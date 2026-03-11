@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Unit Converter Online Free - Convert Length Weight Temperature"; // You may Change the Title here
+$page_description = "Free unit converter online. Convert length, weight, temperature, volume, area, speed, and more. 50+ unit types with instant metric to imperial conversion."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

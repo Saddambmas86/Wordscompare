@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Personal Loan Calculator - Calculate EMI & Interest Online"; // You may Change the Title here
+$page_description = "Free personal loan EMI calculator. Calculate monthly installments, total interest, and repayment schedule for personal loans. Compare loan offers instantly."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

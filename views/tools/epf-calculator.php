@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "EPF Calculator - Employee Provident Fund Calculator Online"; // You may Change the Title here
+$page_description = "Free EPF calculator online. Calculate Employee Provident Fund maturity amount, monthly contributions, and interest. Plan your retirement savings effectively."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Unlock PDF Online Free - Remove PDF Password & Restrictions"; // You may Change the Title here
+$page_description = "Unlock PDF online for free. Remove password protection and restrictions from PDF files instantly. Access locked PDFs without software. Fast and secure."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "PDF OCR - Extract Text from Scanned PDF Online Free"; // You may Change the Title here
+$page_description = "PDF OCR converter online for free. Extract and recognize text from scanned PDFs using Optical Character Recognition. Convert image PDFs to searchable text."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "PDF to Text Converter - Extract Text from PDF Online Free"; // You may Change the Title here
+$page_description = "Convert PDF to text online for free. Extract all text content from PDF files instantly. Supports scanned PDFs with OCR. Fast, secure, browser-based conversion."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

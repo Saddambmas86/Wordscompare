@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "PDF to CSV Converter - Extract PDF Data to CSV Online Free"; // You may Change the Title here
+$page_description = "Convert PDF to CSV online for free. Extract tables and data from PDF files into CSV spreadsheet format. Accurate data extraction for analysis. Fast and secure."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

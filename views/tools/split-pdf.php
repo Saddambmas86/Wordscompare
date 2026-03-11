@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Split PDF"; // You may Change the Title here
-$page_description = "Split PDF online."; // Put your Description here
+$page_title = "Split PDF Online Free - Divide PDF into Multiple Files"; // You may Change the Title here
+$page_description = "Split PDF online for free. Divide PDF files into multiple documents by page range or export every page as a separate PDF. Fast, secure, no sign-up required."; // Put your Description here
 $page_keywords = "split PDF, PDF splitter, extract PDF pages, separate PDF, PDF page extraction, free PDF tool, online PDF splitter";
 
 // Include common header

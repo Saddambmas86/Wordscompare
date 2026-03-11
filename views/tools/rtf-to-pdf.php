@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "RTF to PDF Converter - Convert Rich Text Format to PDF Online"; // You may Change the Title here
+$page_description = "Convert RTF to PDF online for free. Transform Rich Text Format documents into PDF files. Preserve fonts, formatting, and images. Instant, secure conversion."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

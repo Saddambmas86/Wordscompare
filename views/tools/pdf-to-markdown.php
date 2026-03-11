@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "PDF to Markdown Converter - Convert PDF to MD Online Free"; // You may Change the Title here
+$page_description = "Convert PDF to Markdown online for free. Transform PDF documents into clean Markdown text. Preserve headings, lists, and structure. Perfect for developers."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

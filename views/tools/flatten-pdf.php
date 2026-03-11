@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Flatten PDF Online Free - Convert Interactive PDF to Flat PDF"; // You may Change the Title here
+$page_description = "Flatten PDF online for free. Convert interactive PDF forms and annotations into non-editable flat PDFs. Fast, secure, and free — no software required."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

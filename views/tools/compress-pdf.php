@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Compress PDF Online Free - Reduce PDF File Size"; // You may Change the Title here
+$page_description = "Compress PDF files online for free. Reduce PDF file size without quality loss. Fast, secure compression — no software needed, works in your browser."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

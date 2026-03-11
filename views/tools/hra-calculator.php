@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "HRA Calculator - House Rent Allowance Exemption Calculator"; // You may Change the Title here
+$page_description = "Free HRA calculator online. Calculate your House Rent Allowance tax exemption as per Income Tax rules. Know the exact HRA deduction you are eligible for."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

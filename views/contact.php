@@ -1,8 +1,10 @@
-<?php 
+<?php
+
 $page_title = "Contact Us";
 $page_description = "Get in touch with the Snapy Tools team - feedback, suggestions, and support";
 $page_keywords = "contact Snapy Tools, support, feedback, suggestions";
-include '../includes/header.php'; 
+include '../includes/header.php';
+
 ?>
 
 <!-- Page Content -->
@@ -26,11 +28,11 @@ include '../includes/header.php';
                                 <ul class="list-unstyled">
                                     <li class="mb-2">
                                         <i class="bi bi-envelope me-2"></i>
-                                        <a href="digitaltrisha02@gmail.com">support@wordscompare.com</a>
+                                        <a href="mailto:support@wordscompare.com">support@wordscompare.com</a>
                                     </li>
                                     <li class="mb-2">
                                         <i class="bi bi-twitter me-2"></i>
-                                        <a href="digitaltrisha02@gmail.com" target="_blank">WordsCompare@gmail.com</a>
+                                        <a href="mailto:WordsCompare@gmail.com" target="_blank">WordsCompare@gmail.com</a>
                                     </li>
                                 </ul>
                             </div>

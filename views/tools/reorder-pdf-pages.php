@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Reorder PDF Pages"; // You may Change the Title here
-$page_description = "Reorder PDF Pages online."; // Put your Description here
+$page_title = "Reorder PDF Pages Online Free - Rearrange PDF Pages"; // You may Change the Title here
+$page_description = "Reorder PDF pages online for free. Drag and drop to rearrange pages in any order. Reorganize your PDF documents quickly — no software or sign-up needed."; // Put your Description here
 $page_keywords = "reorder PDF pages, rearrange PDF, change PDF page order, PDF organizer, free PDF tool, online PDF editor";
 
 // Include common header

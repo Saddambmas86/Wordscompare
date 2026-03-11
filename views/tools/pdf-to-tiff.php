@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "PDF to TIFF Converter - Convert PDF to TIFF Images Online Free"; // You may Change the Title here
+$page_description = "Convert PDF to TIFF online for free. Transform PDF pages into high-resolution TIFF image files. Ideal for archiving and printing. Fast and secure."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

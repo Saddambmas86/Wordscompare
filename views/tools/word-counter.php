@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Word Counter Online Free - Count Words Characters Sentences"; // You may Change the Title here
+$page_description = "Free word counter online. Count words, characters, sentences, and paragraphs in real-time. Calculate reading time and keyword density. Instant, privacy-first tool."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

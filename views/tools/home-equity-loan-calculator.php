@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Home Equity Loan Calculator - HELOC Payment Calculator"; // You may Change the Title here
+$page_description = "Free home equity loan calculator. Calculate HELOC monthly payments, interest costs, and loan eligibility based on your home value and existing mortgage."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

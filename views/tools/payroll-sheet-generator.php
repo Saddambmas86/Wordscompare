@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Payroll Sheet Generator - Create Payroll Reports Online Free"; // You may Change the Title here
+$page_description = "Free payroll sheet generator online. Create monthly employee payroll reports with salary breakdown, deductions, and net pay. Download as Excel or PDF."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

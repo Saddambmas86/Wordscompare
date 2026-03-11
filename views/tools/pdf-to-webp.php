@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "PDF to WebP Converter - Convert PDF to WebP Images Online"; // You may Change the Title here
+$page_description = "Convert PDF to WebP online for free. Transform PDF pages into modern WebP image format for fast web loading. High quality with smaller file sizes."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

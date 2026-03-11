@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Color Picker - Pick & Convert Colors HEX RGB HSL Online"; // You may Change the Title here
+$page_description = "Free online color picker tool. Pick, convert, and generate colors in HEX, RGB, HSL, and CMYK formats. Create color palettes for your web and design projects."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

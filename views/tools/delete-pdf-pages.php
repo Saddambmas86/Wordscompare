@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Delete PDF Pages"; // You may Change the Title here
-$page_description = "Delete PDF Pages Online."; // Put your Description here
+$page_title = "Delete PDF Pages Online Free - Remove Pages from PDF"; // You may Change the Title here
+$page_description = "Delete pages from PDF online for free. Remove single or multiple pages from any PDF quickly and securely. No sign-up required — instant results."; // Put your Description here
 $page_keywords = "delete PDF pages, remove PDF pages, extract PDF pages, PDF page remover, free PDF tool, online PDF editor";
 
 // Include common header

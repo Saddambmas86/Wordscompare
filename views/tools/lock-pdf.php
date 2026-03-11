@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PDF Locker & Encryptor"; // You may Change the Title here
-$page_description = "PDF Locker & Encryptor online."; // Put your Description here
+$page_title = "Lock PDF Online Free - Password Protect PDF with Encryption"; // You may Change the Title here
+$page_description = "Lock and password-protect PDF online for free. Add 256-bit AES encryption to your PDF files instantly. Secure confidential documents with strong passwords."; // Put your Description here
 $page_keywords = "Lock PDF, Encrypt PDF, Password Protect PDF, Secure PDF, PDF Security, Free PDF Locker, Online PDF Tool";
 
 // Include common header

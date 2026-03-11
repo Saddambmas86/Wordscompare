@@ -1,6 +1,6 @@
 <?php
-$page_title = "$title";
-$page_description = "$desc";
+$page_title = "Text Comparison Tool - Compare Two Texts Online Free";
+$page_description = "Free text comparison tool online. Compare two texts side by side and highlight differences, additions, and deletions. Perfect for proofreading and code review.";
 $page_keywords = "$kw";
 $page_key = 'text-comparision';
 include '../../includes/header.php';

@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Compound Interest Calculator"; // You may Change the Title here
-$page_description = "Compound Interest Calculator online."; // Put your Description here
+$page_title = "Compound Interest Calculator - Calculate Investment Returns"; // You may Change the Title here
+$page_description = "Free compound interest calculator online. Calculate compound interest earned on savings and investments. Compare monthly, quarterly, and yearly compounding effects."; // Put your Description here
 $page_keywords = "compound interest calculator, interest calculator, investment growth, financial planning, future value, interest accrual";
 
 // Include common header

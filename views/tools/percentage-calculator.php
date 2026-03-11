@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Percentage Calculator - Calculate Percentages Online Free"; // You may Change the Title here
+$page_description = "Free percentage calculator online. Calculate percentage of a number, percentage increase/decrease, and find what percent one number is of another. Instant results."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

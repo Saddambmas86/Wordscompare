@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "XML to PDF Converter - Convert XML Data to PDF Online Free"; // You may Change the Title here
+$page_description = "Convert XML to PDF online for free. Transform XML data files into formatted PDF documents. Preserve structure and content. Instant, browser-based conversion."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

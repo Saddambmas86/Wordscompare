@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Income Tax Calculator India FY 2024-25 - Free Online Tool"; // You may Change the Title here
+$page_description = "Free income tax calculator for India. Calculate your income tax liability under old and new tax regime for FY 2024-25. Plan deductions and save more tax."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

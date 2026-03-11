@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Investment Returns Calculator - Calculate ROI Online Free"; // You may Change the Title here
+$page_description = "Free investment returns calculator. Calculate total returns, CAGR, and profit/loss on your investments with detailed year-by-year growth breakdown."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Merge PDF"; // You may Change the Title here
-$page_description = "Merge PDF online."; // Put your Description here
+$page_title = "Merge PDF Online Free - Combine PDF Files into One"; // You may Change the Title here
+$page_description = "Merge PDF files online for free. Combine multiple PDF documents into one file instantly. Reorder pages, merge unlimited files — fast, secure, no sign-up."; // Put your Description here
 $page_keywords = "PDF merger, combine PDF, merge PDF files, online PDF joiner, free PDF tool, secure PDF merge";
 
 // Include common header

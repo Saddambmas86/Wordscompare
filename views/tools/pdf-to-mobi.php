@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "PDF to MOBI Converter - Convert PDF to Kindle Format Online"; // You may Change the Title here
+$page_description = "Convert PDF to MOBI online for free. Transform PDF documents into Kindle-compatible MOBI e-book format. Read PDFs on any Kindle device or app."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

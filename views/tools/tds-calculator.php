@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "TDS Calculator - Calculate Tax Deducted at Source Online Free"; // You may Change the Title here
+$page_description = "Free TDS calculator online. Calculate Tax Deducted at Source on salary, rent, interest, and professional fees. Know your TDS liability as per Indian tax rules."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "JFIF to PDF Converter - Convert JFIF Images to PDF Online"; // You may Change the Title here
+$page_description = "Convert JFIF to PDF online for free. Transform JFIF image files into PDF documents instantly. Combine multiple images into one PDF. No software needed."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

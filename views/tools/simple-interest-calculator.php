@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Simple Interest Calculator"; // You may Change the Title here
-$page_description = "Simple Interest Calculator online."; // Put your Description here
+$page_title = "Simple Interest Calculator - Calculate SI Online Free"; // You may Change the Title here
+$page_description = "Free simple interest calculator online. Calculate interest earned on principal, rate, and time. Understand your savings and loan interest with instant results."; // Put your Description here
 $page_keywords = "simple interest calculator, interest calculator, loan interest, investment interest, financial calculation, future value";
 
 // Include common header

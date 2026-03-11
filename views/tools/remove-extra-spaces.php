@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Remove Extra Spaces from Text Online Free - WordsCompare"; // You may Change the Title here
+$page_description = "Free online tool to remove extra spaces from text. Trim leading, trailing, and multiple spaces between words instantly. Clean and format text effortlessly."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

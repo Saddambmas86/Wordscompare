@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Discount Calculator - Calculate Sale Price & Savings Online"; // You may Change the Title here
+$page_description = "Free discount calculator online. Calculate sale price, discount amount, and savings percentage instantly. Perfect for shopping, retail pricing, and deals."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Brokerage Calculator - Calculate Stock Trading Fees Online"; // You may Change the Title here
+$page_description = "Free brokerage calculator online. Calculate stock trading brokerage fees, taxes, and net profit/loss for NSE, BSE, MCX trades. Compare brokers instantly."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

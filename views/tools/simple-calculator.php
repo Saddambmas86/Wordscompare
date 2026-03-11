@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Simple Calculator Online Free - Basic Arithmetic Calculator"; // You may Change the Title here
+$page_description = "Free simple calculator online. Perform basic arithmetic — addition, subtraction, multiplication, and division. Easy-to-use calculator for everyday calculations."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

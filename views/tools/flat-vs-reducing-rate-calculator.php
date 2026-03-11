@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Flat vs Reducing Rate Calculator - Compare Loan Rates"; // You may Change the Title here
+$page_description = "Free flat vs reducing rate calculator. Compare flat interest rates and reducing balance rates on loans. Find the true cost of your loan and make smarter decisions."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PDF to JPG Converter"; // You may Change the Title here
-$page_description = "PDF to JPG Converter online."; // Put your Description here
+$page_title = "PDF to JPG Converter - Convert PDF Pages to JPEG Online Free"; // You may Change the Title here
+$page_description = "Convert PDF to JPG online for free. Extract PDF pages as high-quality JPEG images. Download individually or as a ZIP. Fast, secure, no sign-up required."; // Put your Description here
 $page_keywords = "PDF to JPG, convert PDF to JPG, PDF to image, extract PDF pages as images, free PDF converter, online PDF tool";
 
 // Include common header

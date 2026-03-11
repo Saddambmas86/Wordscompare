@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Salary Calculator - Calculate Take-Home Pay & CTC Online"; // You may Change the Title here
+$page_description = "Free salary calculator online. Calculate take-home pay, gross to net salary, HRA, PF deductions, and in-hand salary with India tax slabs. Accurate and instant."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

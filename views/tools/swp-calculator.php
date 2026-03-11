@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "SWP Calculator - Systematic Withdrawal Plan Calculator Online"; // You may Change the Title here
+$page_description = "Free SWP calculator online. Calculate Systematic Withdrawal Plan returns, monthly withdrawals, and remaining corpus from mutual fund investments. Smart retirement planning."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

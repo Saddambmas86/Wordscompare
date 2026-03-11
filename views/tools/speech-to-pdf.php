@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "$title"; // You may Change the Title here
-$page_description = "$desc"; // Put your Description here
+$page_title = "Speech to PDF Converter - Convert Voice to PDF Online Free"; // You may Change the Title here
+$page_description = "Convert speech to PDF online for free. Record or transcribe your voice and convert speech to text into a PDF document. Fast, accurate, and easy to use."; // Put your Description here
 $page_keywords = "$kw";
 
 // Include common header

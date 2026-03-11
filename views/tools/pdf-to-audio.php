@@ -1,7 +1,7 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PDF to Audio Converter"; // You may Change the Title here
-$page_description = "PDF to Audio Converter online."; // Put your Description here
+$page_title = "PDF to Audio Converter - Convert PDF to Speech Online Free"; // You may Change the Title here
+$page_description = "Convert PDF to audio online for free. Listen to any PDF document using text-to-speech conversion. Supports multiple voices and playback speeds. No sign-up needed."; // Put your Description here
 $page_keywords = "PDF to audio, convert PDF to speech, text to speech PDF, listen to PDF, free PDF audio converter, online text reader";
 
 // Include common header

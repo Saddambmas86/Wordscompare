@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PDF Repair"; // You may Change the Title here
-$page_description = "PDF Repair online."; // Put your Description here
-$page_keywords = "repair PDF, optimize PDF, compress PDF, flatten PDF, fix corrupted PDF, online PDF repair, free PDF tool";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

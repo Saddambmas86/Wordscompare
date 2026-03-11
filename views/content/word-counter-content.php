@@ -1,75 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Counter - Count Words, Characters, Sentences Online Free</title>
-    <meta name="description" content="Free online word counter tool. Count words, characters, sentences, paragraphs in real-time. Plagiarism check, keyword density, reading time calculator!">
-    <meta name="keywords" content="word counter, character counter, word count checker, sentence counter, paragraph counter, plagiarism checker, keyword density calculator, reading time estimator">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        .feature-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
-        }
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .use-case-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            margin: 0 auto 1rem auto;
-        }
-        .faq-badge {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-        .benefit-check {
-            color: #28a745;
-            font-size: 1.3rem;
-        }
-        .stat-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 15px;
-            padding: 1.5rem;
-            color: white;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <!-- Intro Section -->
+<!-- Intro Section -->
     <div class="card border-0 shadow-sm text-white mb-4" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
         <div class="card-body p-4 p-md-5 text-center">
             <i class="fas fa-calculator fa-4x mb-3"></i>
@@ -688,5 +617,3 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

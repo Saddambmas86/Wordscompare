@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Scientific Calculator"; // You may Change the Title here
-$page_description = "Scientific Calculator online."; // Put your Description here
-$page_keywords = "scientific calculator, online calculator, modern calculator, two-line display, arithmetic, math tool, calculation history, advanced calculator, trigonometry, logarithms, power, square root, factorial, pi, euler's number";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

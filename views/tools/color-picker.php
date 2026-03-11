@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Color Picker"; // You may Change the Title here
-$page_description = "Color Picker Online."; // Put your Description here
-$page_keywords = "color picker, color palette, HEX color, RGB color, HSL color, QR code generator, color scheme";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

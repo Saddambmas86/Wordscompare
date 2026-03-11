@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PNR to PDF Converter"; // You may Change the Title here
-$page_description = "PNR to PDF Converter online."; // Put your Description here
-$page_keywords = "PNR to PDF, convert PNR to PDF, PNR document, flight booking PDF, travel itinerary PDF, free PNR converter, online PDF tool";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

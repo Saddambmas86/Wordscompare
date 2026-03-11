@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Mutual Fund Returns Calculator"; // You may Change the Title here
-$page_description = "Mutual Fund Returns Calculator online."; // Put your Description here
-$page_keywords = "mutual fund calculator, returns calculator, investment calculator, SIP calculator, lump sum calculator, future value mutual fund";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

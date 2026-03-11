@@ -3,12 +3,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6 mb-4">
-                <h5><?php echo $site_name; ?></h5>
+                <div class="h5 mb-3 fw-bold"><?php echo $site_name; ?></div>
                 <p class="text-muted">At <?php echo $site_name; ?>, we're committed to providing free, easy-to-use web utilities that help developers, designers, and everyday internet users accomplish their tasks more efficiently. We believe in creating  tools that are both powerful and accessible to everyone.</p>
             </div>
             
             <div class="col-lg-3 col-md-6 mb-4">
-                <h5>IMPROTANT LINKS</h5>
+                <div class="h5 mb-3 fw-bold">IMPROTANT LINKS</div>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="<?php echo $base_url; ?>about" class="nav-link p-0 text-muted">About Us</a></li>
                     <li class="nav-item mb-2"><a href="<?php echo $base_url; ?>contact" class="nav-link p-0 text-muted">Contact Us</a></li>
@@ -18,7 +18,7 @@
             </div>
             
             <div class="col-lg-3 col-md-6 mb-4">
-                <h5>TRENDING TOOLS</h5>
+                <div class="h5 mb-3 fw-bold">TRENDING TOOLS</div>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="<?php echo $base_url; ?>password-generator" class="nav-link p-0 text-muted">Password Generator</a></li>
                     <li class="nav-item mb-2"><a href="<?php echo $base_url; ?>qr-code-generator" class="nav-link p-0 text-muted">QR Code Generator</a></li>
@@ -28,7 +28,7 @@
             </div>
             
             <div class="col-lg-3 col-md-6 mb-4">
-                <h5>TOP PDF TOOLS</h5>
+                <div class="h5 mb-3 fw-bold">TOP PDF TOOLS</div>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="<?php echo $base_url; ?>lock-pdf" class="nav-link p-0 text-muted">Lock PDF</a></li>
                     <li class="nav-item mb-2"><a href="<?php echo $base_url; ?>reorder-pdf-pages" class="nav-link p-0 text-muted">Reorder PDF Pages</a></li>

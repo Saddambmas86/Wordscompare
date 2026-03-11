@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PDF Metadata Editor"; // You may Change the Title here
-$page_description = "PDF Metadata Editor online."; // Put your Description here
-$page_keywords = "edit PDF metadata, PDF properties, change PDF title, PDF author, PDF subject, PDF keywords, free PDF editor, online PDF tool";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

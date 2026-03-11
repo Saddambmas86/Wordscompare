@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "RD Calculator"; // You may Change the Title here
-$page_description = "RD Calculator online."; // Put your Description here
-$page_keywords = "RD calculator, recurring deposit calculator, RD maturity amount, savings calculator";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

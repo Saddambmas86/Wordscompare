@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Reverse Text"; // You may Change the Title here
-$page_description = "Reverse Text online."; // Put your Description here
-$page_keywords = "reverse text, text reversal, flip text, online text tool, text utility, string reverse";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

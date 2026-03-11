@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timesheet Calculator - Calculate Employee Work Hours & Pay</title>
-    <meta name="description" content="Free timesheet calculator online. Calculate employee work hours, overtime, and payroll. Track time entries, breaks, and total wages!">
-    <meta name="keywords" content="timesheet calculator, work hours calculator, overtime calculator, employee time tracker, payroll calculator, time card calculator, hourly wage calculator, timesheet template">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        .feature-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
-        }
-        .benefit-check {
-            color: #28a745;
-            font-size: 1.3rem;
-        }
-    </style>
-</head>
-<body>
-    <!-- Intro Section -->
+<!-- Intro Section -->
     <div class="card border-0 shadow-sm text-white mb-4" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
         <div class="card-body p-4 p-md-5 text-center">
             <i class="fas fa-clock fa-4x mb-3"></i>
@@ -197,5 +168,3 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

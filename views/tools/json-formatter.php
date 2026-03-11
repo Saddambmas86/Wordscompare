@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "JSON Formatter & Validator"; // You may Change the Title here
-$page_description = "JSON Formatter & Validator online."; // Put your Description here
-$page_keywords = "json formatter, json validator, pretty print json, json beautifier, json minify, online json tool, json parser";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Word to PDF Converter"; // You may Change the Title here
-$page_description = "Word to PDF Converter online."; // Put your Description here
-$page_keywords = "Word to PDF, convert Word to PDF, DOCX to PDF, DOC to PDF, free Word converter, online PDF tool, Word document conversion";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

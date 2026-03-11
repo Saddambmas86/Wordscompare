@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Refinance Calculator"; // You may Change the Title here
-$page_description = "Refinance Calculator online."; // Put your Description here
-$page_keywords = "refinance calculator, loan refinance, mortgage refinance, personal loan refinance, loan comparison, interest savings";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

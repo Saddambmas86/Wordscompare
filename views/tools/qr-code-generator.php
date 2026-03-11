@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "QR Code Generator"; // You may Change the Title here
-$page_description = "QR Code Generator online."; // Put your Description here
-$page_keywords = "QR code generator, create QR code, free QR code, custom QR code, QR code maker, QR code online";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

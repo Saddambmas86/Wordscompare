@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Flat vs. Reducing Rate Loan Calculator"; // You may Change the Title here
-$page_description = "Flat vs. Reducing Rate Loan Calculator online."; // Put your Description here
-$page_keywords = "flat rate loan, reducing balance loan, loan comparison, interest calculator, loan interest, financial planning";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

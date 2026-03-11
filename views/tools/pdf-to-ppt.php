@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PDF to PPT Converter"; // You may Change the Title here
-$page_description = "PDF to PPT Converter online."; // Put your Description here
-$page_keywords = "PDF to PPT, convert PDF to PPT, PDF to PowerPoint, free PDF converter, online PPT tool";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

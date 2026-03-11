@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Brokerage Calculator"; // You may Change the Title here
-$page_description = "Brokerage Calculator online."; // Put your Description here
-$page_keywords = "brokerage calculator, stock trading charges, equity delivery, equity intraday, equity futures, equity options, STT, transaction charges, SEBI turnover fees, stamp duty, GST, demat charges";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

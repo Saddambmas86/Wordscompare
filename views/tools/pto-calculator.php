@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PTO Calculator"; // You may Change the Title here
-$page_description = "PTO Calculator online."; // Put your Description here
-$page_keywords = "PTO calculator, paid time off, vacation accrual, sick leave, personal time, leave calculator, HR tool";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

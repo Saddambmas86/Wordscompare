@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Free CSV to PDF Converter"; // You may Change the Title here
-$page_description = "CSV to PDF converter online."; // Put your Description here
-$page_keywords = "CSV to PDF, convert CSV to PDF, export CSV to PDF, free CSV converter, online PDF tool";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

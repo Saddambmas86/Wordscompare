@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "FD Calculator"; // You may Change the Title here
-$page_description = "FD Calculator online."; // Put your Description here
-$page_keywords = "FD calculator, fixed deposit calculator, investment calculator, maturity amount, interest earned, financial planning";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

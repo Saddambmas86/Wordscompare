@@ -1,54 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compress PDF - Reduce PDF File Size Online Free</title>
-    <meta name="description" content="Free PDF compressor online. Reduce PDF file size up to 90% without quality loss. Optimize PDFs for email, web, printing. Fast & secure!">
-    <meta name="keywords" content="compress pdf, reduce pdf size, optimize pdf, pdf file reducer, shrink pdf, compress pdf for email, pdf optimizer, decrease pdf size">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        .feature-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
-        }
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .benefit-check {
-            color: #28a745;
-            font-size: 1.3rem;
-        }
-        .compression-level {
-            border-radius: 10px;
-            padding: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .compression-level:hover {
-            transform: scale(1.05);
-        }
-    </style>
-</head>
-<body>
-    <!-- Intro Section -->
+<!-- Intro Section -->
     <div class="card border-0 shadow-sm text-white mb-4" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
         <div class="card-body p-4 p-md-5 text-center">
             <i class="fas fa-file-archive fa-4x mb-3"></i>
@@ -410,5 +360,3 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

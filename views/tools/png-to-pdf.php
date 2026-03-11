@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PNG to PDF Converter"; // You may Change the Title here
-$page_description = "PNG to PDF Converter online."; // Put your Description here
-$page_keywords = "PNG to PDF, convert PNG to PDF, image to PDF, free PNG converter, online PDF tool";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

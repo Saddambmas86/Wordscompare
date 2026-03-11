@@ -1,7 +1,7 @@
 <?php
 
 $page_title = ""; // Edit in '/includes/config.php'
-$page_description = "WordsCompare offers free online tools including PDF converter, text utilities, calculators, image compare, word counter and more — fast, secure and no signup.";
+$page_description = "WordsCompare offers free online tools like PDF converter, text utilities, calculators, and more — fast, secure, no signup";
 $page_keywords = "Words Compare, PDF to XML, Speech to PDF, content tools, free web utilities";
 include 'includes/header.php';
 

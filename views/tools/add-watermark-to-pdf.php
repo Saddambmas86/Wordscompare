@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Add Watermark to PDF"; // You may Change the Title here
-$page_description = "Add Watermark to PDF online."; // Put your Description here
-$page_keywords = "add watermark to PDF, PDF watermark, text watermark, image watermark, watermark PDF online, free PDF tool, secure PDF watermark";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

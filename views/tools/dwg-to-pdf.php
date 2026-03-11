@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "DWG to PDF Converter"; // You may Change the Title here
-$page_description = "DWG to PDF Converter online."; // Put your Description here
-$page_keywords = "DWG to PDF, convert DWG to PDF, AutoCAD to PDF, export DWG to PDF, free DWG converter, online CAD tool, drawing to PDF";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Remembered user preference for article section column width
 $article_column_class = "col-lg-8";

@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Unlock PDF"; // You may Change the Title here
-$page_description = "Unlock PDF online."; // Put your Description here
-$page_keywords = "Unlock PDF, remove PDF password, PDF password remover, free PDF unlocker, online PDF tool, decrypt PDF";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

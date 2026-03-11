@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Reverse Mortgage Calculator"; // You may Change the Title here
-$page_description = "Reverse Mortgage Calculator online."; // Put your Description here
-$page_keywords = "reverse mortgage calculator, reverse mortgage, home equity, senior loans, mortgage calculator, financial planning for seniors";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

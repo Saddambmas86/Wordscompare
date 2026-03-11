@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Text Case Converter"; // You may Change the Title here
-$page_description = "Text Case Converter online."; // Put your Description here
-$page_keywords = "case converter, text case, uppercase, lowercase, title case, sentence case, toggle case, inverse case, online tool, text converter";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

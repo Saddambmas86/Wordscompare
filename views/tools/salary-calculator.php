@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Salary Calculator"; // You may Change the Title here
-$page_description = "Salary Calculator online."; // Put your Description here
-$page_keywords = "salary calculator, net salary, gross salary, take home pay, deductions, income tax, professional tax, provident fund, EPF, ESI";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

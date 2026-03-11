@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Home Loan EMI Calculator"; // You may Change the Title here
-$page_description = "Home Loan EMI Calculator online."; // Put your Description here
-$page_keywords = "home loan EMI calculator, loan calculator, home loan EMI, loan amortization, interest calculation";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PDF to OCR Converter"; // You may Change the Title here
-$page_description = "PDF to OCR Converter online."; // Put your Description here
-$page_keywords = "PDF to OCR, convert scanned PDF, OCR PDF online, make PDF searchable, extract text from PDF, free OCR converter, online OCR tool";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

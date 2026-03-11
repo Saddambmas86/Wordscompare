@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PDF to TIFF Converter"; // You may Change the Title here
-$page_description = "PDF to TIFF Converter online."; // Put your Description here
-$page_keywords = "PDF to TIFF, convert PDF to TIFF, export PDF to TIFF, free PDF converter, online image tool, multi-page TIFF";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

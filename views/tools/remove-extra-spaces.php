@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Remove Extra Spaces"; // You may Change the Title here
-$page_description = "Remove Extra Spaces online."; // Put your Description here
-$page_keywords = "remove extra spaces, text cleaner, space remover, trim whitespace, online text tool, format text";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

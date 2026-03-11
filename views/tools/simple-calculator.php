@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Simple Calculator"; // You may Change the Title here
-$page_description = "Simple Calculator online."; // Put your Description here
-$page_keywords = "online calculator, modern calculator, two-line display, arithmetic, math tool, calculation history, advanced calculator, add, subtract, multiply, divide";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

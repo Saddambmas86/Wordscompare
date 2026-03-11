@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PDF to EPUB Converter"; // You may Change the Title here
-$page_description = "PDF to EPUB Converter online."; // Put your Description here
-$page_keywords = "PDF to EPUB, convert PDF to EPUB, PDF to ebook, free PDF converter, online EPUB tool";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

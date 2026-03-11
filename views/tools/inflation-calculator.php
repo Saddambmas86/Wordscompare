@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Inflation Calculator"; // You may Change the Title here
-$page_description = "Inflation Calculator online."; // Put your Description here
-$page_keywords = "inflation calculator, purchasing power, future value of money, historical inflation, cost of living, financial planning";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

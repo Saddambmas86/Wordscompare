@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Calendar Generator"; // You may Change the Title here
-$page_description = "Generate customizable and printable calendars online."; // Put your Description here
-$page_keywords = "calendar generator, printable calendar, monthly calendar, yearly calendar, holiday calendar, custom calendar";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

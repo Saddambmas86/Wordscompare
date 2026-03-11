@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Age Calculator"; // You may Change the Title here
-$page_description = "Age Calculator Online";  // Put your Description here
-$page_keywords = "age calculator, calculate age, birth date calculator, exact age, online age tool";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc";  // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

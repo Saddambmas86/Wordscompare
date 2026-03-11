@@ -1,71 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPF Calculator - Calculate Employee Provident Fund Returns Online</title>
-    <meta name="description" content="Free EPF calculator India. Calculate Employee Provident Fund maturity amount, interest earned, retirement corpus. Check EPF balance, UAN benefits!">
-    <meta name="keywords" content="EPF calculator, employee provident fund calculator, EPF interest calculator, PF maturity amount, EPF balance check, UAN calculator, retirement savings India">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        .feature-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
-        }
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .use-case-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            margin: 0 auto 1rem auto;
-        }
-        .faq-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-        .benefit-check {
-            color: #28a745;
-            font-size: 1.3rem;
-        }
-        .rate-card {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-        }
-    </style>
-</head>
-<body>
-    <!-- Intro Section -->
+<!-- Intro Section -->
     <div class="card border-0 shadow-sm text-white mb-4" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
         <div class="card-body p-4 p-md-5 text-center">
             <i class="fas fa-piggy-bank fa-4x mb-3"></i>
@@ -658,5 +591,3 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Payroll Sheet Generator"; // You may Change the Title here
-$page_description = "Generate customizable and professional payroll sheets online for free. Manage employee records and create payroll reports."; // Put your Description here
-$page_keywords = "payroll sheet generator, free payroll, employee payroll, HR tools, salary management, employee records";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

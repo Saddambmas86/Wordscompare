@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Timesheet Calculator";
-$page_description = "A free online timesheet calculator to quickly calculate total hours worked, including breaks, regular pay, and overtime pay.";
-$page_keywords = "timesheet calculator, free timesheet calculator, online timesheet, work hours calculator, calculate hours, timecard calculator, time and a half, double time, hourly rate, overtime pay, timesheet download";
+$page_title = "$title";
+$page_description = "$desc";
+$page_keywords = "$kw";
 
 // Include common header (assuming this exists in the environment)
 include '../../includes/header.php';

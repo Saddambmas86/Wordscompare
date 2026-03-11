@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Find and Replace Text"; // You may Change the Title here
-$page_description = "Find and Replace Text online."; // You may Change the Title here
-$page_keywords = "find and replace, text find, text replace, online text tool, string replace, regex find replace";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // You may Change the Title here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

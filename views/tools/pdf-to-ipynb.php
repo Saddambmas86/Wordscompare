@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PDF to IPYNB Converter"; // You may Change the Title here
-$page_description = "PDF to IPYNB Converter online."; // Put your Description here
-$page_keywords = "PDF to IPYNB, convert PDF to Jupyter Notebook, extract PDF text to notebook, free PDF converter, online IPYNB tool";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

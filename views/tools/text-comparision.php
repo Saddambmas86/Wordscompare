@@ -1,7 +1,7 @@
 <?php
-$page_title = "Text Compare - Free Online Diff Tool";
-$page_description = "Compare two texts online instantly. Find differences between two documents with highlighted changes. Free text comparison tool.";
-$page_keywords = "text compare, diff tool, compare text online, text difference, document comparison";
+$page_title = "$title";
+$page_description = "$desc";
+$page_keywords = "$kw";
 $page_key = 'text-comparision';
 include '../../includes/header.php';
 ?>

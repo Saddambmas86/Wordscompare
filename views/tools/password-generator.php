@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Secure Password Generator"; // You may Change the Title here
-$page_description = "Secure Password Generator online."; // Put your Description here
-$page_keywords = "password generator, secure password, random password, strong password, online password tool, password creator";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

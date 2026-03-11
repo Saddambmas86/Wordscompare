@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "NSC Calculator"; // You may Change the Title here
-$page_description = "NSC Calculator online."; // Put your Description here
-$page_keywords = "NSC calculator, National Savings Certificate, India investment, small savings scheme, tax saving investment, NSC interest rates, maturity value";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

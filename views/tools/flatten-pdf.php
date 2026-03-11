@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Flatten PDF"; // You may Change the Title here
-$page_description = "Flatten PDF online."; // Put your Description here
-$page_keywords = "flatten PDF, flatten forms, flatten annotations, PDF layers, remove interactive PDF, free PDF tool, online PDF flatten";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

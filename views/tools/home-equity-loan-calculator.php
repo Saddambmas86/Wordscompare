@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Home Equity Loan Calculator"; // You may Change the Title here
-$page_description = "Home Equity Loan Calculator online."; // Put your Description here
-$page_keywords = "home equity loan calculator, HELOC calculator, home equity, loan payment, interest calculation, mortgage, second mortgage";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

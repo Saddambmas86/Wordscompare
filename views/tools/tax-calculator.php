@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Tax Calculator - Income & Sales Tax"; // You may Change the Title here
-$page_description = "Calculate both income tax and sales tax with our comprehensive tax calculator."; // Put your Description here
-$page_keywords = "tax calculator, income tax calculator, sales tax calculator, tax estimation, tax planning, financial calculator";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PDF to PSD Converter"; // You may Change the Title here
-$page_description = "PDF to PSD Converter online."; // Put your Description here
-$page_keywords = "PDF to PSD, PDF to Image, PDF to PNG, PDF to JPEG, convert PDF pages, free PDF converter, online PDF tool";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

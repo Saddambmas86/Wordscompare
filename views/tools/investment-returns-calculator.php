@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Investment Returns Calculator"; // You may Change the Title here
-$page_description = "Calculate potential returns on your investments with our easy-to-use investment calculator."; // Put your Description here
-$page_keywords = "investment calculator, returns calculator, compound interest, future value, mutual fund calculator, stock investment calculator";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

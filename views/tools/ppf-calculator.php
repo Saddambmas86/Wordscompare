@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "PPF Calculator"; // You may Change the Title here
-$page_description = "PPF Calculator online."; // Put your Description here
-$page_keywords = "PPF calculator, Public Provident Fund, PPF maturity, long term savings, investment calculator, compound interest";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

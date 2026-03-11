@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Loan Eligibility Calculator"; // You may Change the Title here
-$page_description = "Calculate your loan eligibility online based on income, expenses, and other factors."; // Put your Description here
-$page_keywords = "loan eligibility calculator, loan amount eligibility, loan affordability, home loan eligibility, car loan eligibility, personal loan eligibility, DTI ratio";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

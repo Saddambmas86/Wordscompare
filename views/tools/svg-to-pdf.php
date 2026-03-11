@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "SVG to PDF Converter"; // You may Change the Title here
-$page_description = "SVG to PDF Converter online."; // Put your Description here
-$page_keywords = "SVG to PDF, convert SVG to PDF, export SVG to PDF, free SVG converter, online PDF tool, vector to PDF";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

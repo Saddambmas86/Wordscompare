@@ -1,45 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JPG to PDF Converter - Convert Images to PDF Online Free</title>
-    <meta name="description" content="Free JPG to PDF converter online. Convert images to PDF instantly. Combine multiple photos into one PDF document. Fast & secure!">
-    <meta name="keywords" content="jpg to pdf, image to pdf, photo to pdf, convert jpg to pdf, png to pdf, pictures to pdf, combine images pdf, image converter">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        .feature-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
-        }
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .benefit-check {
-            color: #28a745;
-            font-size: 1.3rem;
-        }
-    </style>
-</head>
-<body>
-    <!-- Intro Section -->
+<!-- Intro Section -->
     <div class="card border-0 shadow-sm text-white mb-4" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
         <div class="card-body p-4 p-md-5 text-center">
             <i class="fas fa-images fa-4x mb-3"></i>
@@ -328,5 +287,3 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

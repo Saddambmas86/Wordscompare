@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Word Counter"; // You may Change the Title here
-$page_description = "Word Counter online."; // Put your Description here
-$page_keywords = "word counter, character counter, sentence counter, paragraph counter, online text analysis, text statistics";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

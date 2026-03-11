@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Discount Calculator"; // You may Change the Title here
-$page_description = "Discount Calculator online."; // Put your Description here
-$page_keywords = "discount calculator, price discount, percentage off, sales calculator, online discount tool, savings calculator";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

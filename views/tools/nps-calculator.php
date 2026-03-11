@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "NPS Calculator"; // You may Change the Title here
-$page_description = "NPS Calculator online."; // Put your Description here
-$page_keywords = "NPS calculator, National Pension System, pension calculator, retirement planning, NPS maturity, NPS annuity";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Offer Letter Generator"; // You may Change the Title here
-$page_description = "Generate customizable and professional offer letters online."; // Put your Description here
-$page_keywords = "offer letter generator, employment offer, job offer letter, professional templates, free offer letter";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

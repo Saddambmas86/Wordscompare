@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Add Page Numbers to PDF"; // You may Change the Title here
-$page_description = "Add Page Numbers to PDF online."; // Put your Description here
-$page_keywords = "add page numbers to PDF, PDF page numbering, number PDF pages, free PDF tool, online PDF editor, PDF footer, PDF header";
+$page_title = "$title"; // You may Change the Title here
+$page_description = "$desc"; // Put your Description here
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

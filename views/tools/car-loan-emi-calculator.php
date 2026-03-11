@@ -1,8 +1,8 @@
 <?php
 // SEO and Page Metadata
-$page_title = "Car Loan EMI Calculator";
-$page_description = "Car Loan EMI Calculator online.";
-$page_keywords = "Car EMI calculator, car loan calculator, car loan EMI, loan amortization, interest calculation, vehicle loan";
+$page_title = "$title";
+$page_description = "$desc";
+$page_keywords = "$kw";
 
 // Include common header
 include '../../includes/header.php';

@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF to HTML Converter - Convert PDF to Web Page Online Free"; // You may Change the Title here
 $page_description = "Convert PDF to HTML online for free. Transform PDF documents into web-ready HTML pages. Preserve layout, text, and images. Instant, browser-based conversion."; // Put your Description here
-$page_keywords = "pdf to html converter - convert pdf to web page, pdf, html, converter, convert, web, page, free online tools, pdf tools";
+$page_keywords = "pdf to html, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

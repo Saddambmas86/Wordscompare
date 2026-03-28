@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Reverse Text Converter - Flip Text Backwards Online Free"; // You may Change the Title here
 $page_description = "Free reverse text converter online. Flip text backwards, mirror words, or reverse letters instantly. Fun text effects for creative projects and social media."; // Put your Description here
-$page_keywords = "reverse text converter - flip text backwards, reverse, text, converter, flip, backwards, free online tools, pdf tools";
+$page_keywords = "reverse text, text utilities, word counter, case converter, text tool, online text editor, formatting, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

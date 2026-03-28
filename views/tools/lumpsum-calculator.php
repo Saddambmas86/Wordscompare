@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Lumpsum Calculator - Calculate One-Time Investment Returns"; // You may Change the Title here
 $page_description = "Free lumpsum calculator online. Calculate returns on one-time investment in mutual funds or stocks. See wealth growth with compound interest over any period."; // Put your Description here
-$page_keywords = "lumpsum calculator - calculate one-time investment returns, lumpsum, calculator, calculate, one-time, investment, returns, free online tools, pdf tools";
+$page_keywords = "lumpsum calculator, calculator, online calculator, free math tools, age calculator, bmi calculator, conversion calculator, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

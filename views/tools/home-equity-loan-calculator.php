@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Home Equity Loan Calculator - HELOC Payment Calculator"; // You may Change the Title here
 $page_description = "Free home equity loan calculator. Calculate HELOC monthly payments, interest costs, and loan eligibility based on your home value and existing mortgage."; // Put your Description here
-$page_keywords = "home equity loan calculator - heloc payment calculator, home, equity, loan, calculator, heloc, payment, free online tools, pdf tools";
+$page_keywords = "home equity loan calculator, calculator, online calculator, free math tools, age calculator, bmi calculator, conversion calculator, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

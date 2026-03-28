@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Loan Eligibility Calculator - Check Loan Amount Online Free"; // You may Change the Title here
 $page_description = "Free loan eligibility calculator. Check how much home, car, or personal loan you can get based on your income, expenses, and credit profile. Instant results."; // Put your Description here
-$page_keywords = "loan eligibility calculator - check loan amount, loan, eligibility, calculator, check, amount, free online tools, pdf tools";
+$page_keywords = "loan eligibility calculator, calculator, online calculator, free math tools, age calculator, bmi calculator, conversion calculator, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

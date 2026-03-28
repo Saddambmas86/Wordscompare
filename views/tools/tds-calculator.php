@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "TDS Calculator - Calculate Tax Deducted at Source Online Free"; // You may Change the Title here
 $page_description = "Free TDS calculator online. Calculate Tax Deducted at Source on salary, rent, interest, and professional fees. Know your TDS liability as per Indian tax rules."; // Put your Description here
-$page_keywords = "tds calculator - calculate tax deducted at source, tds, calculator, calculate, tax, deducted, source, free online tools, pdf tools";
+$page_keywords = "tds calculator, calculator, online calculator, free math tools, age calculator, bmi calculator, conversion calculator, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF to Excel Converter - Extract PDF Tables to XLS Online"; // You may Change the Title here
 $page_description = "Convert PDF to Excel online for free. Extract tables from PDF into editable XLS/XLSX spreadsheets. Accurate data extraction with formatting preserved."; // Put your Description here
-$page_keywords = "pdf to excel converter - extract pdf tables to xls online, pdf, excel, converter, extract, tables, xls, online, free online tools, pdf tools";
+$page_keywords = "pdf to excel, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';
@@ -326,157 +326,260 @@ function handleFiles(selectedFiles) {
     }
 }
 
-// Convert PDF to Excel
+// Convert PDF to Excel with Advanced Column Snapping and Layout Fidelity
 async function convertPDF() {
     if (files.length === 0) {
-        showError('Please upload at least one PDF file.');
-        Swal.fire({
-            title: 'Error',
-            text: 'Please upload at least one PDF file.',
-            icon: 'error',
-            confirmButtonText: 'OK'
-        });
+        Swal.fire({ title: 'Error', text: 'Please upload at least one PDF file.', icon: 'error' });
         return;
     }
 
-    const encoding = document.getElementById('encoding').value;
-    const hasHeader = document.getElementById('headerCheck').checked;
-    const enableOCR = document.getElementById('enableOCR').checked;
     const outputFormat = document.getElementById('outputFormat').value;
-    const sheetName = document.getElementById('sheetName').value || 'Sheet1';
+    const enableOCR = document.getElementById('enableOCR').checked;
+    const pageRange = document.getElementById('pageRange').value;
 
-    showStatus('Converting PDF to Excel...', 'info');
+    showStatus(`Extractive structural layout for ${outputFormat.toUpperCase()}...`, 'info');
     convertBtn.disabled = true;
 
-    // Show loading alert
-    let timerInterval;
     const swalInstance = Swal.fire({
-        title: 'Converting PDF',
-        html: 'Please wait while we process your file...',
+        title: `High-Fidelity ${outputFormat.toUpperCase()} Extraction`,
+        html: 'Preserving exact alignment and spacing...',
         timerProgressBar: true,
-        didOpen: () => {
-            Swal.showLoading();
-        },
-        willClose: () => {
-            clearInterval(timerInterval);
-        }
+        didOpen: () => Swal.showLoading()
     });
 
     try {
-        // Clear previous data
         excelData = [];
-        
-        // Process each file
+
         for (const file of files) {
-            const fileData = await readFileAsArrayBuffer(file);
-            const pdf = await pdfjsLib.getDocument(fileData).promise;
-            
-            // Parse page range
-            const pageRange = parsePageRange(document.getElementById('pageRange').value, pdf.numPages);
-            
-            // Process each page in the range
-            const allTables = [];
-            for (const pageNum of pageRange) {
-                const page = await pdf.getPage(pageNum);
-                const textContent = await page.getTextContent();
+            let resultBlob;
+            let finalRows = [];
+            let columnWidths = [];
+            let fileName = file.name.replace(/\.pdf$/i, `.${outputFormat}`);
+            let conversionMethod = 'api-fidelity';
+
+            // ── PATH A: PROFESSIONAL API (FIDELITY-FIRST) ──────────────────
+            try {
+                const formData = new FormData();
+                formData.append('File', file);
+                formData.append('StoreFile', 'true');
+                formData.append('SingleSheet', 'true');
+                formData.append('IncludeFormatting', 'true');
+                if (pageRange && pageRange !== '1-') formData.append('PageRange', pageRange);
+                if (enableOCR) formData.append('Ocr', 'true');
+
+                // Use XLSX as the high-fidelity source regardless of outputFormat
+                const apiUrl = `https://v2.convertapi.com/convert/pdf/to/xlsx?Secret=WoZf9gPWyMeW4eTB701cdm4e818fuh4g`;
+                const response = await fetch(apiUrl, { method: 'POST', body: formData });
+                const result = await response.json();
+
+                if (response.ok && result.Files && result.Files.length > 0) {
+                    const dlResponse = await fetch(result.Files[0].Url);
+                    const excelBlob = await dlResponse.blob();
+                    
+                    // Extract data from XLSX for preview and potential CSV conversion
+                    const arrayBuffer = await excelBlob.arrayBuffer();
+                    const wb = XLSX.read(arrayBuffer, { type: 'array' });
+                    const ws = wb.Sheets[wb.SheetNames[0]];
+                    finalRows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' });
+
+                    if (outputFormat === 'csv') {
+                        const csvText = XLSX.utils.sheet_to_csv(ws);
+                        resultBlob = new Blob([csvText], { type: 'text/csv' });
+                    } else {
+                        resultBlob = excelBlob;
+                    }
+
+                    if (finalRows.length < 3) throw new Error('API result too sparse.');
+                    conversionMethod = 'api-fidelity';
+                } else {
+                    throw new Error(result.Message || 'API Error');
+                }
+
+            } catch (apiErr) {
+                console.warn('API Fidelity Path failed, falling back to local:', apiErr.message);
+                conversionMethod = 'layout-fidelity';
                 
-                // Extract tables from the page
-                const tables = extractTablesFromText(textContent);
-                allTables.push(...tables);
+                const fileBuffer = await file.arrayBuffer();
+                const pdfDoc = await pdfjsLib.getDocument({ data: fileBuffer }).promise;
+
+                for (let p = 1; p <= pdfDoc.numPages; p++) {
+                    const page = await pdfDoc.getPage(p);
+                    const textContent = await page.getTextContent();
+                    
+                    const items = textContent.items.filter(item => item.str.trim() !== '').map(item => ({
+                        x: item.transform[4],
+                        y: item.transform[5],
+                        text: item.str,
+                        width: item.width || (item.str.length * 7),
+                        isBold: item.fontName ? (item.fontName.toLowerCase().includes('bold') || item.fontName.toLowerCase().includes('black')) : false
+                    }));
+
+                    if (items.length === 0) continue;
+
+                    // 1. Column Detection
+                    const xSorted = items.map(it => Math.round(it.x)).sort((a, b) => a - b);
+                    const columnSnaps = [];
+                    let currentSnap = xSorted[0];
+                    columnSnaps.push(currentSnap);
+                    for (let i = 1; i < xSorted.length; i++) {
+                        if (xSorted[i] - currentSnap > 12) { 
+                            currentSnap = xSorted[i];
+                            columnSnaps.push(currentSnap);
+                        }
+                    }
+
+                    // 2. Column Widths
+                    const pageCols = columnSnaps.map((snap, i) => {
+                        const nextSnap = columnSnaps[i + 1] || (snap + 150);
+                        return { wch: Math.max(5, (nextSnap - snap) / 6) };
+                    });
+                    if (pageCols.length > columnWidths.length) columnWidths = pageCols;
+
+                    // 3. Row Grouping & Grid Mapping
+                    items.sort((a, b) => b.y - a.y);
+                    const lineGroups = [];
+                    let currentLine = [items[0]];
+                    for (let i = 1; i < items.length; i++) {
+                        if (Math.abs(items[i].y - items[i-1].y) < 8) {
+                            currentLine.push(items[i]);
+                        } else {
+                            lineGroups.push(currentLine);
+                            currentLine = [items[i]];
+                        }
+                    }
+                    lineGroups.push(currentLine);
+
+                    let lastY = -1;
+                    for (const line of lineGroups) {
+                        const currentY = line[0].y;
+                        if (lastY !== -1) {
+                            const yGap = Math.abs(lastY - currentY);
+                            if (yGap > 25) {
+                                const emptyRows = Math.min(5, Math.floor(yGap / 20));
+                                for (let r = 0; r < emptyRows; r++) finalRows.push([]);
+                            }
+                        }
+                        lastY = currentY;
+
+                        const row = new Array(columnSnaps.length).fill('');
+                        for (const item of line) {
+                            let snapIdx = 0;
+                            let minDiff = Infinity;
+                            for (let c = 0; c < columnSnaps.length; c++) {
+                                const diff = Math.abs(item.x - columnSnaps[c]);
+                                if (diff < minDiff) { minDiff = diff; snapIdx = c; }
+                            }
+                            row[snapIdx] += (row[snapIdx] ? ' ' : '') + item.text;
+                        }
+                        finalRows.push(row);
+                    }
+                }
+
+                const wb = XLSX.utils.book_new();
+                const ws = XLSX.utils.aoa_to_sheet(finalRows);
+                ws['!cols'] = columnWidths;
+                XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+                const wbout = XLSX.write(wb, { bookType: outputFormat === 'xlsx' ? 'xlsx' : 'csv', type: 'array' });
+                resultBlob = new Blob([wbout], { type: outputFormat === 'xlsx' ? 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' : 'text/csv' });
             }
-            
-            if (allTables.length === 0) {
-                throw new Error('No tables found in the PDF');
-            }
-            
-            // Combine all tables
-            const combinedData = [];
-            for (const table of allTables) {
-                combinedData.push(...table);
-            }
-            
-            // Add to excelData array
+
             excelData.push({
-                name: file.name.replace('.pdf', outputFormat === 'xlsx' ? '.xlsx' : '.csv'),
-                sheetName: sheetName,
-                data: combinedData
+                name: fileName,
+                data: finalRows.slice(0, 1000), 
+                blobUrl: URL.createObjectURL(resultBlob),
+                format: outputFormat,
+                method: conversionMethod
             });
         }
-        
-        // Update UI with the first file's data
-        columnMappings = [excelData[0].data[0]]; // Use first row as headers
+
         displayPreview(excelData[0].data);
         downloadBtn.disabled = false;
-        showStatus('Conversion complete!', 'success');
-        
-        // Add to history
+
+        const methodNote = excelData[0].method === 'local' ? ' (Full text extraction used)' : '';
+        showStatus(`Conversion complete!${methodNote}`, 'success');
+
         addToHistory({
             fileName: excelData[0].name,
             date: new Date().toLocaleString(),
             format: outputFormat,
-            data: excelData[0].data
+            data: excelData[0].data,
+            blobUrl: excelData[0].blobUrl
         });
-        
-        // Close loading alert and show success
+
         swalInstance.close();
         Swal.fire({
             title: 'Conversion Complete!',
-            text: 'Your PDF has been successfully converted to Excel.',
+            text: `Your PDF has been converted to ${outputFormat.toUpperCase()}.`,
             icon: 'success',
             confirmButtonText: 'Great!',
-            timer: 1000,
+            timer: 1500,
             timerProgressBar: true
         });
-        
+
     } catch (error) {
-        showError(`Error during conversion: ${error.message}`);
+        showError(`Error: ${error.message}`);
         convertBtn.disabled = false;
-        
         swalInstance.close();
-        Swal.fire({
-            title: 'Conversion Error',
-            text: error.message,
-            icon: 'error',
-            confirmButtonText: 'OK'
-        });
+        Swal.fire({ title: 'Conversion Error', text: error.message, icon: 'error' });
     }
 }
 
-// Helper function to read file as ArrayBuffer
-function readFileAsArrayBuffer(file) {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = reject;
-        reader.readAsArrayBuffer(file);
-    });
-}
+// RFC-4180 compliant CSV parser — handles quoted fields, embedded commas, bullet points, etc.
+function parseCSV(text) {
+    const rows = [];
+    let row = [];
+    let field = '';
+    let inQuotes = false;
+    let i = 0;
 
-// Helper function to parse page range string
-function parsePageRange(rangeStr, maxPages) {
-    if (!rangeStr || rangeStr.trim() === '') return Array.from({length: maxPages}, (_, i) => i + 1);
-    
-    const pages = new Set();
-    const parts = rangeStr.split(',');
-    
-    for (const part of parts) {
-        if (part.includes('-')) {
-            const [start, end] = part.split('-').map(Number);
-            const realStart = start || 1;
-            const realEnd = end || maxPages;
-            
-            for (let i = realStart; i <= Math.min(realEnd, maxPages); i++) {
-                pages.add(i);
+    // Normalize line endings
+    text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
+    while (i < text.length) {
+        const ch = text[i];
+
+        if (inQuotes) {
+            if (ch === '"') {
+                // Check for escaped quote ("")
+                if (text[i + 1] === '"') {
+                    field += '"';
+                    i += 2;
+                } else {
+                    inQuotes = false;
+                    i++;
+                }
+            } else {
+                field += ch;
+                i++;
             }
         } else {
-            const page = parseInt(part);
-            if (!isNaN(page) && page <= maxPages) {
-                pages.add(page);
+            if (ch === '"') {
+                inQuotes = true;
+                i++;
+            } else if (ch === ',') {
+                row.push(field.trim());
+                field = '';
+                i++;
+            } else if (ch === '\n') {
+                row.push(field.trim());
+                if (row.some(c => c !== '')) rows.push(row); // skip blank lines
+                row = [];
+                field = '';
+                i++;
+            } else {
+                field += ch;
+                i++;
             }
         }
     }
-    
-    return Array.from(pages).sort((a, b) => a - b);
+
+    // Push last field and row
+    if (field.trim() || row.length > 0) {
+        row.push(field.trim());
+        if (row.some(c => c !== '')) rows.push(row);
+    }
+
+    return rows;
 }
 
 // Basic table extraction from PDF text content
@@ -541,7 +644,7 @@ function displayPreview(data) {
 
 // Download File (handles both XLSX and CSV)
 function downloadFile() {
-    if (excelData.length === 0) {
+    if (excelData.length === 0 || !excelData[0].blobUrl) {
         showError('No data to download. Please convert first.');
         Swal.fire({
             title: 'No Data',
@@ -552,44 +655,31 @@ function downloadFile() {
         return;
     }
 
-    const outputFormat = document.getElementById('outputFormat').value;
-    const sheetName = document.getElementById('sheetName').value || 'Sheet1';
+    const outputFormat = excelData[0].format || 'xlsx';
     
     // Show loading alert
     Swal.fire({
-        title: `Preparing ${outputFormat === 'xlsx' ? 'Excel' : 'CSV'} File`,
-        html: `Please wait while we generate your ${outputFormat === 'xlsx' ? 'Excel' : 'CSV'} file...`,
+        title: `Preparing ${outputFormat.toUpperCase()} File`,
+        html: `Please wait while we generate your ${outputFormat.toUpperCase()} file...`,
         timerProgressBar: true,
         didOpen: () => {
             Swal.showLoading();
         }
     });
 
-    if (outputFormat === 'xlsx') {
-        // Create Excel workbook
-        const wb = XLSX.utils.book_new();
-        const ws = XLSX.utils.aoa_to_sheet(excelData[0].data);
-        XLSX.utils.book_append_sheet(wb, ws, sheetName);
-        XLSX.writeFile(wb, excelData[0].name);
-    } else {
-        // Create CSV
-        const csvContent = excelData[0].data.map(row => row.join(',')).join('\n');
-        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-        const url = URL.createObjectURL(blob);
-        
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = excelData[0].name;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-    }
+    const url = excelData[0].blobUrl;
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = excelData[0].name;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
     
-    showStatus(`${outputFormat === 'xlsx' ? 'Excel' : 'CSV'} file downloaded!`, 'success');
+    showStatus(`${outputFormat.toUpperCase()} file downloaded!`, 'success');
     
     Swal.fire({
         title: 'Download Complete',
-        text: `Your ${outputFormat === 'xlsx' ? 'Excel' : 'CSV'} file has been downloaded.`,
+        text: `Your ${outputFormat.toUpperCase()} file has been downloaded.`,
         icon: 'success',
         confirmButtonText: 'OK',
         timer: 1000,
@@ -604,7 +694,8 @@ function addToHistory(item) {
         fileName: item.fileName,
         date: item.date,
         format: item.format,
-        data: item.data
+        data: item.data, // Minimal preview
+        blobUrl: item.blobUrl // Actual file to download instantly
     };
 
     conversionHistory.unshift(historyItem);
@@ -707,22 +798,15 @@ function downloadHistoryItem(id) {
     });
 
     setTimeout(() => {
-        if (item.format === 'xlsx') {
-            const wb = XLSX.utils.book_new();
-            const ws = XLSX.utils.aoa_to_sheet(item.data);
-            XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
-            XLSX.writeFile(wb, item.fileName);
-        } else {
-            const csvContent = item.data.map(row => row.join(',')).join('\n');
-            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-            const url = URL.createObjectURL(blob);
-            
+        if (item.blobUrl) {
             const a = document.createElement('a');
-            a.href = url;
+            a.href = item.blobUrl;
             a.download = item.fileName;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
+        } else {
+            showError('File data is no longer available. Please convert again.');
         }
         
         showStatus(`${item.fileName} downloaded!`, 'success');

@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF to MOBI Converter - Convert PDF to Kindle Format Online"; // You may Change the Title here
 $page_description = "Convert PDF to MOBI online for free. Transform PDF documents into Kindle-compatible MOBI e-book format. Read PDFs on any Kindle device or app."; // Put your Description here
-$page_keywords = "pdf to mobi converter - convert pdf to kindle format online, pdf, mobi, converter, convert, kindle, format, online, free online tools, pdf tools";
+$page_keywords = "pdf to mobi, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

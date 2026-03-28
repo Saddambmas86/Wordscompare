@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "EMI Calculator - Calculate Loan EMI Online Free"; // You may Change the Title here
 $page_description = "Free EMI calculator online. Calculate monthly loan EMI for home, car, or personal loans. Get full amortization schedule and total interest payable instantly."; // Put your Description here
-$page_keywords = "EMI calculator, loan calculator, home loan EMI, car loan EMI, personal loan EMI, loan amortization, interest calculation";
+$page_keywords = "emi calculator, calculator, online calculator, free math tools, age calculator, bmi calculator, conversion calculator, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

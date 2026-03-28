@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Flatten PDF Online Free - Convert Interactive PDF to Flat PDF"; // You may Change the Title here
 $page_description = "Flatten PDF online for free. Convert interactive PDF forms and annotations into non-editable flat PDFs. Fast, secure, and free — no software required."; // Put your Description here
-$page_keywords = "flatten pdf  - convert interactive pdf to flat pdf, flatten, pdf, convert, interactive, flat, free online tools, pdf tools";
+$page_keywords = "flatten pdf, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

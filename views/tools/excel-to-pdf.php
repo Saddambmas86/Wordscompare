@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Excel to PDF Converter - Convert XLS/XLSX to PDF Online Free"; // You may Change the Title here
 $page_description = "Convert Excel to PDF online for free. Transform XLS and XLSX spreadsheets into PDF documents. Preserve formatting, charts, and formulas. Fast and secure."; // Put your Description here
-$page_keywords = "excel to pdf converter - convert xls/xlsx to pdf, excel, pdf, converter, convert, xls/xlsx, free online tools, pdf tools";
+$page_keywords = "excel to pdf, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';
@@ -228,11 +228,11 @@ function showHowTo() {
         title: 'Welcome to Excel to PDF Converter',
         html: `Follow these steps to convert your Excels:<br><br>
         <ol class="text-start">
-            <li>Upload Excel files by clicking "Select Excel Files" or dragging them into the drop zone.</li>
+            <li>Upload Excel files (.xlsx, .xls) by clicking "Select Excel Files" or dragging them into the drop zone.</li>
             <li>Select the desired sheet from the dropdown if your Excel has multiple sheets.</li>
             <li>Choose your desired page size, orientation, and other options.</li>
-            <li>Click "Convert" to generate the PDF.</li>
-            <li>Download your newly created PDF.</li>
+            <li>Click "Convert" to generate a professional PDF with high-fidelity formatting.</li>
+            <li>Download your newly created, perfectly formatted PDF document.</li>
         </ol>`,
         icon: 'info',
         confirmButtonText: 'Got it!',
@@ -408,96 +408,138 @@ function displayPreview(data) {
 }
 
 
-// Convert Excel to PDF
+// Global reference for the generated PDF blob to avoid regeneration
+let currentPdfBlob = null;
+
+// Convert Excel to PDF with Professional API & Local Fallback
 async function convertExcelToPdf() {
-    if (!currentSheetData || currentSheetData.length === 0) {
-        showError('No Excel data to convert. Please upload a file and select a sheet first.');
-        Swal.fire({
-            title: 'Error',
-            text: 'No Excel data to convert. Please upload a file and select a sheet first.',
-            icon: 'error',
-            confirmButtonText: 'OK'
-        });
+    if (files.length === 0) {
+        Swal.fire({ title: 'Error', text: 'Please upload an Excel file.', icon: 'error' });
         return;
     }
 
-    showStatus('Converting Excel to PDF...', 'info');
+    const file = files[0];
+    const pageSize = document.getElementById('pageSize').value;
+    const orientation = document.getElementById('orientation').value;
+    const addPageNumbers = document.getElementById('addPageNumbers').checked;
+    const fitToPage = document.getElementById('fitToPage').checked;
+
+    showStatus('Converting Excel to Professional PDF...', 'info');
     convertBtn.disabled = true;
     downloadBtn.disabled = true;
 
-    // Show loading alert
     const swalInstance = Swal.fire({
-        title: 'Creating PDF',
-        html: 'Please wait while we generate your PDF document from Excel data...',
+        title: 'High-Fidelity PDF Generation',
+        html: 'Rendering spreadsheet layouts and styles with professional accuracy...',
         timerProgressBar: true,
-        didOpen: () => {
-            Swal.showLoading();
-        }
+        didOpen: () => Swal.showLoading()
     });
 
     try {
-        const pageSize = document.getElementById('pageSize').value;
-        const orientation = document.getElementById('orientation').value;
-        const addPageNumbers = document.getElementById('addPageNumbers').checked;
-        const fitToPage = document.getElementById('fitToPage').checked;
+        let resultBlob;
+        let conversionMethod = 'api-fidelity';
 
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF(orientation, 'pt', pageSize);
-
-        let tableHeaders = currentSheetData[0];
-        let tableBody = currentSheetData.slice(1);
-        
-        let autoTableOptions = {
-            head: [tableHeaders],
-            body: tableBody,
-            startY: 40,
-            styles: {
-                fontSize: 8,
-                cellPadding: 3,
-                valign: 'middle',
-                overflow: 'linebreak',
-            },
-            headStyles: {
-                fillColor: [220, 53, 69], // Bootstrap danger color
-                textColor: 255,
-                fontStyle: 'bold',
-                halign: 'center'
-            },
-            theme: 'striped',
-            didDrawPage: function(data) {
-                // Add page numbers
-                if (addPageNumbers) {
-                    let str = "Page " + doc.internal.getNumberOfPages();
-                    doc.setFontSize(8);
-                    doc.text(str, doc.internal.pageSize.width - data.settings.margin.right, doc.internal.pageSize.height - 10);
-                }
+        // ── PATH A: PROFESSIONAL API (FIDELITY-FIRST) ──────────────────
+        try {
+            const formData = new FormData();
+            formData.append('File', file);
+            formData.append('StoreFile', 'true');
+            
+            const fileExtension = file.name.split('.').pop().toLowerCase();
+            const selectedSheet = sheetSelect.value;
+            
+            // API Parameters for High Fidelity
+            formData.append('PageSize', pageSize);
+            formData.append('PageOrientation', orientation);
+            
+            if (selectedSheet) {
+                formData.append('WorksheetName', selectedSheet);
             }
-        };
+            
+            if (fitToPage) {
+                // Some ConvertAPI engines support auto-fitting
+                formData.append('AutoColumnFit', 'true'); 
+                formData.append('AutoPageFit', 'true');
+            }
+            
+            // Set margins for professional look
+            formData.append('MarginTop', '30');       
+            formData.append('MarginLeft', '30');
+            formData.append('MarginRight', '30');
+            formData.append('MarginBottom', '30');
 
-        if (fitToPage) {
-            autoTableOptions.autoTableWidth = 'wrap'; // Not directly 'fit', but wrap text to fit
-            autoTableOptions.columnStyles = {}; // Reset column styles if any for auto-width
-            // Calculate column widths based on content and page width
-            // This is a more advanced autoTable feature or requires manual calculation
-            // For now, autoTable defaults often handle this well with 'autoTableWidth'
+            const apiUrl = `https://v2.convertapi.com/convert/${fileExtension}/to/pdf?Secret=WoZf9gPWyMeW4eTB701cdm4e818fuh4g`;
+            const response = await fetch(apiUrl, { method: 'POST', body: formData });
+            const result = await response.json();
+
+            if (response.ok && result.Files && result.Files.length > 0) {
+                const dlResponse = await fetch(result.Files[0].Url);
+                resultBlob = await dlResponse.blob();
+                conversionMethod = 'api-fidelity';
+            } else {
+                throw new Error(result.Message || 'API Error');
+            }
+        } catch (apiErr) {
+            console.warn('API Path failed, falling back to local:', apiErr.message);
+            conversionMethod = 'layout-fallback';
+
+            // Local Fallback using jsPDF-AutoTable
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF(orientation, 'pt', pageSize);
+
+            let tableHeaders = currentSheetData[0] || [];
+            let tableBody = currentSheetData.slice(1) || [];
+            
+            let autoTableOptions = {
+                head: [tableHeaders],
+                body: tableBody,
+                startY: 40,
+                styles: {
+                    fontSize: 8,
+                    cellPadding: 3,
+                    valign: 'middle',
+                    overflow: 'linebreak',
+                },
+                headStyles: {
+                    fillColor: [220, 53, 69], // Bootstrap danger color
+                    textColor: 255,
+                    fontStyle: 'bold',
+                    halign: 'center'
+                },
+                theme: 'striped',
+                didDrawPage: function(data) {
+                    if (addPageNumbers) {
+                        let str = "Page " + doc.internal.getNumberOfPages();
+                        doc.setFontSize(8);
+                        doc.text(str, doc.internal.pageSize.width - data.settings.margin.right, doc.internal.pageSize.height - 10);
+                    }
+                }
+            };
+
+            if (fitToPage) {
+                autoTableOptions.autoTableWidth = 'wrap';
+            }
+            
+            doc.autoTable(autoTableOptions);
+            resultBlob = doc.output('blob');
         }
-        
-        doc.autoTable(autoTableOptions);
 
-        const fileName = files[0].name.replace(/\.(xls|xlsx|ods)$/i, '.pdf');
+        currentPdfBlob = resultBlob;
+        const fileName = file.name.replace(/\.(xls|xlsx|ods)$/i, '.pdf');
         
         // Add to history
         addToHistory({
             fileName: fileName,
             date: new Date().toLocaleString(),
             format: 'pdf',
-            data: currentSheetData, // Store the raw data of the current sheet
-            options: { // Store options needed for regeneration
+            data: currentSheetData.slice(0, 100), // Store partial data for preview
+            options: {
                 pageSize: pageSize,
                 orientation: orientation,
                 addPageNumbers: addPageNumbers,
                 fitToPage: fitToPage,
-                sheetName: sheetSelect.value // Store which sheet was converted
+                sheetName: sheetSelect.value,
+                method: conversionMethod
             }
         });
         
@@ -508,11 +550,13 @@ async function convertExcelToPdf() {
         swalInstance.close();
         Swal.fire({
             title: 'Conversion Complete!',
-            text: 'Your Excel sheet has been successfully converted to PDF.',
+            text: conversionMethod === 'api-fidelity' 
+                ? 'Your Excel sheet has been converted with high-fidelity formatting.' 
+                : 'Your Excel sheet has been converted using the standard layout engine.',
             icon: 'success',
             confirmButtonText: 'Great!',
-            timer: 1000,  // Auto-close after 1 seconds
-            timerProgressBar: true  // Show a progress bar
+            timer: 1500,
+            timerProgressBar: true
         });
         
     } catch (error) {
@@ -532,7 +576,7 @@ async function convertExcelToPdf() {
 
 // Download PDF
 function downloadPdf() {
-    if (!currentSheetData || currentSheetData.length === 0) {
+    if (!currentPdfBlob) {
         showError('No PDF to download. Please convert first.');
         Swal.fire({
             title: 'No Data',
@@ -543,77 +587,24 @@ function downloadPdf() {
         return;
     }
 
-    showStatus('Preparing PDF for download...', 'info');
+    const fileName = files[0].name.replace(/\.(xls|xlsx|ods)$/i, '.pdf');
+    const url = URL.createObjectURL(currentPdfBlob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
     
-    // Show loading alert
+    showStatus('PDF file downloaded!', 'success');
     Swal.fire({
-        title: 'Preparing PDF File',
-        html: `Please wait while we generate your PDF file...`,
-        timer: 1500,
-        timerProgressBar: true,
-        didOpen: () => {
-            Swal.showLoading();
-        }
+        title: 'Download Complete',
+        text: 'Your PDF file has been downloaded.',
+        icon: 'success',
+        confirmButtonText: 'OK',
+        timer: 1000,
+        timerProgressBar: true
     });
-
-    setTimeout(() => {
-        // Regenerate PDF on download to ensure options are applied correctly
-        const pageSize = document.getElementById('pageSize').value;
-        const orientation = document.getElementById('orientation').value;
-        const addPageNumbers = document.getElementById('addPageNumbers').checked;
-        const fitToPage = document.getElementById('fitToPage').checked;
-
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF(orientation, 'pt', pageSize);
-
-        let tableHeaders = currentSheetData[0];
-        let tableBody = currentSheetData.slice(1);
-
-        let autoTableOptions = {
-            head: [tableHeaders],
-            body: tableBody,
-            startY: 40,
-            styles: {
-                fontSize: 8,
-                cellPadding: 3,
-                valign: 'middle',
-                overflow: 'linebreak',
-            },
-            headStyles: {
-                fillColor: [220, 53, 69], // Bootstrap danger color
-                textColor: 255,
-                fontStyle: 'bold',
-                halign: 'center'
-            },
-            theme: 'striped',
-            didDrawPage: function(data) {
-                if (addPageNumbers) {
-                    let str = "Page " + doc.internal.getNumberOfPages();
-                    doc.setFontSize(8);
-                    doc.text(str, doc.internal.pageSize.width - data.settings.margin.right, doc.internal.pageSize.height - 10);
-                }
-            }
-        };
-
-        if (fitToPage) {
-            autoTableOptions.autoTableWidth = 'wrap';
-        }
-        
-        doc.autoTable(autoTableOptions);
-
-        const fileName = files[0].name.replace(/\.(xls|xlsx|ods)$/i, '.pdf');
-        doc.save(fileName);
-        
-        showStatus('PDF file downloaded!', 'success');
-        Swal.fire({
-            title: 'Download Complete',
-            text: 'Your PDF file has been downloaded.',
-            icon: 'success',
-            confirmButtonText: 'OK',
-            timer: 1000,  // Auto-close after 1 seconds
-            timerProgressBar: true  // Show a progress bar
-        });
-    }, 1500);
 }
 
 // History Functions
@@ -719,7 +710,7 @@ function downloadHistoryItem(id) {
     Swal.fire({
         title: 'Preparing Download',
         html: `Preparing ${item.fileName} for download...`,
-        timer: 1500,
+        timer: 1000,
         timerProgressBar: true,
         didOpen: () => {
             Swal.showLoading();
@@ -727,12 +718,13 @@ function downloadHistoryItem(id) {
     });
 
     setTimeout(() => {
-        // Regenerate PDF using stored data and options
+        // For history items, we usually just regenerate using local logic if we don't store the blob
+        // (Storing blobs in localStorage is not practical)
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF(item.options.orientation, 'pt', item.options.pageSize);
 
-        let tableHeaders = item.data[0];
-        let tableBody = item.data.slice(1);
+        let tableHeaders = item.data[0] || [];
+        let tableBody = item.data.slice(1) || [];
         
         let autoTableOptions = {
             head: [tableHeaders],
@@ -774,10 +766,10 @@ function downloadHistoryItem(id) {
             text: `Your PDF file has been downloaded.`,
             icon: 'success',
             confirmButtonText: 'OK',
-            timer: 1000,  // Auto-close after 1 seconds
-            timerProgressBar: true  // Show a progress bar
+            timer: 1000,
+            timerProgressBar: true
         });
-    }, 1500);
+    }, 1000);
 }
 
 function previewHistoryItem(id) {

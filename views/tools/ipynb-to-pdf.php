@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "IPYNB to PDF - Convert Jupyter Notebook to PDF Online Free"; // You may Change the Title here
 $page_description = "Convert IPYNB to PDF online for free. Transform Jupyter Notebook files into PDF documents. Preserve code cells, outputs, and markdown. Fast and secure."; // Put your Description here
-$page_keywords = "ipynb to pdf - convert jupyter notebook to pdf, ipynb, pdf, convert, jupyter, notebook, free online tools, pdf tools";
+$page_keywords = "ipynb to pdf, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

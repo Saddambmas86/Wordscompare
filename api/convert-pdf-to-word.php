@@ -1,17 +1,46 @@
 <?php
 /**
  * PDF to Word Conversion API
- * Uses Python pdf2docx library for high-fidelity conversion
+ * Uses ConvertAPI (Cloud API) for high-fidelity conversion.
+ * 
+ * IMPORTANT SETUP:
+ * 1. Go to https://www.convertapi.com/
+ * 2. Create a free account.
+ * 3. Go to your dashboard and copy your "API Secret".
+ * 4. Paste it securely into the $apiSecret variable below.
  */
+
+$apiSecret = "WoZf9gPWyMeW4eTB701cdm4e818fuh4g"; // <--- PASTE YOUR API SECRET HERE
 
 header('Content-Type: application/json');
 
-// Error handling
-set_error_handler(function($errno, $errstr, $errfile, $errline) {
+// Relax error reporting so Hostinger doesn't crash on notices
+error_reporting(E_ERROR | E_PARSE);
+ini_set('display_errors', 0); // Hide raw errors, output JSON only
+
+// Allow the script to run longer for heavy PDF conversions
+set_time_limit(180);
+
+// Basic JSON exception handler only
+set_exception_handler(function($e) {
     http_response_code(500);
-    echo json_encode(['success' => false, 'message' => $errstr]);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Exception: ' . $e->getMessage()
+    ]);
     exit;
 });
+
+try {
+// Check if API Secret is configured
+if (empty($apiSecret) || $apiSecret === "YOUR_CONVERTAPI_SECRET_HERE") {
+    http_response_code(500);
+    echo json_encode([
+        'success' => false,
+        'message' => 'API Secret not configured. Please open api/convert-pdf-to-word.php and add your ConvertAPI Secret.'
+    ]);
+    exit;
+}
 
 // Check if request is POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -28,8 +57,6 @@ if (!isset($_FILES['pdfFile']) || $_FILES['pdfFile']['error'] !== UPLOAD_ERR_OK)
 }
 
 $uploadedFile = $_FILES['pdfFile'];
-$pageRange = isset($_POST['pageRange']) ? $_POST['pageRange'] : '1-';
-$outputFormat = isset($_POST['outputFormat']) ? $_POST['outputFormat'] : 'docx';
 
 // Validate file type
 $finfo = finfo_open(FILEINFO_MIME_TYPE);
@@ -42,222 +69,91 @@ if ($mimeType !== 'application/pdf') {
     exit;
 }
 
-// Create temporary directory
-$tempDir = sys_get_temp_dir() . '/pdf2word_' . uniqid();
-if (!mkdir($tempDir, 0777, true)) {
+// Check if CURL is enabled
+if (!function_exists('curl_init')) {
     http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Failed to create temporary directory']);
+    echo json_encode(['success' => false, 'message' => 'CURL extension is not enabled. Please enable extension=curl in your php.ini']);
     exit;
 }
 
-$inputPath = $tempDir . '/input.pdf';
-$outputPath = $tempDir . '/output.docx';
+// Prepare CURL request to ConvertAPI
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'https://v2.convertapi.com/convert/pdf/to/docx?Secret=' . $apiSecret . '&StoreFile=true');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_TIMEOUT, 120); // 2 minute timeout
+curl_setopt($ch, CURLOPT_HTTPHEADER, ['Expect:']); // Prevent Expect: 100-continue issues on Hostinger
 
-// Move uploaded file
-if (!move_uploaded_file($uploadedFile['tmp_name'], $inputPath)) {
-    http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Failed to save uploaded file']);
-    cleanup($tempDir);
-    exit;
-}
+// Prevent SSL certificate issues on localhost/XAMPP
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($ch, CURLOPT_POST, 1);
 
-// Check if Python is available
-$pythonCmd = null;
-if (stripos(PHP_OS, 'WIN') === 0) {
-    // Windows - check for python or py
-    $pythonCheck = shell_exec('python --version 2>&1');
-    if (strpos($pythonCheck, 'Python') !== false) {
-        $pythonCmd = 'python';
-    } else {
-        $pythonCheck = shell_exec('py --version 2>&1');
-        if (strpos($pythonCheck, 'Python') !== false) {
-            $pythonCmd = 'py';
-        }
-    }
-} else {
-    // Linux/Mac - check for python3 or python
-    $pythonCheck = shell_exec('python3 --version 2>&1');
-    if (strpos($pythonCheck, 'Python') !== false) {
-        $pythonCmd = 'python3';
-    } else {
-        $pythonCheck = shell_exec('python --version 2>&1');
-        if (strpos($pythonCheck, 'Python') !== false) {
-            $pythonCmd = 'python';
-        }
-    }
-}
-
-if (!$pythonCmd) {
-    http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Python is not available on the server']);
-    cleanup($tempDir);
-    exit;
-}
-
-// Create Python script for conversion
-$pythonScript = <<<'PYTHON'
-import sys
-import os
-
-try:
-    from pdf2docx import Converter
-except ImportError as e:
-    sys.stderr.write("pdf2docx not installed: " + str(e) + "\n")
-    sys.exit(1)
-
-input_path = sys.argv[1]
-output_path = sys.argv[2]
-page_range = sys.argv[3] if len(sys.argv) > 3 else None
-
-try:
-    # Convert PDF to DOCX
-    cv = Converter(input_path)
-    
-    # Parse page range if provided
-    pages = None
-    if page_range and page_range != '1-':
-        try:
-            if '-' in page_range:
-                parts = page_range.split('-')
-                start = int(parts[0]) if parts[0] else 1
-                end = int(parts[1]) if parts[1] else None
-                if end:
-                    pages = list(range(start - 1, end))
-                else:
-                    pages = list(range(start - 1, 9999))
-            else:
-                # Single page or comma-separated
-                pages = [int(p) - 1 for p in page_range.split(',')]
-        except:
-            pages = None
-    
-    # Perform conversion
-    cv.convert(output_path, pages=pages)
-    cv.close()
-    
-    print("Conversion successful")
-    
-except Exception as e:
-    sys.stderr.write("Conversion error: " + str(e) + "\n")
-    sys.exit(1)
-PYTHON;
-
-$scriptPath = $tempDir . '/convert.py';
-file_put_contents($scriptPath, $pythonScript);
-
-// Execute Python script
-// On Windows, use quotes instead of escapeshellarg for better path handling
-if (stripos(PHP_OS, 'WIN') === 0) {
-    $command = '"' . $pythonCmd . '" "' . $scriptPath . '" "' . $inputPath . '" "' . $outputPath . '" "' . $pageRange . '" 2>&1';
-} else {
-    $command = sprintf(
-        '%s %s %s %s %s 2>&1',
-        escapeshellarg($pythonCmd),
-        escapeshellarg($scriptPath),
-        escapeshellarg($inputPath),
-        escapeshellarg($outputPath),
-        escapeshellarg($pageRange)
-    );
-}
-
-$output = shell_exec($command);
-
-// Check if conversion was successful
-if (!file_exists($outputPath) || filesize($outputPath) === 0) {
-    http_response_code(500);
-    
-    // Read the Python script for debugging
-    $scriptContent = file_get_contents($scriptPath);
-    
-    echo json_encode([
-        'success' => false, 
-        'message' => 'Conversion failed. pdf2docx may not be installed. Run: pip install pdf2docx',
-        'debug' => $output,
-        'pythonCmd' => $pythonCmd,
-        'pythonVersion' => shell_exec($pythonCmd . ' --version 2>&1'),
-        'tempDir' => $tempDir,
-        'scriptExists' => file_exists($scriptPath),
-        'inputExists' => file_exists($inputPath),
-        'inputSize' => file_exists($inputPath) ? filesize($inputPath) : 0
-    ]);
-    cleanup($tempDir);
-    exit;
-}
-
-// Read the converted file
-$docxContent = file_get_contents($outputPath);
-if ($docxContent === false) {
-    http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Failed to read converted file']);
-    cleanup($tempDir);
-    exit;
-}
-
-// Extract preview text from DOCX (first 1000 chars)
-$previewText = extractTextFromDocx($outputPath);
-
-// Return the converted file as base64
-$response = [
-    'success' => true,
-    'message' => 'Conversion successful',
-    'data' => base64_encode($docxContent),
-    'mimeType' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    'previewText' => $previewText
+// Send the uploaded temp file directly
+$post = [
+    'File' => new CURLFile($uploadedFile['tmp_name'], 'application/pdf', $uploadedFile['name'])
 ];
+curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
-echo json_encode($response);
+// Execute request
+$result = curl_exec($ch);
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+$curlError = curl_error($ch);
+curl_close($ch);
 
-// Cleanup
-cleanup($tempDir);
-
-/**
- * Clean up temporary files
- */
-function cleanup($dir) {
-    if (!is_dir($dir)) return;
-    
-    $files = array_diff(scandir($dir), ['.', '..']);
-    foreach ($files as $file) {
-        $path = $dir . '/' . $file;
-        if (is_dir($path)) {
-            cleanup($path);
-        } else {
-            @unlink($path);
-        }
-    }
-    @rmdir($dir);
+if ($curlError) {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'CURL Error: ' . $curlError]);
+    exit;
 }
 
-/**
- * Extract text from DOCX file for preview
- */
-function extractTextFromDocx($docxPath) {
-    // Check if ZipArchive is available
-    if (!class_exists('ZipArchive')) {
-        return 'Preview not available (ZipArchive extension not enabled)';
-    }
-    
-    $text = '';
-    
-    try {
-        $zip = new ZipArchive();
-        if ($zip->open($docxPath) === TRUE) {
-            $xml = $zip->getFromName('word/document.xml');
-            $zip->close();
-            
-            if ($xml) {
-                // Simple XML text extraction
-                $xmlObj = simplexml_load_string($xml);
-                if ($xmlObj) {
-                    $text = strip_tags($xml);
-                    $text = preg_replace('/\s+/', ' ', $text);
-                    $text = substr($text, 0, 1000);
-                }
-            }
-        }
-    } catch (Exception $e) {
-        $text = 'Preview not available';
-    }
-    
-    return $text;
+// Decode API response
+$responseObj = json_decode($result, true);
+
+if ($httpCode !== 200) {
+    // API returned an error
+    $errorMsg = isset($responseObj['Message']) ? $responseObj['Message'] : 'API Error ' . $httpCode;
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'ConvertAPI Error: ' . $errorMsg]);
+    exit;
 }
+
+// Success! Return the Download URL directly to the frontend.
+if (isset($responseObj['Files']) && count($responseObj['Files']) > 0) {
+    if (isset($responseObj['Files'][0]['Url'])) {
+        $fileUrl = $responseObj['Files'][0]['Url']; 
+        
+        echo json_encode([
+            'success' => true,
+            'message' => 'Conversion successful',
+            'downloadUrl' => $fileUrl,
+            'previewText' => 'Document successfully converted via Cloud. Click download to view.'
+        ]);
+        exit;
+    } else if (isset($responseObj['Files'][0]['FileData'])) {
+        $fileData = $responseObj['Files'][0]['FileData']; 
+        
+        echo json_encode([
+            'success' => true,
+            'message' => 'Conversion successful',
+            'data' => $fileData,
+            'mimeType' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'previewText' => 'Preview generated from ConvertAPI'
+        ]);
+        exit;
+    }
+} else {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Invalid response from ConvertAPI']);
+    exit;
+}
+
+} catch (Exception $e) {
+    http_response_code(500);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Exception caught: ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine()
+    ]);
+    exit;
+}
+

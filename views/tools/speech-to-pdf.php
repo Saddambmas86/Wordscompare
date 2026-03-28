@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Speech to PDF Converter - Convert Voice to PDF Online Free"; // You may Change the Title here
 $page_description = "Convert speech to PDF online for free. Record or transcribe your voice and convert speech to text into a PDF document. Fast, accurate, and easy to use."; // Put your Description here
-$page_keywords = "speech to pdf converter - convert voice to pdf, speech, pdf, converter, convert, voice, free online tools, pdf tools";
+$page_keywords = "speech to pdf, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

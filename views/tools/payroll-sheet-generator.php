@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Payroll Sheet Generator - Create Payroll Reports Online Free"; // You may Change the Title here
 $page_description = "Free payroll sheet generator online. Create monthly employee payroll reports with salary breakdown, deductions, and net pay. Download as Excel or PDF."; // Put your Description here
-$page_keywords = "payroll sheet generator - create payroll reports, payroll, sheet, generator, create, reports, free online tools, pdf tools";
+$page_keywords = "payroll sheet generator, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

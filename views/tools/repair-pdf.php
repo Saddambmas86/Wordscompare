@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Repair PDF Online Free - Fix Corrupted PDF Files Instantly"; // You may Change the Title here
 $page_description = "Repair corrupted PDF files online for free. Fix damaged, unreadable, or broken PDF documents and recover your content. Fast and secure browser-based repair."; // Put your Description here
-$page_keywords = "repair pdf  - fix corrupted pdf files instantly, repair, pdf, fix, corrupted, files, instantly, free online tools, pdf tools";
+$page_keywords = "repair pdf, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "JSON to PDF Converter - Convert JSON Data to PDF Online Free"; // You may Change the Title here
 $page_description = "Convert JSON to PDF online for free. Transform JSON data files into formatted PDF documents instantly. Easy conversion with clean output. No sign-up needed."; // Put your Description here
-$page_keywords = "json to pdf converter - convert json data to pdf, json, pdf, converter, convert, data, free online tools, pdf tools";
+$page_keywords = "json to pdf, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

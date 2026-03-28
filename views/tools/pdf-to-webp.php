@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF to WebP Converter - Convert PDF to WebP Images Online"; // You may Change the Title here
 $page_description = "Convert PDF to WebP online for free. Transform PDF pages into modern WebP image format for fast web loading. High quality with smaller file sizes."; // Put your Description here
-$page_keywords = "pdf to webp converter - convert pdf to webp images online, pdf, webp, converter, convert, images, online, free online tools, pdf tools";
+$page_keywords = "pdf to webp, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

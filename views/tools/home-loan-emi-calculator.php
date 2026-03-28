@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Home Loan EMI Calculator - Housing Loan Calculator Online"; // You may Change the Title here
 $page_description = "Free home loan EMI calculator. Calculate housing loan monthly installments, total interest, and complete amortization schedule. Plan your dream home financing."; // Put your Description here
-$page_keywords = "home loan emi calculator - housing loan calculator online, home, loan, emi, calculator, housing, online, free online tools, pdf tools";
+$page_keywords = "home loan emi calculator, calculator, online calculator, free math tools, age calculator, bmi calculator, conversion calculator, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

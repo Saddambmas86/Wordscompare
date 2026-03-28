@@ -1354,21 +1354,21 @@ body {
 }
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, rgba(15, 32, 39, 0.95), rgba(32, 58, 67, 0.95)) !important;
-    color: #ffffff;
-    border-bottom: 3px solid #dc3545;
+    background: #ffffff !important;
+    color: #111111;
+    border-bottom: 1px solid #e9ecef;
 }
 
 .hero-section h1 {
-    color: #ffffff;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    color: #111111;
     font-weight: 900;
     letter-spacing: 1px;
 }
 
-.hero-section .lead {
-    font-size: 1.3rem;
-    font-weight: 500;
+.hero-section p {
+    color: #333333;
+    font-size: 1.1rem;
+    font-weight: 400;
 }
 
 [data-bs-theme="dark"] .hero-section {
@@ -1438,3 +1438,4 @@ body {
         gap: 0.75rem;
     }
 }
+

@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "EPF Calculator - Employee Provident Fund Calculator Online"; // You may Change the Title here
 $page_description = "Free EPF calculator online. Calculate Employee Provident Fund maturity amount, monthly contributions, and interest. Plan your retirement savings effectively."; // Put your Description here
-$page_keywords = "epf calculator - employee provident fund calculator online, epf, calculator, employee, provident, fund, online, free online tools, pdf tools";
+$page_keywords = "epf calculator, calculator, online calculator, free math tools, age calculator, bmi calculator, conversion calculator, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

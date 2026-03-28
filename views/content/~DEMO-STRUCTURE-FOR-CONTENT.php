@@ -12,6 +12,8 @@ REFERENCE -----------------------------------------
 
                 <section id="how-it-works">
                     <h2 class="h3 mb-4 text-danger"><i class="fas fa-workflow me-2"></i></h2>
+
+<p class="text-center mt-3">Looking for more? Use our <a href="<?php echo $base_url; ?>jpg-to-pdf">Jpg To Pdf</a> and <a href="<?php echo $base_url; ?>csv-to-pdf">Csv To Pdf</a> for fast and accurate results.</p>
                     <p></p>
                     <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
                         <div class="col">

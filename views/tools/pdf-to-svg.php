@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF to SVG Converter - Convert PDF to Vector Graphics Online"; // You may Change the Title here
 $page_description = "Convert PDF to SVG online for free. Transform PDF files into scalable vector graphics. Perfect for web use, printing, and design workflows. No sign-up needed."; // Put your Description here
-$page_keywords = "pdf to svg converter - convert pdf to vector graphics online, pdf, svg, converter, convert, vector, graphics, online, free online tools, pdf tools";
+$page_keywords = "pdf to svg, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

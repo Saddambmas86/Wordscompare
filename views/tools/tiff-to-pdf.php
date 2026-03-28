@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "TIFF to PDF Converter - Convert TIFF Images to PDF Online Free"; // You may Change the Title here
 $page_description = "Convert TIFF to PDF online for free. Transform TIFF image files into PDF documents. Combine multiple TIFF pages into one PDF. Fast, secure, free conversion."; // Put your Description here
-$page_keywords = "tiff to pdf converter - convert tiff images to pdf, tiff, pdf, converter, convert, images, free online tools, pdf tools";
+$page_keywords = "tiff to pdf, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Case Converter - Convert Text Case Online Free"; // You may Change the Title here
 $page_description = "Free case converter online. Convert text to UPPERCASE, lowercase, Title Case, camelCase, snake_case, and more instantly. Perfect for developers and writers."; // Put your Description here
-$page_keywords = "case converter - convert text case, case, converter, convert, text, free online tools, pdf tools";
+$page_keywords = "case converter, text utilities, word counter, case converter, text tool, online text editor, formatting, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

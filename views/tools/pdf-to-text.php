@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF to Text Converter - Extract Text from PDF Online Free"; // You may Change the Title here
 $page_description = "Convert PDF to text online for free. Extract all text content from PDF files instantly. Supports scanned PDFs with OCR. Fast, secure, browser-based conversion."; // Put your Description here
-$page_keywords = "pdf to text converter - extract text from pdf, pdf, text, converter, extract, from, free online tools, pdf tools";
+$page_keywords = "pdf to text, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

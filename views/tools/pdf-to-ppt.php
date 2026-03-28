@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF to PowerPoint Converter - Convert PDF to PPTX Online Free"; // You may Change the Title here
 $page_description = "Convert PDF to PowerPoint (PPT/PPTX) online for free. Transform PDF slides into editable presentations. Preserve layout and images. Fast and accurate."; // Put your Description here
-$page_keywords = "pdf to powerpoint converter - convert pdf to pptx, pdf, powerpoint, converter, convert, pptx, free online tools, pdf tools";
+$page_keywords = "pdf to ppt, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';
@@ -38,11 +38,11 @@ include '../../includes/header.php';
             </div>
         </div>
         
-        <div class="col-lg-8 border shadow-sm">
+        <div class="col-lg-7 border shadow-sm">
             <div class="tool-container rounded-3 p-4 p-md-5">
                 <header class="text-center mb-4">
-                    <h1 class="h2">PDF to PPT Converter <i class="fas fa-file-powerpoint text-danger ms-2"></i></h1>
-                    <p class="lead text-muted">Transform your PDF documents into editable PowerPoint presentations.</p>
+                    <h1 class="h2">PDF to PowerPoint Converter <i class="fas fa-file-powerpoint text-danger ms-2"></i></h1>
+                    <p class="lead text-muted">Transform your PDF slides into high-quality, editable PowerPoint presentations.</p>
                 </header>
 
                 <div id="uploadArea" class="upload-area border-dashed bg-light rounded-3 p-5 text-center mb-4">
@@ -63,22 +63,35 @@ include '../../includes/header.php';
                     <div class="card-body">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label for="pageRange" class="form-label">Page Range (e.g., 1-5, 8)</label>
-                                <input type="text" id="pageRange" class="form-control" placeholder="All pages">
+                                <label for="pageRange" class="form-label">Page Range</label>
+                                <input type="text" id="pageRange" class="form-control" placeholder="e.g. 1-3, 5" value="1-">
                             </div>
                             <div class="col-md-6">
-                                <label for="slideLayout" class="form-label">Slide Layout</label>
-                                <select id="slideLayout" class="form-select">
-                                    <option value="TITLE_AND_CONTENT" selected>Title and Content</option>
-                                    <option value="BLANK">Blank</option>
-                                    <option value="TITLE_SLIDE">Title Slide</option>
+                                <label for="outputFormat" class="form-label">Output Format</label>
+                                <select id="outputFormat" class="form-select">
+                                    <option value="pptx" selected>PowerPoint (PPTX)</option>
+                                    <option value="ppt">PowerPoint 97-2003 (PPT)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="contentMode" class="form-label">Content Mode</label>
+                                <select id="contentMode" class="form-select">
+                                    <option value="textAndImages" selected>Text + Images</option>
+                                    <option value="text">Text Only</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="layoutMode" class="form-label">Layout Mode</label>
+                                <select id="layoutMode" class="form-select">
+                                    <option value="flow" selected>Flow Layout (Editable)</option>
+                                    <option value="fixed">Fixed Layout (Preserve PDF Appearance)</option>
                                 </select>
                             </div>
                             <div class="col-12">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="smartTextExtraction" checked>
                                     <label class="form-check-label" for="smartTextExtraction">
-                                        Attempt Smart Text Extraction (Experimental)
+                                        Attempt Smart Text Extraction (Best for Editability)
                                     </label>
                                 </div>
                             </div>
@@ -399,9 +412,9 @@ function parsePageRange(rangeStr, totalPages) {
 // Store PDF document for image rendering
 let pdfDocument = null;
 
-// Convert PDF to PPT with high fidelity (page images)
+// Convert PDF to PPT with high fidelity (Primary: ConvertAPI, Fallback: PptxGenJS)
 async function convertPdfToPpt() {
-    if (!pdfDocument || pdfTextContent.length === 0) {
+    if (files.length === 0) {
         showError('No PDF data to convert. Please upload a file first.');
         Swal.fire({
             title: 'Error',
@@ -412,14 +425,19 @@ async function convertPdfToPpt() {
         return;
     }
 
-    showStatus('Converting PDF pages to images for PPTX...', 'info');
+    const file = files[0];
+    const pageRange = pageRangeInput.value;
+    const slideLayout = slideLayoutSelect.value;
+    const smartExtraction = smartTextExtractionCheckbox.checked;
+
+    showStatus('Preparing high-fidelity editable PPTX conversion...', 'info');
     convertBtn.disabled = true;
     downloadBtn.disabled = true;
 
     // Show loading alert
     const swalInstance = Swal.fire({
         title: 'Creating PowerPoint',
-        html: 'Rendering PDF pages as images... This may take a moment for larger files.',
+        html: 'Performing high-fidelity conversion... This ensures your PPTX is fully editable.',
         timerProgressBar: true,
         allowOutsideClick: false,
         didOpen: () => {
@@ -428,91 +446,123 @@ async function convertPdfToPpt() {
     });
 
     try {
-        // Check if PptxGenJS is loaded
+        // ── PATH A: PROFESSIONAL API (FIDELITY-FIRST & EDITABLE) ──────────
+        try {
+            const formData = new FormData();
+            formData.append('File', file);
+            formData.append('StoreFile', 'true');
+            if (pageRange && pageRange !== '1-' && pageRange !== 'All pages') {
+                formData.append('PageRange', pageRange);
+            }
+
+            const outputFormat = document.getElementById('outputFormat').value || 'pptx';
+            const layoutMode = document.getElementById('layoutMode').value || 'flow';
+            
+            // Direct browser-to-cloud API call to bypass server limits
+            const apiUrl = `https://v2.convertapi.com/convert/pdf/to/${outputFormat}?Secret=WoZf9gPWyMeW4eTB701cdm4e818fuh4g`;
+            const response = await fetch(apiUrl, { method: 'POST', body: formData });
+            const result = await response.json();
+
+            if (response.ok && result.Files && result.Files.length > 0) {
+                const dlResponse = await fetch(result.Files[0].Url);
+                const pptxBlob = await dlResponse.blob();
+                
+                const fileName = file.name.replace(/\.pdf$/i, '.' + outputFormat);
+                
+                // Store for download
+                window.currentPptxBlob = pptxBlob;
+                window.currentFileName = fileName;
+                window.isApiConversion = true;
+
+                addToHistory({
+                    fileName: fileName,
+                    date: new Date().toLocaleString(),
+                    format: 'pptx',
+                    data: pdfTextContent,
+                    blob: pptxBlob,
+                    options: {
+                        pageRange: pageRange,
+                        slideLayout: slideLayout,
+                        smartTextExtraction: smartExtraction,
+                        method: 'api-high-fidelity'
+                    }
+                });
+
+                showStatus('High-fidelity conversion complete! Click Download.', 'success');
+                swalInstance.close();
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Your PDF has been converted to an editable PowerPoint with perfect layout.',
+                    icon: 'success',
+                    confirmButtonText: 'Great!',
+                    timer: 2000,
+                    timerProgressBar: true
+                });
+
+                convertBtn.disabled = false;
+                downloadBtn.disabled = false;
+                return; // Success, exit function
+            } else {
+                throw new Error(result.Message || 'API Conversion failed');
+            }
+        } catch (apiErr) {
+            console.warn('API Path failed, falling back to local rendering:', apiErr.message);
+            // Fall through to Path B
+        }
+
+        // ── PATH B: LOCAL RENDERING (FALLBACK - IMAGE BASED) ─────────────
+        if (!pdfDocument || pdfTextContent.length === 0) {
+            throw new Error('Fallback failed: No PDF data loaded.');
+        }
+
         if (typeof PptxGenJS === 'undefined') {
             throw new Error('PptxGenJS library is not loaded. Please check your internet connection.');
         }
         
         const pptx = new PptxGenJS();
-        const pageRange = parsePageRange(pageRangeInput.value, pdfTextContent.length);
+        const parsedPageRange = parsePageRange(pageRange, pdfTextContent.length);
         
-        // Define slide dimensions (16:9 aspect ratio)
         pptx.defineSlideMaster({
             title: 'PDF_PAGE',
             background: { color: 'FFFFFF' }
         });
 
-        // Process each page
-        for (let i = 0; i < pageRange.length; i++) {
-            const pageNum = pageRange[i];
-            
-            // Update progress
-            Swal.update({
-                html: `Rendering page ${i + 1} of ${pageRange.length}...`
-            });
-            
-            // Get PDF page
+        for (let i = 0; i < parsedPageRange.length; i++) {
+            const pageNum = parsedPageRange[i];
             const page = await pdfDocument.getPage(pageNum);
-            
-            // Render page to canvas at high resolution
-            const scale = 2.0; // Higher scale for better quality
+            const scale = 2.0; 
             const viewport = page.getViewport({ scale: scale });
-            
             const canvas = document.createElement('canvas');
             const context = canvas.getContext('2d');
             canvas.width = viewport.width;
             canvas.height = viewport.height;
-            
-            // Fill white background
             context.fillStyle = 'white';
             context.fillRect(0, 0, canvas.width, canvas.height);
             
-            // Render PDF page to canvas
-            await page.render({
-                canvasContext: context,
-                viewport: viewport
-            }).promise;
-            
-            // Convert canvas to base64 image
+            await page.render({ canvasContext: context, viewport: viewport }).promise;
             const imageData = canvas.toDataURL('image/png', 1.0);
             
-            // Add slide with image
             const slide = pptx.addSlide();
-            
-            // Calculate dimensions to fit slide (10 x 5.625 inches for 16:9)
             const slideWidth = 10;
             const slideHeight = 5.625;
             const imgWidth = canvas.width;
             const imgHeight = canvas.height;
-            
-            // Calculate scaling to fit image on slide while maintaining aspect ratio
             const scaleX = slideWidth / imgWidth;
             const scaleY = slideHeight / imgHeight;
             const imgScale = Math.min(scaleX, scaleY);
-            
             const finalWidth = imgWidth * imgScale;
             const finalHeight = imgHeight * imgScale;
             const x = (slideWidth - finalWidth) / 2;
             const y = (slideHeight - finalHeight) / 2;
             
-            // Add image to slide
-            slide.addImage({
-                data: imageData,
-                x: x,
-                y: y,
-                w: finalWidth,
-                h: finalHeight
-            });
-            
-            // Clean up
+            slide.addImage({ data: imageData, x: x, y: y, w: finalWidth, h: finalHeight });
             page.cleanup();
         }
 
-        const fileName = files[0].name.replace('.pdf', '.pptx');
-        
-        // Store for download
+        const fileName = file.name.replace('.pdf', '.pptx');
         window.currentPptx = pptx;
         window.currentFileName = fileName;
+        window.isApiConversion = false;
         
         addToHistory({
             fileName: fileName,
@@ -520,68 +570,51 @@ async function convertPdfToPpt() {
             format: 'pptx',
             data: pdfTextContent,
             options: {
-                pageRange: pageRangeInput.value,
-                slideLayout: slideLayoutSelect.value,
-                smartTextExtraction: smartTextExtractionCheckbox.checked
+                pageRange: pageRange,
+                slideLayout: slideLayout,
+                smartTextExtraction: smartExtraction,
+                method: 'local-rendering'
             }
         });
         
-        showStatus('Conversion complete! Click Download PPTX.', 'success');
+        showStatus('Conversion complete (Basic mode). For editable text, ensure API access.', 'success');
+        swalInstance.close();
+        Swal.fire({
+            title: 'Conversion Complete',
+            text: 'Converted using local rendering (preserved as images).',
+            icon: 'info',
+            confirmButtonText: 'OK'
+        });
+        
         convertBtn.disabled = false;
         downloadBtn.disabled = false;
         
-        swalInstance.close();
-        Swal.fire({
-            title: 'Conversion Complete!',
-            text: 'Your PDF has been successfully converted to PPTX with preserved layout.',
-            icon: 'success',
-            confirmButtonText: 'Great!',
-            timer: 1500,
-            timerProgressBar: true
-        });
-        
     } catch (error) {
-        showError(`Error during PPTX generation: ${error.message}`);
+        showError(`Error during conversion: ${error.message}`);
         convertBtn.disabled = false;
         downloadBtn.disabled = true;
-        
         swalInstance.close();
-        Swal.fire({
-            title: 'Conversion Error',
-            text: error.message,
-            icon: 'error',
-            confirmButtonText: 'OK'
-        });
+        Swal.fire({ title: 'Conversion Error', text: error.message, icon: 'error' });
     }
 }
 
 // Download PPT
 function downloadPpt() {
-    if (!window.currentPptx) {
+    if (window.isApiConversion && window.currentPptxBlob) {
+        const url = URL.createObjectURL(window.currentPptxBlob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = window.currentFileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        showStatus('PPTX file downloaded!', 'success');
+    } else if (window.currentPptx) {
+        window.currentPptx.writeFile({ fileName: window.currentFileName });
+        showStatus('PPTX file downloaded!', 'success');
+    } else {
         showError('No PPTX to download. Please convert first.');
-        Swal.fire({
-            title: 'No Data',
-            text: 'No PPTX to download. Please convert first.',
-            icon: 'warning',
-            confirmButtonText: 'OK'
-        });
-        return;
     }
-
-    showStatus('Downloading PPTX...', 'info');
-    
-    // Write the file
-    window.currentPptx.writeFile({ fileName: window.currentFileName });
-    
-    showStatus('PPTX file downloaded!', 'success');
-    Swal.fire({
-        title: 'Download Complete',
-        text: 'Your PPTX file has been downloaded.',
-        icon: 'success',
-        confirmButtonText: 'OK',
-        timer: 1000,
-        timerProgressBar: true
-    });
 }
 
 // History Functions
@@ -687,7 +720,7 @@ function downloadHistoryItem(id) {
     Swal.fire({
         title: 'Preparing Download',
         html: `Preparing ${item.fileName} for download...`,
-        timer: 1500,
+        timer: 1000,
         timerProgressBar: true,
         didOpen: () => {
             Swal.showLoading();
@@ -695,7 +728,23 @@ function downloadHistoryItem(id) {
     });
 
     setTimeout(async () => {
-        // Regenerate PPTX using stored data and options
+        // If it was an API conversion, use the stored blob if we had it (though we don't store blobs in localStorage)
+        // Since we don't store blobs, we need to regenerate if it was local, or it's just a download link if we had a URL
+        // However, for this implementation, we'll try to redo the conversion if it's missing, or just show an error
+        
+        if (item.options && item.options.method === 'api-high-fidelity') {
+            // Re-conversion might be needed or we could have stored a temporary URL if this was a recent session
+            // For persistence, we'd need a server-side storage. For now, we'll inform the user.
+            Swal.fire({
+                title: 'Re-conversion Required',
+                text: 'High-fidelity files are processed in real-time. Please re-upload and convert the file for the best (editable) result.',
+                icon: 'info',
+                confirmButtonText: 'OK'
+            });
+            return;
+        }
+
+        // Fallback for local rendering history items
         if (typeof PptxGenJS === 'undefined') {
             Swal.fire('Error', 'PptxGenJS library is not loaded.', 'error');
             return;
@@ -715,20 +764,12 @@ function downloadHistoryItem(id) {
                     const content = smartExtraction && lines.length > 1 ? lines.slice(1).join('\n').trim() : lines.join('\n').trim();
 
                     if (slideLayout === 'TITLE_AND_CONTENT') {
-                        if (title) {
-                            slide.addText(title, { x: 0.5, y: 0.5, w: 9, h: 0.75, fontSize: 24, bold: true, align: 'center', valign: 'middle' });
-                        }
-                        if (content) {
-                            slide.addText(content, { x: 0.5, y: 1.5, w: 9, h: 6, fontSize: 12 });
-                        }
+                        if (title) slide.addText(title, { x: 0.5, y: 0.5, w: 9, h: 0.75, fontSize: 24, bold: true, align: 'center', valign: 'middle' });
+                        if (content) slide.addText(content, { x: 0.5, y: 1.5, w: 9, h: 6, fontSize: 12 });
                     } else if (slideLayout === 'TITLE_SLIDE') {
-                        if (title) {
-                            slide.addText(title, { x: 0.5, y: 3, w: 9, h: 1, fontSize: 32, bold: true, align: 'center', valign: 'middle' });
-                        } else if (content) {
-                             slide.addText(content.substring(0, Math.min(200, content.length)) + (content.length > 200 ? '...' : ''), 
-                                { x: 0.5, y: 3, w: 9, h: 1, fontSize: 32, bold: true, align: 'center', valign: 'middle' });
-                        }
-                    } else { // BLANK or other layouts
+                        if (title) slide.addText(title, { x: 0.5, y: 3, w: 9, h: 1, fontSize: 32, bold: true, align: 'center', valign: 'middle' });
+                        else if (content) slide.addText(content.substring(0, Math.min(200, content.length)), { x: 0.5, y: 3, w: 9, h: 1, fontSize: 32, bold: true, align: 'center', valign: 'middle' });
+                    } else {
                         slide.addText(text, { x: 0.5, y: 0.5, w: 9, h: 6.5, fontSize: 12 });
                     }
                 }
@@ -736,17 +777,8 @@ function downloadHistoryItem(id) {
         }
         
         pptx.writeFile({ fileName: item.fileName });
-        
         showStatus(`${item.fileName} downloaded!`, 'success');
-        Swal.fire({
-            title: 'Download Complete',
-            text: `Your PPTX file has been downloaded.`,
-            icon: 'success',
-            confirmButtonText: 'OK',
-            timer: 1000,
-            timerProgressBar: true
-        });
-    }, 1500);
+    }, 1000);
 }
 
 function previewHistoryItem(id) {

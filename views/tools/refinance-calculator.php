@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Refinance Calculator - Calculate Mortgage Savings Online Free"; // You may Change the Title here
 $page_description = "Free mortgage refinance calculator. Calculate monthly savings, break-even point, and total interest saved from refinancing. Make smarter refinancing decisions."; // Put your Description here
-$page_keywords = "refinance calculator - calculate mortgage savings, refinance, calculator, calculate, mortgage, savings, free online tools, pdf tools";
+$page_keywords = "refinance calculator, calculator, online calculator, free math tools, age calculator, bmi calculator, conversion calculator, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

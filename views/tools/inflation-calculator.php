@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Inflation Calculator - Calculate Purchasing Power Online"; // You may Change the Title here
 $page_description = "Free inflation calculator online. Calculate the real value of money over time, purchasing power loss, and future price using historical inflation rates."; // Put your Description here
-$page_keywords = "inflation calculator - calculate purchasing power online, inflation, calculator, calculate, purchasing, power, online, free online tools, pdf tools";
+$page_keywords = "inflation calculator, calculator, online calculator, free math tools, age calculator, bmi calculator, conversion calculator, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

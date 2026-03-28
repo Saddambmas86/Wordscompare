@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "GST Calculator - Calculate GST Amount Online Free India"; // You may Change the Title here
 $page_description = "Free GST calculator online. Calculate GST amount, inclusive/exclusive GST prices for 5%, 12%, 18%, and 28% tax slabs. Instant results for India GST."; // Put your Description here
-$page_keywords = "GST calculator, goods and services tax, tax calculator, GST India, add GST, remove GST, calculate GST";
+$page_keywords = "gst calculator, calculator, online calculator, free math tools, age calculator, bmi calculator, conversion calculator, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

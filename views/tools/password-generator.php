@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Password Generator - Create Strong Secure Passwords Online"; // You may Change the Title here
 $page_description = "Free password generator online. Create strong, secure, random passwords with custom length and character sets. Generate 100% secure passwords instantly."; // Put your Description here
-$page_keywords = "password generator - create strong secure passwords online, password, generator, create, strong, secure, passwords, online, free online tools, pdf tools";
+$page_keywords = "password generator, developer tools, json formatter, qr code generator, password generator, web tools, coding utilities, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

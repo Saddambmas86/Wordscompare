@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "SIP Calculator - Systematic Investment Plan Returns Calculator"; // You may Change the Title here
 $page_description = "Free SIP calculator online. Calculate Systematic Investment Plan returns, wealth gained, and maturity amount for mutual fund SIPs. Plan smart monthly investments."; // Put your Description here
-$page_keywords = "sip calculator - systematic investment plan returns calculator, sip, calculator, systematic, investment, plan, returns, free online tools, pdf tools";
+$page_keywords = "sip calculator, calculator, online calculator, free math tools, age calculator, bmi calculator, conversion calculator, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

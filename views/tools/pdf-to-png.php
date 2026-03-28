@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF to PNG Converter - Convert PDF Pages to PNG Online Free"; // You may Change the Title here
 $page_description = "Convert PDF to PNG online for free. Transform PDF pages into high-quality PNG images. Transparent background support. Fast, secure, no software required."; // Put your Description here
-$page_keywords = "PDF to PNG, convert PDF to PNG, PDF to image, extract PDF pages as images, free PDF converter, online PDF tool";
+$page_keywords = "pdf to png, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

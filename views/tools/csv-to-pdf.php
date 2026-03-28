@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "CSV to PDF Converter - Convert CSV Files to PDF Online Free"; // You may Change the Title here
 $page_description = "Convert CSV to PDF online for free. Turn spreadsheet data and CSV files into professional PDF documents instantly. No software downloads required."; // Put your Description here
-$page_keywords = "csv to pdf converter - convert csv files to pdf, csv, pdf, converter, convert, files, free online tools, pdf tools";
+$page_keywords = "csv to pdf, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';
@@ -425,220 +425,165 @@ function displayPreview(data, hasHeader) {
 }
 
 
-// Convert CSV to PDF
+// Global reference for the generated PDF blob to avoid regeneration
+let currentPdfBlob = null;
+
+// Convert CSV to PDF with Professional API & Local Fallback
 async function convertCsvToPdf() {
-    if (parsedCsvData.length === 0) {
-        showError('No CSV data to convert. Please upload a file first.');
-        Swal.fire({
-            title: 'Error',
-            text: 'No CSV data to convert. Please upload a file first.',
-            icon: 'error',
-            confirmButtonText: 'OK'
-        });
+    if (files.length === 0) {
+        Swal.fire({ title: 'Error', text: 'Please upload a CSV file.', icon: 'error' });
         return;
     }
 
-    showStatus('Converting CSV to PDF...', 'info');
+    const pageSize = document.getElementById('pageSize').value; // A4, Letter, etc.
+    const orientation = document.getElementById('orientation').value; // portrait, landscape
+    const delimiter = delimiterSelect.value === 'custom' ? customDelimiter.value : delimiterSelect.value;
+    const addPageNumbers = document.getElementById('addPageNumbers').checked;
+    const hasHeader = document.getElementById('headerCheck').checked;
+
+    showStatus('Converting CSV to Professional PDF...', 'info');
     convertBtn.disabled = true;
     downloadBtn.disabled = true;
 
-    // Show loading alert
     const swalInstance = Swal.fire({
-        title: 'Creating PDF',
-        html: 'Please wait while we generate your PDF document...',
+        title: 'High-Fidelity PDF Generation',
+        html: 'Rendering tables and encoding data with professional accuracy...',
         timerProgressBar: true,
-        didOpen: () => {
-            Swal.showLoading();
-        }
+        didOpen: () => Swal.showLoading()
     });
 
     try {
-        const pageSize = document.getElementById('pageSize').value;
-        const orientation = document.getElementById('orientation').value;
-        const addPageNumbers = document.getElementById('addPageNumbers').checked;
-        const hasHeader = document.getElementById('headerCheck').checked;
+        const file = files[0];
+        let resultBlob;
+        let conversionMethod = 'api-fidelity';
 
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF(orientation, 'pt', pageSize);
+        // ── PATH A: PROFESSIONAL API (FIDELITY-FIRST) ──────────────────
+        try {
+            const formData = new FormData();
+            
+            // CLEAN DATA: Filter out fully empty rows to remove "blank spaces" in the PDF
+            const cleanedData = parsedCsvData.filter(row => row.some(cell => cell && String(cell).trim() !== ''));
+            const csvText = cleanedData.map(row => row.map(cell => {
+                const s = String(cell);
+                if (s.includes(delimiter) || s.includes('"') || s.includes('\n')) {
+                    return `"${s.replace(/"/g, '""')}"`;
+                }
+                return s;
+            }).join(delimiter)).join('\n');
 
-        let tableHeaders = [];
-        let tableBody = [];
+            // Fix Encoding: Inject UTF-8 BOM at the start of the file
+            const bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
+            const blobWithBom = new Blob([bom, csvText], { type: 'text/csv' });
+            formData.append('File', blobWithBom, file.name);
 
-        if (hasHeader && parsedCsvData.length > 0) {
-            tableHeaders = parsedCsvData[0];
-            tableBody = parsedCsvData.slice(1);
-        } else {
-            tableHeaders = parsedCsvData[0].map((_, i) => `Column ${i + 1}`);
-            tableBody = parsedCsvData;
+            formData.append('StoreFile', 'true');
+            formData.append('CsvDelimiter', delimiter);
+            formData.append('PageSize', pageSize);
+            formData.append('PageOrientation', orientation);
+            
+            // Fidelity Improvements: Auto-scaling and Layout optimization
+            formData.append('AutoColumnFit', 'true'); 
+            formData.append('AutoPageFit', 'true');   
+            formData.append('MarginTop', '30');       
+            formData.append('MarginLeft', '30');
+            formData.append('MarginRight', '30');
+            formData.append('MarginBottom', '30');
+
+            const apiUrl = `https://v2.convertapi.com/convert/csv/to/pdf?Secret=WoZf9gPWyMeW4eTB701cdm4e818fuh4g`;
+            const response = await fetch(apiUrl, { method: 'POST', body: formData });
+            const result = await response.json();
+
+            if (response.ok && result.Files && result.Files.length > 0) {
+                const dlResponse = await fetch(result.Files[0].Url);
+                resultBlob = await dlResponse.blob();
+                conversionMethod = 'api-fidelity';
+            } else {
+                throw new Error(result.Message || 'API Error');
+            }
+        } catch (apiErr) {
+            console.warn('API Path failed, falling back to local:', apiErr.message);
+            conversionMethod = 'layout-fidelity';
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF(orientation, 'pt', pageSize);
+            
+            let tableHeaders = [];
+            let tableBody = [];
+            if (hasHeader && parsedCsvData.length > 0) {
+                tableHeaders = parsedCsvData[0];
+                tableBody = parsedCsvData.slice(1);
+            } else {
+                tableHeaders = parsedCsvData[0] ? parsedCsvData[0].map((_, i) => `Col ${i + 1}`) : [];
+                tableBody = parsedCsvData;
+            }
+
+            doc.autoTable({
+                head: [tableHeaders],
+                body: tableBody,
+                startY: 40,
+                styles: { fontSize: 8, cellPadding: 3, overflow: 'linebreak' },
+                headStyles: { fillColor: [220, 53, 69], textColor: 255, fontStyle: 'bold' },
+                theme: 'striped',
+                didDrawPage: (data) => {
+                    if (addPageNumbers) {
+                        doc.setFontSize(8);
+                        doc.text(`Page ${doc.internal.getNumberOfPages()}`, doc.internal.pageSize.width - data.settings.margin.right, doc.internal.pageSize.height - 10);
+                    }
+                }
+            });
+            resultBlob = doc.output('blob');
         }
 
-        doc.autoTable({
-            head: [tableHeaders],
-            body: tableBody,
-            startY: 40,
-            styles: {
-                fontSize: 8,
-                cellPadding: 3,
-                valign: 'middle',
-                overflow: 'linebreak',
-            },
-            headStyles: {
-                fillColor: [220, 53, 69], // Bootstrap danger color
-                textColor: 255,
-                fontStyle: 'bold',
-                halign: 'center'
-            },
-            theme: 'striped',
-            didDrawPage: function(data) {
-                // Add page numbers
-                if (addPageNumbers) {
-                    let str = "Page " + doc.internal.getNumberOfPages();
-                    doc.setFontSize(8);
-                    doc.text(str, doc.internal.pageSize.width - data.settings.margin.right, doc.internal.pageSize.height - 10);
-                }
-            }
-        });
-
-        // Save the PDF content temporarily
-        const fileName = files[0].name.replace('.csv', '.pdf');
-        const pdfBlob = doc.output('blob');
+        currentPdfBlob = resultBlob;
+        const fileName = file.name.replace(/\.csv$/i, '.pdf');
         
-        // Update stored data for history with blob or base64 representation
-        // For simplicity and potential size limits, we'll store a small indicator
-        // and regenerate PDF on history download if needed.
-        // For now, let's keep `parsedCsvData` and use it to regenerate.
+        // Final UI Updates
+        downloadBtn.disabled = false;
+        showStatus('PDF generated successfully!', 'success');
 
-        // Add to history (store parsedCsvData to regenerate PDF on download/preview)
         addToHistory({
             fileName: fileName,
             date: new Date().toLocaleString(),
             format: 'pdf',
-            data: parsedCsvData, // Store the raw parsed data to regenerate
-            options: { // Store options needed for regeneration
-                delimiter: delimiterSelect.value === 'custom' ? customDelimiter.value : delimiterSelect.value,
-                encoding: document.getElementById('encoding').value,
-                pageSize: document.getElementById('pageSize').value,
-                orientation: document.getElementById('orientation').value,
-                addPageNumbers: document.getElementById('addPageNumbers').checked,
-                hasHeader: document.getElementById('headerCheck').checked
-            }
+            data: parsedCsvData.slice(0, 100),
+            blobUrl: URL.createObjectURL(resultBlob)
         });
-        
-        showStatus('Conversion complete! Click Download PDF.', 'success');
-        convertBtn.disabled = false;
-        downloadBtn.disabled = false;
-        
+
         swalInstance.close();
         Swal.fire({
             title: 'Conversion Complete!',
-            text: 'Your CSV has been successfully converted to PDF.',
+            text: 'Your document has been rendered with professional encoding and layout.',
             icon: 'success',
             confirmButtonText: 'Great!',
-            timer: 1000,  // Auto-close after 1 seconds
-            timerProgressBar: true  // Show a progress bar
+            timer: 1500,
+            timerProgressBar: true
         });
-        
+
     } catch (error) {
-        showError(`Error during PDF generation: ${error.message}`);
+        showError(`Error: ${error.message}`);
         convertBtn.disabled = false;
-        downloadBtn.disabled = true;
-        
         swalInstance.close();
-        Swal.fire({
-            title: 'Conversion Error',
-            text: error.message,
-            icon: 'error',
-            confirmButtonText: 'OK'
-        });
+        Swal.fire({ title: 'Conversion Error', text: error.message, icon: 'error' });
     }
 }
 
-// Download PDF
+// Download the generated PDF
 function downloadPdf() {
-    if (parsedCsvData.length === 0) {
-        showError('No PDF to download. Please convert first.');
-        Swal.fire({
-            title: 'No Data',
-            text: 'No PDF to download. Please convert first.',
-            icon: 'warning',
-            confirmButtonText: 'OK'
-        });
+    if (!currentPdfBlob) {
+        Swal.fire({ title: 'No File', text: 'Please convert the file again to download.', icon: 'warning' });
         return;
     }
 
-    showStatus('Preparing PDF for download...', 'info');
+    const fileName = files[0].name.replace(/\.csv$/i, '.pdf');
+    const url = URL.createObjectURL(currentPdfBlob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
     
-    // Show loading alert
-    Swal.fire({
-        title: 'Preparing PDF File',
-        html: `Please wait while we generate your PDF file...`,
-        timer: 1500,
-        timerProgressBar: true,
-        didOpen: () => {
-            Swal.showLoading();
-        }
-    });
-
-    setTimeout(() => {
-        // Regenerate PDF on download to ensure options are applied correctly
-        const pageSize = document.getElementById('pageSize').value;
-        const orientation = document.getElementById('orientation').value;
-        const addPageNumbers = document.getElementById('addPageNumbers').checked;
-        const hasHeader = document.getElementById('headerCheck').checked;
-
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF(orientation, 'pt', pageSize);
-
-        let tableHeaders = [];
-        let tableBody = [];
-
-        if (hasHeader && parsedCsvData.length > 0) {
-            tableHeaders = parsedCsvData[0];
-            tableBody = parsedCsvData.slice(1);
-        } else {
-            tableHeaders = parsedCsvData[0].map((_, i) => `Column ${i + 1}`);
-            tableBody = parsedCsvData;
-        }
-
-        doc.autoTable({
-            head: [tableHeaders],
-            body: tableBody,
-            startY: 40,
-            styles: {
-                fontSize: 8,
-                cellPadding: 3,
-                valign: 'middle',
-                overflow: 'linebreak',
-            },
-            headStyles: {
-                fillColor: [220, 53, 69], // Bootstrap danger color
-                textColor: 255,
-                fontStyle: 'bold',
-                halign: 'center'
-            },
-            theme: 'striped',
-            didDrawPage: function(data) {
-                if (addPageNumbers) {
-                    let str = "Page " + doc.internal.getNumberOfPages();
-                    doc.setFontSize(8);
-                    doc.text(str, doc.internal.pageSize.width - data.settings.margin.right, doc.internal.pageSize.height - 10);
-                }
-            }
-        });
-
-        const fileName = files[0].name.replace('.csv', '.pdf');
-        doc.save(fileName);
-        
-        showStatus('PDF file downloaded!', 'success');
-        Swal.fire({
-            title: 'Download Complete',
-            text: 'Your PDF file has been downloaded.',
-            icon: 'success',
-            confirmButtonText: 'OK',
-            timer: 1000,  // Auto-close after 1 seconds
-            timerProgressBar: true  // Show a progress bar
-        });
-    }, 1500);
+    showStatus('PDF file downloaded successfully!', 'success');
 }
 
 // History Functions

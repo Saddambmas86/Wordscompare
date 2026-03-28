@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Text to PDF Converter - Convert TXT Files to PDF Online Free"; // You may Change the Title here
 $page_description = "Convert text to PDF online for free. Transform plain TXT files and text content into PDF documents. Customize fonts and layout. Fast, secure, no software needed."; // Put your Description here
-$page_keywords = "text to pdf converter - convert txt files to pdf, text, pdf, converter, convert, txt, files, free online tools, pdf tools";
+$page_keywords = "text to pdf, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

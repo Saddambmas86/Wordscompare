@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "RTF to PDF Converter - Convert Rich Text Format to PDF Online"; // You may Change the Title here
 $page_description = "Convert RTF to PDF online for free. Transform Rich Text Format documents into PDF files. Preserve fonts, formatting, and images. Instant, secure conversion."; // Put your Description here
-$page_keywords = "rtf to pdf converter - convert rich text format to pdf online, rtf, pdf, converter, convert, rich, text, format, online, free online tools";
+$page_keywords = "rtf to pdf, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

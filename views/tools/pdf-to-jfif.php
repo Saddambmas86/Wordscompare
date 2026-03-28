@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF to JFIF Converter - Convert PDF Pages to JFIF Online Free"; // You may Change the Title here
 $page_description = "Convert PDF to JFIF online for free. Transform PDF pages into JFIF image files instantly. High-quality output, adjustable resolution. No software needed."; // Put your Description here
-$page_keywords = "pdf to jfif converter - convert pdf pages to jfif, pdf, jfif, converter, convert, pages, free online tools, pdf tools";
+$page_keywords = "pdf to jfif, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

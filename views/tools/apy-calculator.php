@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "APY Calculator - Annual Percentage Yield Calculator Online"; // You may Change the Title here
 $page_description = "Free APY calculator online. Calculate Annual Percentage Yield on savings accounts, CDs, and investments. Compare APY vs APR and maximize your returns."; // Put your Description here
-$page_keywords = "apy calculator - annual percentage yield calculator online, apy, calculator, annual, percentage, yield, online, free online tools, pdf tools";
+$page_keywords = "apy calculator, calculator, online calculator, free math tools, age calculator, bmi calculator, conversion calculator, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

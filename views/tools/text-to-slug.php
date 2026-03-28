@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Text to Slug Converter - Generate URL Slugs Online Free"; // You may Change the Title here
 $page_description = "Free text to URL slug converter online. Generate SEO-friendly slugs from any text. Remove special characters, spaces, and format for clean, readable URLs."; // Put your Description here
-$page_keywords = "text to slug converter - generate url slugs, text, slug, converter, generate, url, slugs, free online tools, pdf tools";
+$page_keywords = "text to slug, text utilities, word counter, case converter, text tool, online text editor, formatting, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

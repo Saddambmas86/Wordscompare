@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Offer Letter Generator - Create Job Offer Letters Online Free"; // You may Change the Title here
 $page_description = "Free online offer letter generator. Create professional job offer letters quickly. Customize salary, designation, joining date, and company details. Download as PDF."; // Put your Description here
-$page_keywords = "offer letter generator - create job offer letters, offer, letter, generator, create, job, letters, free online tools, pdf tools";
+$page_keywords = "offer letter generator, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

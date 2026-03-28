@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "FD Calculator - Fixed Deposit Maturity Calculator Online"; // You may Change the Title here
 $page_description = "Free FD calculator online. Calculate Fixed Deposit maturity amount, interest earned, and returns for any bank. Compare FD rates and plan your savings."; // Put your Description here
-$page_keywords = "fd calculator - fixed deposit maturity calculator online, calculator, fixed, deposit, maturity, online, free online tools, pdf tools";
+$page_keywords = "fd calculator, calculator, online calculator, free math tools, age calculator, bmi calculator, conversion calculator, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

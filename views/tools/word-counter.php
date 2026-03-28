@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Word Counter Online Free - Count Words Characters Sentences"; // You may Change the Title here
 $page_description = "Free word counter online. Count words, characters, sentences, and paragraphs in real-time. Calculate reading time and keyword density. Instant, privacy-first tool."; // Put your Description here
-$page_keywords = "word counter  - count words characters sentences, word, counter, count, words, characters, sentences, free online tools, pdf tools";
+$page_keywords = "word counter, text utilities, word counter, case converter, text tool, online text editor, formatting, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

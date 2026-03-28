@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Mutual Fund Returns Calculator - Calculate MF Returns Online"; // You may Change the Title here
 $page_description = "Free mutual fund returns calculator. Calculate absolute returns, CAGR, and wealth gained on your mutual fund investments. Analyze SIP and lump sum performance."; // Put your Description here
-$page_keywords = "mutual fund returns calculator - calculate mf returns online, mutual, fund, returns, calculator, calculate, online, free online tools, pdf tools";
+$page_keywords = "mutual fund returns calculator, calculator, online calculator, free math tools, age calculator, bmi calculator, conversion calculator, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

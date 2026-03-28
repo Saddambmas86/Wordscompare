@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "BMI Calculator - Body Mass Index Calculator Online Free"; // You may Change the Title here
 $page_description = "Free BMI calculator online. Calculate your Body Mass Index instantly — enter your height and weight to find out if you are underweight, healthy, or overweight."; // Put your Description here
-$page_keywords = "bmi calculator - body mass index calculator, bmi, calculator, body, mass, index, free online tools, pdf tools";
+$page_keywords = "bmi calculator, calculator, online calculator, free math tools, age calculator, bmi calculator, conversion calculator, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

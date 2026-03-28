@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "Rotate PDF Pages Online Free - Fix PDF Page Orientation"; // You may Change the Title here
 $page_description = "Rotate PDF pages online for free. Rotate all or individual pages by 90°, 180°, or 270°. Fix upside-down or sideways PDF pages instantly. No software needed."; // Put your Description here
-$page_keywords = "rotate PDF, PDF rotator, rotate PDF online, free PDF rotate, turn PDF, rotate PDF pages, PDF orientation";
+$page_keywords = "rotate pdf, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';

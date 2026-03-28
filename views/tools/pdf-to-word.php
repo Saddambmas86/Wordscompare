@@ -2,7 +2,7 @@
 // SEO and Page Metadata
 $page_title = "PDF to Word Converter - Convert PDF to DOCX Online Free"; // You may Change the Title here
 $page_description = "Convert PDF to Word (DOCX) online for free. Transform PDF documents into editable Microsoft Word files. Preserve text, tables, and formatting accurately."; // Put your Description here
-$page_keywords = "PDF to Word, convert PDF to Word, PDF to DOCX, PDF to DOC, edit PDF in Word, free PDF converter, online PDF tool";
+$page_keywords = "pdf to word, pdf converter, convert pdf, free online pdf tools, pdf to word, pdf to excel, wordscompare";
 
 // Include common header
 include '../../includes/header.php';
@@ -343,13 +343,16 @@ include '../../includes/header.php';
     }
     
     async function convertWithServer(file, pageRange, outputFormat, swalInstance) {
+        // Bypass Hostinger's proxy drops (ERR_HTTP2_PROTOCOL_ERROR) entirely 
+        // by making the API call directly from the browser to ConvertAPI!
         const formData = new FormData();
-        formData.append('pdfFile', file);
-        formData.append('pageRange', pageRange);
-        formData.append('outputFormat', outputFormat);
+        formData.append('File', file);
+        if (pageRange && pageRange !== '1-') {
+            formData.append('PageRange', pageRange);
+        }
+        formData.append('StoreFile', 'true');
         
-        // Use absolute path based on current location
-        const apiUrl = window.location.origin + '/v1.0.3/api/convert-pdf-to-word.php';
+        const apiUrl = 'https://v2.convertapi.com/convert/pdf/to/docx?Secret=WoZf9gPWyMeW4eTB701cdm4e818fuh4g';
         
         const response = await fetch(apiUrl, {
             method: 'POST',
@@ -358,26 +361,21 @@ include '../../includes/header.php';
         
         const result = await response.json();
         
-        if (!response.ok || !result.success) {
+        if (!response.ok) {
             console.error('Server conversion error:', result);
-            const errorMsg = result.message || 'Server conversion failed';
-            const debugInfo = result.debug ? `\n\nDebug: ${result.debug}` : '';
-            throw new Error(errorMsg + debugInfo);
+            throw new Error(result.Message || 'Server conversion failed');
         }
         
-        if (result.success) {
+        if (result.Files && result.Files.length > 0) {
+            const fileUrl = result.Files[0].Url;
+            
             // Download the converted file
-            const byteCharacters = atob(result.data);
-            const byteNumbers = new Array(byteCharacters.length);
-            for (let i = 0; i < byteCharacters.length; i++) {
-                byteNumbers[i] = byteCharacters.charCodeAt(i);
-            }
-            const byteArray = new Uint8Array(byteNumbers);
-            const blob = new Blob([byteArray], { type: result.mimeType || 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
+            const dlResponse = await fetch(fileUrl);
+            const blob = await dlResponse.blob();
             
             currentFile.outputBlob = blob;
             currentFile.outputFormat = outputFormat;
-            currentFile.convertedText = result.previewText || 'Converted with server';
+            currentFile.convertedText = 'Document successfully converted via Cloud. Click download to view.';
             
             // Update preview
             document.getElementById('wordPreview').innerHTML = `
@@ -395,7 +393,7 @@ include '../../includes/header.php';
                 fileName: currentFile.name.replace('.pdf', `.${outputFormat}`),
                 date: new Date().toLocaleString(),
                 format: outputFormat,
-                content: result.previewText || 'Server conversion'
+                content: 'Server conversion'
             });
             
             document.getElementById('downloadBtn').disabled = false;
@@ -411,7 +409,7 @@ include '../../includes/header.php';
                 timerProgressBar: true
             });
         } else {
-            throw new Error(result.message || 'Conversion failed');
+            throw new Error('Conversion failed');
         }
     }
     

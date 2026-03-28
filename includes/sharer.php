@@ -12,6 +12,8 @@
         class="fab fa-whatsapp"></i></a>
     <a class="share-button telegram" href="https://telegram.me/share/url?url={{url}}&text={{title}}" target="_blank"><i
         class="fab fa-telegram"></i></a>
+    <a class="share-button instagram" href="https://www.instagram.com/wordscompare?igsh=bTd0dHVndWt2cm4z&utm_source=qr" target="_blank"><i
+        class="fab fa-instagram"></i></a>
     <a class="share-button copy-url" href="javascript:void(0);" onclick="copyURL(event)" title="Copy URL"><i
         class="fa fa-link"></i></a>
   </div>

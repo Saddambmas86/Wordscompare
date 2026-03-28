@@ -39,7 +39,7 @@ include 'includes/header.php';
 <nav class="category-nav-wrapper shadow-sm sticky-top"
     style="top: 56px; background: #ffffff; z-index: 1020; border-bottom: 1px solid #e9ecef;">
     <div class="container py-2 py-md-3">
-        <ul class="nav nav-pills flex-nowrap overflow-auto hide-scrollbar" style="gap: 10px; white-space: nowrap; padding-bottom: 4px;">
+        <ul class="nav nav-pills flex-wrap justify-content-center" style="gap: 8px; padding-bottom: 4px;">
             <li class="nav-item">
                 <a class="nav-link active rounded-pill px-4 fw-bold shadow-sm" style="background:#dc3545; color:white;"
                     href="#">All</a>

@@ -1,0 +1,37 @@
+# llms.txt for WordsCompare
+# A free online toolkit with 100+ browser-based tools
+
+## Overview
+WordsCompare provides free online tools for PDF conversion, calculators, text utilities, and more. All tools run directly in your browser with no installation required.
+
+## Key Features
+- 100+ free online tools
+- PDF converters (PDF to Word, Excel, PowerPoint, images, and more)
+- Smart calculators (Age, BMI, EMI, GST, and more)
+- Text utilities (Word counter, case converter, text comparison)
+- File converters and generators
+- Developer tools (JSON formatter, code utilities)
+- All tools work in your browser - no upload to servers
+
+## Tool Categories
+
+### PDF Tools
+Convert PDFs to various formats and vice versa. Includes PDF to Word, Excel, PowerPoint, images, and repair tools.
+
+### Calculators
+Financial and personal calculators including Age, BMI, EMI, GST, HRA, and investment calculators.
+
+### Text Tools
+Text manipulation tools including word counter, case converter, find and replace, and text comparison.
+
+### Developer Tools
+Code and data utilities including JSON formatter, text to slug converter, and more.
+
+## Usage
+All tools are free to use. Simply select a tool, upload your file or enter your data, and get instant results.
+
+## Contact
+For support or inquiries, visit the contact page on the website.
+
+## Last Updated
+February 2026

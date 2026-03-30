@@ -717,3 +717,19 @@ main {
 .cursor-pointer {
     cursor: pointer;
 }
+
+/* Category Pill Scaling for Mobile - Make them smaller */
+@media (max-width: 767px) {
+    .category-nav-wrapper .nav-link {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+        padding-top: 0.35rem !important;
+        padding-bottom: 0.35rem !important;
+        font-size: 0.8rem !important;
+        font-weight: 600 !important;
+    }
+    
+    .category-nav-wrapper .nav-pills {
+        gap: 6px !important;
+    }
+}

@@ -1,4 +1,14 @@
 <!-- Intro Section -->
+
+<!-- What Is Section -->
+<section class="mb-5">
+    <div class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+            <h2 class="mb-3"><i class="fas fa-info-circle me-2 text-primary"></i>What is this PDF Tool?</h2>
+            <p>This professional-grade PDF tool is designed to provide high-fidelity document management without the need for expensive software. It utilizes advanced cloud-based and local processing algorithms to ensure that your document's layout, fonts, and images are preserved with 100% accuracy. Whether you're a student, a legal professional, or a business owner, this tool streamlines your workflow by enabling instant modifications to your PDF files directly in your web browser.</p>
+        </div>
+    </div>
+</section>
  <div class="card border-0 shadow-sm text-white mb-4" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
  <div class="card-body p-4 p-md-5 text-center">
  <i class="fas fa-tools fa-4x mb-3"></i>
@@ -153,5 +163,6 @@
  </div>
 
  <!-- Bootstrap JS -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

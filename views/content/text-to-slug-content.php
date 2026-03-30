@@ -1,4 +1,14 @@
 <!-- Intro Section -->
+
+<!-- What Is Section -->
+<section class="mb-5">
+    <div class="card border-0 shadow-sm border-start border-4 border-info">
+        <div class="card-body p-4">
+            <h2 class="mb-3"><i class="fas fa-quote-left me-2 text-info"></i>What is this Text Tool?</h2>
+            <p>Our text processing tools are essential for writers, editors, and SEO specialists who need to clean, transform, or analyze content quickly. Whether you're removing extra spaces, converting case, or counting words, this tool handles large blocks of text effortlessly. It's built for speed and privacy, ensuring that your sensitive drafts are processed entirely in your browser without ever hitting a database.</p>
+        </div>
+    </div>
+</section>
  <div class="card border-0 shadow-sm text-white mb-4" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
  <div class="card-body p-4 p-md-5 text-center">
  <i class="fas fa-link fa-4x mb-3"></i>
@@ -118,5 +128,6 @@
  </div>
 
  <!-- Bootstrap JS -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

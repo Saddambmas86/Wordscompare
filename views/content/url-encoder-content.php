@@ -1,3 +1,13 @@
+
+<!-- What Is Section -->
+<section class="mb-5">
+    <div class="card border-0 shadow-sm border-start border-4 border-primary">
+        <div class="card-body p-4">
+            <h2 class="h3 mb-3"><i class="fas fa-info-circle me-2 text-primary"></i>What is this PDF Tool?</h2>
+            <p>This professional-grade PDF tool is designed to provide high-fidelity document management without the need for expensive software. It utilizes advanced cloud-based and local processing algorithms to ensure that your document's layout, fonts, and images are preserved with 100% accuracy. Whether you're a student, a legal professional, or a business owner, this tool streamlines your workflow by enabling instant modifications to your PDF files directly in your web browser.</p>
+        </div>
+    </div>
+</section>
 <?php
 // Ensure $base_url is available
 if (!isset($base_url)) {
@@ -61,4 +71,49 @@ if (!isset($base_url)) {
  </div>
  </div>
  </div>
+</section>
+
+
+
+<!-- Features Section -->
+<section class="mb-5">
+    <h2 class="mb-4"><i class="fas fa-star me-2 text-warning"></i>Key Features of Our PDF Tool</h2>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-bolt text-success fa-2x me-3"></i>
+                <div>
+                    <h5 class="fw-bold mb-1">Ultra-Fast Processing</h5>
+                    <p class="small text-muted mb-0">Get your results in seconds, even with complex and multi-page documents.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-shield-alt text-primary fa-2x me-3"></i>
+                <div>
+                    <h5 class="fw-bold mb-1">Privacy Focused</h5>
+                    <p class="small text-muted mb-0">All files are processed securely and deleted from our servers automatically.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-check-circle text-info fa-2x me-3"></i>
+                <div>
+                    <h5 class="fw-bold mb-1">High-Fidelity Results</h5>
+                    <p class="small text-muted mb-0">Maintains document structure, formatting, and quality throughout the process.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-mobile-alt text-warning fa-2x me-3"></i>
+                <div>
+                    <h5 class="fw-bold mb-1">No Installation Needed</h5>
+                    <p class="small text-muted mb-0">Works entirely in your browser on desktop, tablet, and mobile devices.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

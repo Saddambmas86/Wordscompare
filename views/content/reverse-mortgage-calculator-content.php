@@ -1,4 +1,14 @@
 <!-- Intro Section -->
+
+<!-- What Is Section -->
+<section class="mb-5">
+    <div class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+            <h2 class="mb-3"><i class="fas fa-calculator me-2 text-success"></i>What is this Calculator?</h2>
+            <p>Our online calculation tools are built using the most accurate financial and mathematical formulas to help you make informed decisions. Whether you are planning your retirement, calculating your BMI, or projecting investment returns, this tool provides instant, reliable data. Designed for both professionals and students, it eliminates complex manual math and provides easy-to-read health or financial insights within seconds.</p>
+        </div>
+    </div>
+</section>
  <div class="card border-0 shadow-sm text-white mb-4" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
  <div class="card-body p-4 p-md-5 text-center">
  <i class="fas fa-home fa-4x mb-3"></i>
@@ -180,5 +190,6 @@
  </div>
 
  <!-- Bootstrap JS -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

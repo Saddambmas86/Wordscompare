@@ -1,4 +1,15 @@
 <!-- Intro Section -->
+
+<!-- What Is Section -->
+<section class="mb-5">
+    <div class="card border-0 shadow-sm border-start border-4 border-success">
+        <div class="card-body p-4">
+            <h2 class="h3 mb-3"><i class="fas fa-calculator me-2 text-success"></i>What is this Calculator?</h2>
+            <p>Our online calculation tools are built using the most accurate financial and mathematical formulas to help you make informed decisions. Whether you are planning your retirement, calculating your BMI, or projecting investment returns, this tool provides instant, reliable data. Designed for both professionals and students, it eliminates complex manual math and provides easy-to-read health or financial insights within seconds.</p>
+        </div>
+    </div>
+</section>
+
 <section class="mb-5">
  <div class="card border-0 shadow-sm text-white mb-4" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
  <div class="card-body p-4 p-md-5 text-center">
@@ -372,11 +383,117 @@
  </div>
 </section>
 
+
+<!-- Detailed Features Section -->
+<section class="mb-5">
+    <h2 class="h3 mb-4 text-center fw-bold"><i class="fas fa-list-check me-2 text-info"></i>Why Choose Our Calculator?</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 bg-light shadow-sm text-center">
+                <div class="card-body">
+                    <i class="fas fa-check-double text-success fa-3x mb-3"></i>
+                    <h5 class="fw-bold">100% Accuracy</h5>
+                    <p class="small text-muted">All formulas are based on global industry standards, WHO benchmarks, and verified mathematical models.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 bg-light shadow-sm text-center">
+                <div class="card-body">
+                    <i class="fas fa-sync text-primary fa-3x mb-3"></i>
+                    <h5 class="fw-bold">Instant Results</h5>
+                    <p class="small text-muted">Get your calculations updated in real-time as you input your data. No waiting, no refreshing needed.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 bg-light shadow-sm text-center">
+                <div class="card-body">
+                    <i class="fas fa-user-shield text-warning fa-3x mb-3"></i>
+                    <h5 class="fw-bold">Private & Secure</h5>
+                    <p class="small text-muted">No personal data is saved; all calculations remain private on your device. We respect your data privacy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <!-- FAQ Section -->
 <section class="mb-5">
  <h2 class="mb-4"><i class="fas fa-question-circle me-2 text-primary"></i>Frequently Asked Questions About GST</h2>
  
  <div class="faq-container">
+
+ <div class="accordion mb-3 shadow-sm" id="faqAccordionInjected101">
+  <div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected101">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Are these calculations legally binding?
+  </button>
+  </h3>
+  <div id="faqInjected101" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected101">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">No, our calculators provide estimates for informational purposes only. Consult a professional for critical financial or medical decisions.</p>
+  </div>
+  </div>
+  </div>
+ </div>
+ <div class="accordion mb-3 shadow-sm" id="faqAccordionInjected102">
+  <div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected102">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Can I save my calculation results?
+  </button>
+  </h3>
+  <div id="faqInjected102" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected102">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">Yes, you can easily download your results as a PDF or copy the summary for future reference.</p>
+  </div>
+  </div>
+  </div>
+ </div>
+ <div class="accordion mb-3 shadow-sm" id="faqAccordionInjected103">
+  <div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected103">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Does it support different units (Metric/Imperial)?
+  </button>
+  </h3>
+  <div id="faqInjected103" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected103">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">Yes, most of our calculators allow you to switch between units like kg/lbs or cm/ft seamlessly to suit your preference.</p>
+  </div>
+  </div>
+  </div>
+ </div>
+ <div class="accordion mb-3 shadow-sm" id="faqAccordionInjected104">
+  <div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected104">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> How accurate are the results compared to professional software?
+  </button>
+  </h3>
+  <div id="faqInjected104" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected104">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">We use standardized formulas, but slight variances may occur due to rounding. Results are highly reliable for daily planning and analysis.</p>
+  </div>
+  </div>
+  </div>
+ </div>
+
+ </div>
+  </div>
+ </div>
+ </div>
+  </div>
+ </div>
+ </div>
+  </div>
+ </div>
+ </div>
+  </div>
+ </div>
  <div class="accordion mb-3 shadow-sm" id="faqAccordion1">
  <div class="accordion-item border-0 mb-3 rounded overflow-hidden">
  <h3 class="accordion-header">
@@ -682,9 +799,9 @@
  <i class="fas fa-mobile-alt fa-4x text-danger mb-3"></i>
  <h5 class="fw-bold mb-3">Anywhere Access</h5>
  <p class="small">Calculate GST on phone, tablet, laptop - perfect for field sales, markets, trade fairs</p>
- </div>
- </div>
- </div>
+ 
+ 
+ 
  
  <div class="col-md-4">
  <div class="card border-0 h-100 bg-white bg-opacity-75">
@@ -692,10 +809,10 @@
  <i class="fas fa-infinity fa-4x text-primary mb-3"></i>
  <h5 class="fw-bold mb-3">Free Forever</h5>
  <p class="small">No limits, no watermarks, no premium tier - genuinely free GST tool for everyone</p>
- </div>
- </div>
- </div>
- </div>
+ 
+ 
+ 
+ 
  
  <div class="text-center mt-5">
  <div class="card border-0 bg-white text-dark d-inline-block shadow">
@@ -704,10 +821,10 @@
  <i class="fas fa-check-double text-success me-2"></p>Calculate GST accurately!<br>
  <span class="small fw-normal">Ensure compliance, claim ITC benefits, price products correctly - start now!</span>
  </p>
- </div>
- </div>
- </div>
- </div>
- </div>
+ 
+ 
+ 
+ 
+ 
 </section>
 

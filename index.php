@@ -17,8 +17,7 @@ include 'includes/header.php';
 <meta property="og:image:height" content="630"> -->
 
 <!-- Hero Section -->
-<section class="hero-section py-3"
-    style="background: #ffffff; border-bottom: 1px solid #e9ecef;">
+<section class="hero-section py-3" style="background: #ffffff; border-bottom: 1px solid #e9ecef;">
     <div class="container px-3 text-center">
         <h1 class="display-5 fw-bold mb-2" style="color: #111111; letter-spacing: -0.5px;">Wordscompare one platform.
             Endless tools <span class="emoji">🛠️</span></h1>
@@ -33,6 +32,16 @@ include 'includes/header.php';
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2923840482782912"
     crossorigin="anonymous"></script>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVG71163ZG"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZVG71163ZG');
+</script>
+
 <link rel="stylesheet" href="assets/css/homepage.css">
 
 <!-- Category Navigation (Pills) -->
@@ -45,8 +54,8 @@ include 'includes/header.php';
                     href="#">All</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link rounded-pill px-4 border text-dark fw-bold" style="border-color:#e0e0e0; background: #f8f9fa;"
-                    href="#trending-tools">Trending</a>
+                <a class="nav-link rounded-pill px-4 border text-dark fw-bold"
+                    style="border-color:#e0e0e0; background: #f8f9fa;" href="#trending-tools">Trending</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link rounded-pill px-4 border text-dark fw-medium" style="border-color:#d1d1d1;"

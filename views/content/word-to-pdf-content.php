@@ -1,3 +1,13 @@
+
+<!-- What Is Section -->
+<section class="mb-5">
+    <div class="card border-0 shadow-sm border-start border-4 border-primary">
+        <div class="card-body p-4">
+            <h2 class="h3 mb-3"><i class="fas fa-info-circle me-2 text-primary"></i>What is this PDF Tool?</h2>
+            <p>This professional-grade PDF tool is designed to provide high-fidelity document management without the need for expensive software. It utilizes advanced cloud-based and local processing algorithms to ensure that your document's layout, fonts, and images are preserved with 100% accuracy. Whether you're a student, a legal professional, or a business owner, this tool streamlines your workflow by enabling instant modifications to your PDF files directly in your web browser.</p>
+        </div>
+    </div>
+</section>
 <div class="content-section mb-5">
  <h3>About Our Word to PDF Converter</h3>
  <p>
@@ -65,6 +75,64 @@
 
  <h4 class="mt-5 mb-3">Frequently Asked Questions</h4>
  <div class="accordion" id="faqAccordion">
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected101">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Is this tool free to use?
+  </button>
+  </h3>
+  <div id="faqInjected101" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected101">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">Yes, all our PDF tools are 100% free with no hidden charges, registration, or premium tiers.</p>
+  </div>
+  </div>
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected102">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> What is the maximum file size supported?
+  </button>
+  </h3>
+  <div id="faqInjected102" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected102">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">You can upload files up to 50MB for processing. For larger files, please compress them first using our PDF compressor.</p>
+  </div>
+  </div>
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected103">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Can I use this tool on my smartphone?
+  </button>
+  </h3>
+  <div id="faqInjected103" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected103">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">Absolutely! Our tools are fully responsive and work perfectly on iPhones, Android devices, and all major tablets.</p>
+  </div>
+  </div>
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected104">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Is my data safe during processing?
+  </button>
+  </h3>
+  <div id="faqInjected104" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected104">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">Your privacy is our priority. Files are processed over encrypted connections and are not permanently stored on our servers.</p>
+  </div>
+  </div>
+
+
+ 
+  </div>
+ </div>
+ 
+  </div>
+ </div>
+ 
+  </div>
+ </div>
+ 
+  </div>
+ </div>
  <div class="accordion-item">
  <h2 class="accordion-header">
  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
@@ -99,7 +167,19 @@
  <div class="accordion-body">
  Because we use direct-to-cloud file transfers, you can upload significantly larger files than standard web converters, bypassing typical web server memory bottlenecks.
  </div>
- </div>
- </div>
- </div>
-</div>
+ 
+ 
+ 
+
+ 
+  
+ 
+ 
+  
+ 
+ 
+  
+ 
+ 
+  
+ 

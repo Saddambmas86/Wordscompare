@@ -1,4 +1,14 @@
 <!-- Intro Section -->
+
+<!-- What Is Section -->
+<section class="mb-5">
+    <div class="card border-0 shadow-sm border-start border-4 border-info">
+        <div class="card-body p-4">
+            <h2 class="mb-3"><i class="fas fa-quote-left me-2 text-info"></i>What is this Text Tool?</h2>
+            <p>Our text processing tools are essential for writers, editors, and SEO specialists who need to clean, transform, or analyze content quickly. Whether you're removing extra spaces, converting case, or counting words, this tool handles large blocks of text effortlessly. It's built for speed and privacy, ensuring that your sensitive drafts are processed entirely in your browser without ever hitting a database.</p>
+        </div>
+    </div>
+</section>
  <div class="card border-0 shadow-sm text-white mb-4" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
  <div class="card-body p-4 p-md-5 text-center">
  <i class="fas fa-calculator fa-4x mb-3"></i>
@@ -323,13 +333,108 @@
  </div>
  </div>
 
- <!-- FAQ Section -->
+ 
+<!-- Detailed Features Section -->
+<section class="mb-5">
+    <h2 class="h3 mb-4 text-center fw-bold"><i class="fas fa-wand-magic-sparkles me-2 text-primary"></i>Advanced Text Processing Features</h2>
+    <div class="row g-3">
+        <div class="col-md-3 text-center">
+            <div class="p-4 border rounded bg-white shadow-sm h-100">
+                <i class="fas fa-clock text-info fa-3x mb-3"></i>
+                <h6 class="fw-bold mb-2">Real-Time Update</h6>
+                <p class="small text-muted mb-0">Results update instantly as you type.</p>
+            </div>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="p-4 border rounded bg-white shadow-sm h-100">
+                <i class="fas fa-keyboard text-success fa-3x mb-3"></i>
+                <h6 class="fw-bold mb-2">Batch Processing</h6>
+                <p class="small text-muted mb-0">Handle thousands of words at once.</p>
+            </div>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="p-4 border rounded bg-white shadow-sm h-100">
+                <i class="fas fa-copy text-primary fa-3x mb-3"></i>
+                <h6 class="fw-bold mb-2">One-Click Copy</h6>
+                <p class="small text-muted mb-0">Quick clipboard export functionality.</p>
+            </div>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="p-4 border rounded bg-white shadow-sm h-100">
+                <i class="fas fa-eye-slash text-danger fa-3x mb-3"></i>
+                <h6 class="fw-bold mb-2">No Data Storage</h6>
+                <p class="small text-muted mb-0">Your text stays in your browser.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- FAQ Section -->
  <div class="card border-0 shadow-sm mb-4">
  <div class="card-header bg-white border-0 py-3">
  <h3 class="h2 mb-0 text-center fw-bold"><i class="fas fa-question-circle me-2 text-info"></i>Frequently Asked Questions</h3>
  </div>
  <div class="card-body p-4 p-md-5">
  <div class="accordion" id="faqAccordion">
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected101">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Are there limits on how much text I can process?
+  </button>
+  </h3>
+  <div id="faqInjected101" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected101">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">You can process large texts up to 100,000 characters without any performance lag or data loss.</p>
+  </div>
+  </div>
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected102">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Does it handle special characters or foreign languages?
+  </button>
+  </h3>
+  <div id="faqInjected102" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected102">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">Yes, our tools fully support UTF-8, handling symbols, emojis, and all major global languages including non-Latin scripts.</p>
+  </div>
+  </div>
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected103">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Can I use this tool offline?
+  </button>
+  </h3>
+  <div id="faqInjected103" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected103">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">Once the page is loaded, most text processing functions work offline as they run in your browser's local environment.</p>
+  </div>
+  </div>
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected104">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Can I reverse multiple lines of text at once?
+  </button>
+  </h3>
+  <div id="faqInjected104" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected104">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">Yes, our advanced tools support multi-line processing and preserve your original line breaks perfectly.</p>
+  </div>
+  </div>
+
+
+ 
+  </div>
+ </div>
+ 
+  </div>
+ </div>
+ 
+  </div>
+ </div>
+ 
+  </div>
+ </div>
  <!-- Question 1 -->
  <div class="accordion-item mb-3 border">
  <h4 class="accordion-header">
@@ -612,11 +717,24 @@
  <div class="text-center mt-4 p-4" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 15px;">
  <h4 class="text-white mb-3"><i class="fas fa-keyboard me-2"></i>Start Counting Words Now!</h4>
  <p class="text-white mb-0">Analyze your text in seconds — free, instant, no signup required!</p>
- </div>
- </div>
- </div>
- </div>
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+  
+ 
+ 
+  
+ 
+ 
+  
+ 
 
  <!-- Bootstrap JS -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

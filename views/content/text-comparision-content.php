@@ -1,4 +1,14 @@
 <!-- Intro Section -->
+
+<!-- What Is Section -->
+<section class="mb-5">
+    <div class="card border-0 shadow-sm border-start border-4 border-info">
+        <div class="card-body p-4">
+            <h2 class="mb-3"><i class="fas fa-quote-left me-2 text-info"></i>What is this Text Tool?</h2>
+            <p>Our text processing tools are essential for writers, editors, and SEO specialists who need to clean, transform, or analyze content quickly. Whether you're removing extra spaces, converting case, or counting words, this tool handles large blocks of text effortlessly. It's built for speed and privacy, ensuring that your sensitive drafts are processed entirely in your browser without ever hitting a database.</p>
+        </div>
+    </div>
+</section>
 <div class="card border-0 shadow-sm text-white mb-4" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
  <div class="card-body p-4 p-md-5 text-center">
  <i class="fas fa-exchange-alt fa-4x mb-3"></i>
@@ -126,7 +136,76 @@
  </div>
  </div>
 
- <!-- FAQ -->
+ 
+<!-- Features Section -->
+<section class="mb-5">
+    <h2 class="mb-4"><i class="fas fa-wand-magic-sparkles me-2 text-primary"></i>Advanced Text Processing Features</h2>
+    <div class="row g-3">
+        <div class="col-md-3">
+            <div class="p-3 border rounded bg-white shadow-sm text-center">
+                <i class="fas fa-clock text-info fa-2x mb-2"></i>
+                <h6 class="fw-bold mb-0">Real-Time Update</h6>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="p-3 border rounded bg-white shadow-sm text-center">
+                <i class="fas fa-keyboard text-success fa-2x mb-2"></i>
+                <h6 class="fw-bold mb-0">Batch Processing</h6>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="p-3 border rounded bg-white shadow-sm text-center">
+                <i class="fas fa-copy text-primary fa-2x mb-2"></i>
+                <h6 class="fw-bold mb-0">One-Click Copy</h6>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="p-3 border rounded bg-white shadow-sm text-center">
+                <i class="fas fa-eye-slash text-danger fa-2x mb-2"></i>
+                <h6 class="fw-bold mb-0">No Data Storage</h6>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Detailed Features Section -->
+<section class="mb-5">
+    <h2 class="h3 mb-4 text-center fw-bold"><i class="fas fa-wand-magic-sparkles me-2 text-primary"></i>Advanced Text Processing Features</h2>
+    <div class="row g-3">
+        <div class="col-md-3 text-center">
+            <div class="p-4 border rounded bg-white shadow-sm h-100">
+                <i class="fas fa-clock text-info fa-3x mb-3"></i>
+                <h6 class="fw-bold mb-2">Real-Time Update</h6>
+                <p class="small text-muted mb-0">Results update instantly as you type.</p>
+            </div>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="p-4 border rounded bg-white shadow-sm h-100">
+                <i class="fas fa-keyboard text-success fa-3x mb-3"></i>
+                <h6 class="fw-bold mb-2">Batch Processing</h6>
+                <p class="small text-muted mb-0">Handle thousands of words at once.</p>
+            </div>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="p-4 border rounded bg-white shadow-sm h-100">
+                <i class="fas fa-copy text-primary fa-3x mb-3"></i>
+                <h6 class="fw-bold mb-2">One-Click Copy</h6>
+                <p class="small text-muted mb-0">Quick clipboard export functionality.</p>
+            </div>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="p-4 border rounded bg-white shadow-sm h-100">
+                <i class="fas fa-eye-slash text-danger fa-3x mb-3"></i>
+                <h6 class="fw-bold mb-2">No Data Storage</h6>
+                <p class="small text-muted mb-0">Your text stays in your browser.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- FAQ -->
  <div class="card border-0 shadow-sm mb-4">
  <div class="card-header bg-white border-0 py-3 text-center">
  <h3 class="h2 mb-0 fw-bold"><i class="fas fa-question-circle me-2 text-info"></i>FAQ - Frequently Asked Questions</h3>
@@ -173,4 +252,16 @@
  </div>
  </div>
  </div>
-</div>
+
+ </div>
+  
+ 
+ 
+  
+ 
+ 
+  
+ 
+ 
+  
+ 

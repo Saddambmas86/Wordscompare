@@ -1,4 +1,14 @@
 <!-- Intro Section -->
+
+<!-- What Is Section -->
+<section class="mb-5">
+    <div class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+            <h2 class="mb-3"><i class="fas fa-calculator me-2 text-success"></i>What is this Calculator?</h2>
+            <p>Our online calculation tools are built using the most accurate financial and mathematical formulas to help you make informed decisions. Whether you are planning your retirement, calculating your BMI, or projecting investment returns, this tool provides instant, reliable data. Designed for both professionals and students, it eliminates complex manual math and provides easy-to-read health or financial insights within seconds.</p>
+        </div>
+    </div>
+</section>
  <div class="card border-0 shadow-sm text-white mb-4" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);">
  <div class="card-body p-4 p-md-5 text-center">
  <i class="fas fa-chart-line fa-4x mb-3"></i>
@@ -269,13 +279,107 @@
  </div>
  </div>
 
- <!-- FAQ Section -->
+ 
+<!-- Detailed Features Section -->
+<section class="mb-5">
+    <h2 class="h3 mb-4 text-center fw-bold"><i class="fas fa-list-check me-2 text-info"></i>Why Choose Our Calculator?</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 bg-light shadow-sm text-center">
+                <div class="card-body">
+                    <i class="fas fa-check-double text-success fa-3x mb-3"></i>
+                    <h5 class="fw-bold">100% Accuracy</h5>
+                    <p class="small text-muted">All formulas are based on global industry standards, WHO benchmarks, and verified mathematical models.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 bg-light shadow-sm text-center">
+                <div class="card-body">
+                    <i class="fas fa-sync text-primary fa-3x mb-3"></i>
+                    <h5 class="fw-bold">Instant Results</h5>
+                    <p class="small text-muted">Get your calculations updated in real-time as you input your data. No waiting, no refreshing needed.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 bg-light shadow-sm text-center">
+                <div class="card-body">
+                    <i class="fas fa-user-shield text-warning fa-3x mb-3"></i>
+                    <h5 class="fw-bold">Private & Secure</h5>
+                    <p class="small text-muted">No personal data is saved; all calculations remain private on your device. We respect your data privacy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- FAQ Section -->
  <div class="card border-0 shadow-sm mb-4">
  <div class="card-header bg-white border-0 py-3">
  <h3 class="h2 mb-0 text-center fw-bold"><i class="fas fa-question-circle me-2 text-info"></i>Frequently Asked Questions</h3>
  </div>
  <div class="card-body p-4 p-md-5">
  <div class="accordion" id="faqAccordion">
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected101">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Are these calculations legally binding?
+  </button>
+  </h3>
+  <div id="faqInjected101" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected101">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">No, our calculators provide estimates for informational purposes only. Consult a professional for critical financial or medical decisions.</p>
+  </div>
+  </div>
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected102">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Can I save my calculation results?
+  </button>
+  </h3>
+  <div id="faqInjected102" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected102">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">Yes, you can easily download your results as a PDF or copy the summary for future reference.</p>
+  </div>
+  </div>
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected103">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Does it support different units (Metric/Imperial)?
+  </button>
+  </h3>
+  <div id="faqInjected103" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected103">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">Yes, most of our calculators allow you to switch between units like kg/lbs or cm/ft seamlessly to suit your preference.</p>
+  </div>
+  </div>
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected104">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> How accurate are the results compared to professional software?
+  </button>
+  </h3>
+  <div id="faqInjected104" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected104">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">We use standardized formulas, but slight variances may occur due to rounding. Results are highly reliable for daily planning and analysis.</p>
+  </div>
+  </div>
+
+
+ 
+  </div>
+ </div>
+ 
+  </div>
+ </div>
+ 
+  </div>
+ </div>
+ 
+  </div>
+ </div>
  <!-- Question 1 -->
  <div class="accordion-item mb-3 border">
  <h4 class="accordion-header">
@@ -561,11 +665,24 @@
  <div class="text-center mt-4 p-4" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 15px;">
  <h4 class="text-white mb-3"><i class="fas fa-flag-checkered me-2"></i>Start Your NPS Journey Today!</h4>
  <p class="text-white mb-0">Calculate your pension corpus in 3 minutes—retire with dignity!</p>
- </div>
- </div>
- </div>
- </div>
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+  
+ 
+ 
+  
+ 
+ 
+  
+ 
 
  <!-- Bootstrap JS -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

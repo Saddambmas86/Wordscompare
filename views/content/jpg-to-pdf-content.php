@@ -1,4 +1,14 @@
 <!-- Intro Section -->
+
+<!-- What Is Section -->
+<section class="mb-5">
+    <div class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+            <h2 class="mb-3"><i class="fas fa-info-circle me-2 text-primary"></i>What is this PDF Tool?</h2>
+            <p>This professional-grade PDF tool is designed to provide high-fidelity document management without the need for expensive software. It utilizes advanced cloud-based and local processing algorithms to ensure that your document's layout, fonts, and images are preserved with 100% accuracy. Whether you're a student, a legal professional, or a business owner, this tool streamlines your workflow by enabling instant modifications to your PDF files directly in your web browser.</p>
+        </div>
+    </div>
+</section>
  <div class="card border-0 shadow-sm text-white mb-4" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
  <div class="card-body p-4 p-md-5 text-center">
  <i class="fas fa-images fa-4x mb-3"></i>
@@ -167,13 +177,116 @@
  </div>
  </div>
 
- <!-- FAQ -->
+ 
+<!-- Detailed Features Section -->
+<section class="mb-5">
+    <h2 class="h3 mb-4 text-center fw-bold"><i class="fas fa-star me-2 text-warning"></i>Premium Features for Professional Results</h2>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="d-flex align-items-start p-3 bg-white rounded shadow-sm h-100">
+                <i class="fas fa-bolt text-success fa-2x me-3 mt-1"></i>
+                <div>
+                    <h5 class="fw-bold mb-1">Ultra-Fast Processing</h5>
+                    <p class="small text-muted mb-0">Get your results in seconds, even with complex and multi-page documents. Our optimized engine handles heavy lifting instantly.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex align-items-start p-3 bg-white rounded shadow-sm h-100">
+                <i class="fas fa-shield-alt text-primary fa-2x me-3 mt-1"></i>
+                <div>
+                    <h5 class="fw-bold mb-1">Privacy Focused</h5>
+                    <p class="small text-muted mb-0">All files are processed securely over encrypted connections (HTTPS) and are deleted from our servers automatically after processing.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex align-items-start p-3 bg-white rounded shadow-sm h-100">
+                <i class="fas fa-check-circle text-info fa-2x me-3 mt-1"></i>
+                <div>
+                    <h5 class="fw-bold mb-1">High-Fidelity Results</h5>
+                    <p class="small text-muted mb-0">Our advanced conversion engine maintains document structure, formatting, tables, and image quality throughout the entire process.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex align-items-start p-3 bg-white rounded shadow-sm h-100">
+                <i class="fas fa-mobile-alt text-warning fa-2x me-3 mt-1"></i>
+                <div>
+                    <h5 class="fw-bold mb-1">No Installation Needed</h5>
+                    <p class="small text-muted mb-0">Works entirely in your browser on desktop, tablet, and mobile devices. No plugins, no drivers, and no software downloads required.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- FAQ -->
  <div class="card border-0 shadow-sm mb-4">
  <div class="card-header bg-white border-0 py-3">
  <h3 class="h2 mb-0 text-center fw-bold"><i class="fas fa-question-circle me-2 text-info"></i>Frequently Asked Questions</h3>
  </div>
  <div class="card-body p-4 p-md-5">
  <div class="accordion" id="faqAccordion">
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected101">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Is this tool free to use?
+  </button>
+  </h3>
+  <div id="faqInjected101" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected101">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">Yes, all our PDF tools are 100% free with no hidden charges, registration, or premium tiers.</p>
+  </div>
+  </div>
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected102">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> What is the maximum file size supported?
+  </button>
+  </h3>
+  <div id="faqInjected102" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected102">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">You can upload files up to 50MB for processing. For larger files, please compress them first using our PDF compressor.</p>
+  </div>
+  </div>
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected103">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Can I use this tool on my smartphone?
+  </button>
+  </h3>
+  <div id="faqInjected103" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected103">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">Absolutely! Our tools are fully responsive and work perfectly on iPhones, Android devices, and all major tablets.</p>
+  </div>
+  </div>
+<div class="accordion-item border-0 mb-3 rounded overflow-hidden">
+  <h3 class="accordion-header">
+  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqInjected104">
+  <span class="badge bg-secondary me-3 px-3 py-2">NEW</span> Is my data safe during processing?
+  </button>
+  </h3>
+  <div id="faqInjected104" class="accordion-collapse collapse" data-bs-parent="#faqAccordionInjected104">
+  <div class="accordion-body bg-light">
+  <p class="mb-0">Your privacy is our priority. Files are processed over encrypted connections and are not permanently stored on our servers.</p>
+  </div>
+  </div>
+
+
+ 
+  </div>
+ </div>
+ 
+  </div>
+ </div>
+ 
+  </div>
+ </div>
+ 
+  </div>
+ </div>
  <div class="accordion-item mb-3 border">
  <h4 class="accordion-header">
  <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
@@ -282,11 +395,24 @@
  <div class="text-center mt-4 p-4" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px;">
  <h4 class="text-white mb-3"><i class="fas fa-file-image me-2"></i>Convert Images to PDF Now!</h4>
  <p class="text-white mb-0">Transform JPG/PNG files instantly—free forever!</p>
- </div>
- </div>
- </div>
- </div>
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+  
+ 
+ 
+  
+ 
+ 
+  
+ 
 
  <!-- Bootstrap JS -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

@@ -1,168 +1,184 @@
-<!-- Intro Section -->
-
-<!-- What Is Section -->
-<section class="mb-5">
-    <div class="card border-0 shadow-sm">
-        <div class="card-body p-4">
-            <h2 class="mb-3"><i class="fas fa-info-circle me-2 text-primary"></i>What is this PDF Tool?</h2>
-            <p>This professional-grade PDF tool is designed to provide high-fidelity document management without the need for expensive software. It utilizes advanced cloud-based and local processing algorithms to ensure that your document's layout, fonts, and images are preserved with 100% accuracy. Whether you're a student, a legal professional, or a business owner, this tool streamlines your workflow by enabling instant modifications to your PDF files directly in your web browser.</p>
+    <!-- Hero Card -->
+    <div class="card border-0 shadow-sm text-white mb-4" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+        <div class="card-body p-4 p-md-5 text-center">
+            <i class="fas fa-file-invoice fa-4x mb-3"></i>
+            <h2 class="display-5 mb-3 fw-bold">DWG to PDF - Fast & Free Online</h2>
+            <p class="lead mb-0">Professional CAD to PDF conversion—no software installation required.</p>
+            <p class="text-center mt-3 text-white-50">Looking for more? Use our <a href="<?php echo $base_url; ?>dxf-to-pdf" class="text-white text-decoration-underline">DXF to PDF</a> and <a href="<?php echo $base_url; ?>dwf-to-pdf" class="text-white text-decoration-underline">DWF to PDF</a> tools.</p>
         </div>
     </div>
-</section>
- <div class="card border-0 shadow-sm text-white mb-4" style="background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);">
- <div class="card-body p-4 p-md-5 text-center">
- <i class="fas fa-file-pdf fa-4x mb-3"></i>
- <h2 class="display-5 mb-3"> Dwg To Pdf - Fast & Free Online</h2>
- <p class="lead mb-0">Free Dwg To Pdf online. Convert files instantly and securely.</p>
 
-<p class="text-center mt-3">Looking for more? Use our <a href="<?php echo $base_url; ?>epub-to-pdf">Epub To Pdf</a> and <a href="<?php echo $base_url; ?>png-to-pdf">Png To Pdf</a> for fast and accurate results.</p>
- </div>
- </div>
+    <!-- What is DWG to PDF Conversion? -->
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-body p-4 p-md-5">
+            <h2 class="h3 fw-bold mb-4"><i class="fas fa-info-circle me-2 text-primary"></i>What is DWG to PDF Conversion?</h2>
+            <p>DWG to PDF conversion allows users to convert DWG files to PDF online quickly without installing AutoCAD software. DWG files are commonly used in engineering and architectural designs, and converting them into PDF format makes them easier to share, print, and archive.</p>
+            <p class="mb-0">Our DWG to PDF converter online enables fast and secure file conversion directly in your browser. This makes it ideal for engineers, architects, students, and professionals who need to convert AutoCAD drawings into portable PDF documents.</p>
+        </div>
+    </div>
 
- <div class="container mb-5">
- <!-- Feature Cards -->
- <div class="row g-3 mb-4">
- <div class="col-md-3">
- <div class="card h-100 border-0 shadow-sm text-center feature-card">
- <div class="card-body">
- <i class="fas fa-bolt fa-3x text-primary mb-3"></i>
- <h6 class="fw-bold">Fast Processing</h6>
- <p class="small mb-0">Instant results</p>
- </div>
- </div>
- </div>
- <div class="col-md-3">
- <div class="card h-100 border-0 shadow-sm text-center feature-card">
- <div class="card-body">
- <i class="fas fa-magic fa-3x text-success mb-3"></i>
- <h6 class="fw-bold">Easy to Use</h6>
- <p class="small mb-0">No technical skills needed</p>
- </div>
- </div>
- </div>
- <div class="col-md-3">
- <div class="card h-100 border-0 shadow-sm text-center feature-card">
- <div class="card-body">
- <i class="fas fa-check-circle fa-3x text-info mb-3"></i>
- <h6 class="fw-bold">100% Accurate</h6>
- <p class="small mb-0">Reliable outputs</p>
- </div>
- </div>
- </div>
- <div class="col-md-3">
- <div class="card h-100 border-0 shadow-sm text-center feature-card">
- <div class="card-body">
- <i class="fas fa-shield-alt fa-3x text-warning mb-3"></i>
- <h6 class="fw-bold">Secure</h4>
- <p class="small mb-0">Privacy guaranteed</p>
- </div>
- </div>
- </div>
- </div>
+    <!-- How to Convert DWG to PDF Online -->
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-white border-0 py-3 text-center">
+            <h3 class="h2 mb-0 fw-bold"><i class="fas fa-cogs me-2 text-success"></i>How to Convert DWG to PDF Online</h3>
+        </div>
+        <div class="card-body p-4 p-md-5">
+            <p class="text-center mb-5 lead text-muted">Follow these simple steps to convert your CAD files in seconds.</p>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="step-icon-wrapper mb-3 mx-auto">
+                            <i class="fas fa-upload text-primary fa-2x"></i>
+                        </div>
+                        <h6 class="fw-bold">1. Upload File</h6>
+                        <p class="small text-muted">Upload your DWG file into the converter box.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="step-icon-wrapper mb-3 mx-auto">
+                            <i class="fas fa-sync text-success fa-2x"></i>
+                        </div>
+                        <h6 class="fw-bold">2. Click Convert</h6>
+                        <p class="small text-muted">Click the convert button to begin the transformation.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="step-icon-wrapper mb-3 mx-auto">
+                            <i class="fas fa-hourglass-half text-warning fa-2x"></i>
+                        </div>
+                        <h6 class="fw-bold">3. Processing</h6>
+                        <p class="small text-muted">Wait a few moments for the CAD file to process.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="step-icon-wrapper mb-3 mx-auto">
+                            <i class="fas fa-download text-info fa-2x"></i>
+                        </div>
+                        <h6 class="fw-bold">4. Download PDF</h6>
+                        <p class="small text-muted">Download your high-quality PDF file instantly.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-success border-0 shadow-sm mt-5 mb-0 text-center">
+                Our DWG to PDF converter ensures accurate conversion while preserving drawing quality.
+            </div>
+        </div>
+    </div>
 
- <!-- How It Works -->
- <div class="card border-0 shadow-sm mb-4">
- <div class="card-header bg-white border-0 py-3">
- <h3 class="h2 mb-0 text-center fw-bold"><i class="fas fa-cogs me-2 text-primary"></i>How to use Dwg To Pdf</h3>
- </div>
- <div class="card-body p-4 p-md-5">
- <p class="lead text-center mb-5">Get started in 3 simple steps.</p>
- 
- <div class="row g-4">
- <div class="col-md-4">
- <div class="text-center mb-3">
- <div class="step-number mx-auto">1</div>
- </div>
- <div class="card border-0 shadow-sm h-100">
- <div class="card-body text-center">
- <i class="fas fa-keyboard fa-3x text-primary mb-3"></i>
- <h5 class="fw-bold">Input Details</h5>
- <p class="small text-muted mb-0">Enter your data or upload files.</p>
- </div>
- </div>
- </div>
- 
- <div class="col-md-4">
- <div class="text-center mb-3">
- <div class="step-number mx-auto">2</div>
- </div>
- <div class="card border-0 shadow-sm h-100">
- <div class="card-body text-center">
- <i class="fas fa-play fa-3x text-success mb-3"></i>
- <h5 class="fw-bold">Process</h5>
- <p class="small text-muted mb-0">Click the button to process your request.</p>
- </div>
- </div>
- </div>
- 
- <div class="col-md-4">
- <div class="text-center mb-3">
- <div class="step-number mx-auto">3</div>
- </div>
- <div class="card border-0 shadow-sm h-100">
- <div class="card-body text-center">
- <i class="fas fa-check fa-3x text-info mb-3"></i>
- <h5 class="fw-bold">Get Results</h5>
- <p class="small text-muted mb-0">Instantly view or download your results.</p>
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
+    <!-- Benefits of Converting DWG to PDF -->
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-white border-0 py-3 text-center">
+            <h3 class="h2 mb-0 fw-bold"><i class="fas fa-star me-2 text-warning"></i>Benefits of Converting DWG to PDF</h3>
+        </div>
+        <div class="card-body p-4 p-md-5">
+            <p class="text-center mb-5">Using an online DWG to PDF converter provides many advantages for design professionals.</p>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-success me-3 fa-lg"></i> <span class="fw-bold">Easy file sharing:</span> Share designs without specialized software.</li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-success me-3 fa-lg"></i> <span class="fw-bold">Better compatibility:</span> Open files on any device with a PDF viewer.</li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-success me-3 fa-lg"></i> <span class="fw-bold">Improved security:</span> Password protect and lock your drawings.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-success me-3 fa-lg"></i> <span class="fw-bold">Reduced file size:</span> Make CAD drawings easier to email and store.</li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-success me-3 fa-lg"></i> <span class="fw-bold">High-quality output:</span> Preserve all vector details and line weights.</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center mt-4 fw-bold text-muted small">This makes PDF the preferred format for sharing AutoCAD drawings.</p>
+        </div>
+    </div>
 
- <!-- Benefits -->
- <div class="card border-0 shadow-sm">
- <div class="card-header bg-white border-0 py-3">
- <h3 class="h2 mb-0 text-center fw-bold"><i class="fas fa-star me-2 text-warning"></i>Benefits</h3>
- </div>
- <div class="card-body p-4 p-md-5">
- <div class="row g-4">
- <div class="col-md-6">
- <h5 class="fw-bold text-primary mb-3">Why use Dwg To Pdf?</h5>
- <ul class="list-unstyled">
- <li class="mb-3">
- <i class="fas fa-check-circle benefit-check me-2"></i>
- <strong>Save Time:</strong> Complete your tasks in seconds.
- </li>
- <li class="mb-3">
- <i class="fas fa-check-circle benefit-check me-2"></i>
- <strong>Free to Use:</strong> No hidden charges or subscriptions.
- </li>
- <li class="mb-3">
- <i class="fas fa-check-circle benefit-check me-2"></i>
- <strong>No Installation:</strong> Works entirely in your web browser.
- </li>
- </ul>
- </div>
- <div class="col-md-6">
- <h5 class="fw-bold text-success mb-3">Tool Features</h5>
- <ul class="list-unstyled">
- <li class="mb-3">
- <i class="fas fa-check-circle benefit-check me-2"></i>
- <strong>Cross-Platform:</strong> Works on Windows, Mac, Linux, and Mobile.
- </li>
- <li class="mb-3">
- <i class="fas fa-check-circle benefit-check me-2"></i>
- <strong>User Friendly:</strong> Clean, intuitive interface for everyone.
- </li>
- <li class="mb-3">
- <i class="fas fa-check-circle benefit-check me-2"></i>
- <strong>Safe & Secure:</strong> We prioritize your privacy and data security.
- </li>
- </ul>
- </div>
- </div>
- 
- <div class="text-center mt-4 p-4" style="background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);; border-radius: 15px;">
- <h4 class="text-white mb-3"><i class="fas fa-file-pdf me-2"></i>Use Dwg To Pdf Now!</h4>
- <p class="text-white mb-0">Experience the best online tool—free forever!</p>
- </div>
- </div>
- </div>
- </div>
+    <!-- Who Uses DWG to PDF Converter? -->
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-white border-0 py-3 text-center">
+            <h3 class="h2 mb-0 fw-bold"><i class="fas fa-users me-2 text-primary"></i>Who Uses DWG to PDF Converter?</h3>
+        </div>
+        <div class="card-body p-4 p-md-5">
+            <div class="row g-4 text-center">
+                <?php
+                $professions = [
+                    ['icon' => 'fa-pencil-ruler', 'name' => 'Architects'],
+                    ['icon' => 'fa-drafting-pencil', 'name' => 'Civil Engineers'],
+                    ['icon' => 'fa-cogs', 'name' => 'Mechanical Engineers'],
+                    ['icon' => 'fa-palette', 'name' => 'Designers'],
+                    ['icon' => 'fa-user-graduate', 'name' => 'Students'],
+                    ['icon' => 'fa-hard-hat', 'name' => 'Construction Pros']
+                ];
+                foreach ($professions as $prof) {
+                    echo '<div class="col-6 col-md-4 col-lg-2">
+                            <div class="p-3 border rounded-3 bg-light shadow-sm h-100 feature-card">
+                                <i class="fas ' . $prof['icon'] . ' text-primary mb-3 fa-2x"></i>
+                                <h6 class="fw-bold small mb-0">' . $prof['name'] . '</h6>
+                            </div>
+                         </div>';
+                }
+                ?>
+            </div>
+            <p class="text-center mt-5 mb-0 text-muted">Professionals rely on AutoCAD to PDF conversion for efficient technical drawing sharing.</p>
+        </div>
+    </div>
 
- <!-- Bootstrap JS -->
+    <!-- Supported CAD File Formats -->
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-white border-0 py-3 text-center">
+            <h3 class="h2 mb-0 fw-bold"><i class="fas fa-file-code me-2 text-info"></i>Supported CAD File Formats</h3>
+        </div>
+        <div class="card-body p-4 p-md-5 text-center">
+            <p class="mb-5 lead text-muted">Our tool supports all common industry formats.</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <span class="badge bg-white text-dark border p-3 rounded-pill shadow-sm px-5 fs-6">DWG</span>
+                <span class="badge bg-white text-dark border p-3 rounded-pill shadow-sm px-5 fs-6">DXF</span>
+                <span class="badge bg-white text-dark border p-3 rounded-pill shadow-sm px-5 fs-6">DWF</span>
+                <span class="badge bg-white text-dark border p-3 rounded-pill shadow-sm px-5 fs-6">AutoCAD Files</span>
+            </div>
+            <p class="text-center mt-5 mb-0 fw-bold">This ensures flexibility for different CAD users.</p>
+        </div>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- FAQ -->
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-white border-0 py-3 text-center">
+            <h3 class="h2 mb-0 fw-bold"><i class="fas fa-question-circle me-2 text-info"></i>Frequently Asked Questions (FAQs)</h3>
+        </div>
+        <div class="card-body p-4 p-md-5">
+            <div class="accordion" id="dwgFaqAccordion">
+                <?php
+                $dwg_faqs = [
+                    ['q' => 'Can I convert DWG to PDF without AutoCAD?', 'a' => 'Yes, you can convert DWG files online using our tool without installing AutoCAD software.'],
+                    ['q' => 'Is DWG to PDF conversion free?', 'a' => 'Yes, our converter is completely free to use for any number of files.'],
+                    ['q' => 'Does conversion reduce drawing quality?', 'a' => 'No, the output PDF maintains the original vector drawing quality and line weights.'],
+                    ['q' => 'Are my CAD files secure?', 'a' => 'Absolutely. We use secure servers and all files are deleted automatically within an hour.'],
+                    ['q' => 'Does this tool support DXF files?', 'a' => 'Yes, in addition to DWG, we support DXF components common in CAD workflows.'],
+                    ['q' => 'Can I convert multiple DWG files?', 'a' => 'Yes, our tool supports batch processing for multiple DWG to PDF conversions.'],
+                    ['q' => 'Is installation required?', 'a' => 'No installation is needed; it works entirely in your web browser.'],
+                    ['q' => 'Does it work on Mac and Linux?', 'a' => 'Yes, our web-based tool works on any operating system with a modern browser.'],
+                    ['q' => 'Can I choose the paper size for the PDF?', 'a' => 'The converter automatically scales your drawing to fit standard PDF pages for best results.'],
+                    ['q' => 'How fast is the conversion?', 'a' => 'Most DWG files are converted in just a few seconds, depending on the drawing complexity.'],
+                ];
+                foreach ($dwg_faqs as $i => $faq) {
+                    $id = 'dwgfaq' . $i;
+                    $show = ($i === 0) ? 'show' : '';
+                    $collapsed = ($i === 0) ? '' : 'collapsed';
+                    echo '<div class="accordion-item mb-3 border">
+                            <h4 class="accordion-header">
+                                <button class="accordion-button ' . $collapsed . ' fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#' . $id . '">
+                                    <span class="faq-badge me-3">Q' . ($i + 1) . '</span> ' . $faq['q'] . '
+                                </button>
+                            </h4>
+                            <div id="' . $id . '" class="accordion-collapse collapse ' . $show . '" data-bs-parent="#dwgFaqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-0">' . $faq['a'] . '</p>
+                                </div>
+                            </div>
+                        </div>';
+                }
+                ?>
+            </div>
+        </div>
+    </div>

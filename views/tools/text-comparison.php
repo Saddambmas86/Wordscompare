@@ -1,17 +1,90 @@
 <?php
-$page_title = "Text Comparison Tool - Compare Two Texts Online Free";
-$page_description = "Free text comparison tool online. Compare two texts side by side and highlight differences, additions, and deletions. Perfect for proofreading and code review.";
-$page_keywords = "text comparision, text utilities, word counter, case converter, text tool, online text editor, formatting, wordscompare";
-$page_key = 'text-comparision';
+// Get the current slug from the URI
+$current_uri = $_SERVER['REQUEST_URI'];
+$slug = basename(parse_url($current_uri, PHP_URL_PATH));
+
+// SEO Cluster Mapping
+$seo_cluster = [
+    'compare-two-text-files-online' => [
+        'title' => 'Compare Two Text Files Online – Fast & Free Diff Tool',
+        'description' => 'Easily compare two text files online. Our free tool highlights differences between documents side-by-side. No signup required.',
+        'keywords' => 'compare text files, online diff tool, file comparison, text differences'
+    ],
+    'compare-text-line-by-line' => [
+        'title' => 'Compare Text Line by Line Online – Accurate Diff Checker',
+        'description' => 'Compare text line by line to find exact changes, additions, and deletions. Perfect for detailed document review and proofreading.',
+        'keywords' => 'line by line comparison, text diff, compare lines, document review'
+    ],
+    'compare-json-files-online' => [
+        'title' => 'Compare JSON Files Online – JSON Diff & Checker',
+        'description' => 'Find differences between two JSON objects or files. Our online JSON comparison tool highlights structural and value changes instantly.',
+        'keywords' => 'compare json, json diff, online json checker, json comparison'
+    ],
+    'compare-xml-files-online' => [
+        'title' => 'Compare XML Files Online – XML Diff Tool',
+        'description' => 'Compare two XML files or strings online. Identify changes in tags, attributes, and content with our specialized XML comparison tool.',
+        'keywords' => 'compare xml, xml diff tool, online xml checker, xml differences'
+    ],
+    'compare-html-files-online' => [
+        'title' => 'Compare HTML Files Online – HTML Code Diff Tool',
+        'description' => 'Compare HTML code snippets or files. Detect changes in tags and structure with side-by-side highlighting for web developers.',
+        'keywords' => 'compare html, html diff, online html checker, code comparison'
+    ],
+    'compare-css-files-online' => [
+        'title' => 'Compare CSS Files Online – CSS Style Diff Checker',
+        'description' => 'Quickly compare two CSS files to find changes in styles, selectors, and properties. Ideal for debugging web layouts.',
+        'keywords' => 'compare css, css diff, online css checker, style comparison'
+    ],
+    'compare-code-files-online' => [
+        'title' => 'Compare Code Files Online – Developer Diff Tool',
+        'description' => 'A powerful online code comparison tool for developers. Compare JS, Python, HTML, CSS, and more with syntax-friendly highlighting.',
+        'keywords' => 'compare code, code diff tool, online developer tool, syntax comparison'
+    ],
+    'online-text-diff-tool' => [
+        'title' => 'Online Text Diff Tool – Compare Text for Free',
+        'description' => 'Use our reliable online text diff tool to compare any two pieces of text. Fast, secure, and preserves your privacy.',
+        'keywords' => 'online diff tool, text diff, compare text online, free diff checker'
+    ],
+    'text-difference-checker' => [
+        'title' => 'Text Difference Checker – Find Changes Instantly',
+        'description' => 'The most accurate text difference checker online. Easily detect modified, added, or removed text between two versions.',
+        'keywords' => 'text difference checker, change detector, compare versions, diff tool'
+    ],
+    'compare-text-documents' => [
+        'title' => 'Compare Text Documents Online – Legal & Business',
+        'description' => 'Compare legal contracts, business reports, or essays. Detect even the smallest changes between document versions with ease.',
+        'keywords' => 'compare documents, document diff, legal contract comparison, business document tool'
+    ],
+    'text-comparison' => [
+        'title' => 'Compare Two Text Files Online – Free Text Comparison Tool',
+        'description' => 'Free text comparison tool online. Compare two texts side by side and highlight differences, additions, and deletions. Perfect for proofreading and code review.',
+        'keywords' => 'text comparison, text utilities, word counter, case converter, text tool, online text editor, formatting, wordscompare'
+    ]
+];
+
+// Set metadata based on slug
+if (isset($seo_cluster[$slug])) {
+    $page_title = $seo_cluster[$slug]['title'];
+    $page_description = $seo_cluster[$slug]['description'];
+    $page_keywords = $seo_cluster[$slug]['keywords'];
+} else {
+    // Default values
+    $page_title = "Compare Two Text Files Online – Free Text Comparison Tool";
+    $page_description = "Free text comparison tool online. Compare two texts side by side and highlight differences, additions, and deletions. Perfect for proofreading and code review.";
+    $page_keywords = "text comparison, text utilities, word counter, case converter, text tool, online text editor, formatting, wordscompare";
+}
+
+$page_key = 'text-comparison';
 include '../../includes/header.php';
 ?>
 
 <main class="container-fluid px-1 py-1">
     <!-- Header -->
     <div class="text-center mb-1">
-        <h1 class="h6 mb-0"><i class="fas fa-exchange-alt text-success"></i> Text Compare!</h1>
-        <p class="text-muted" style="font-size: 10px; margin-bottom: 2px;">Compare two versions of a text to find
-            differences.</p>
+        <h1 class="h6 mb-0"><i class="fas fa-exchange-alt text-success"></i> <?php echo isset($seo_cluster[$slug]) ? explode(' –', $page_title)[0] : 'Text Compare!'; ?></h1>
+        <p class="text-muted" style="font-size: 10px; margin-bottom: 2px;">
+            <?php echo isset($seo_cluster[$slug]) ? $page_description : 'Compare two versions of a text to find differences.'; ?>
+        </p>
     </div>
 
     <!-- Comparison Results (shown after compare) -->
@@ -835,7 +908,7 @@ include '../../includes/header.php';
                     <h2 class="display-5"><?php echo $page_title; ?></h2>
                     <p class="lead"><?php echo $page_description; ?></p>
                 </header>
-                <?php include '../../views/content/text-comparision-content.php'; ?>
+                <?php include '../../views/content/text-comparison-content.php'; ?>
             </article>
         </div>
     </div>

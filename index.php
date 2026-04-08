@@ -121,7 +121,7 @@ include 'includes/header.php';
                 <?php
                 $trendingTools = [
                     ['title' => 'EId Wishes card generator', 'description' => 'Generate beautiful Eid Mubarak wishes cards with name and photo.', 'icon' => 'fa-moon', 'color' => 'text-warning', 'url' => 'https://prophetstories.in/'],
-                    ['title' => 'Text Compare', 'description' => 'Compare two texts side-by-side and highlight differences instantly.', 'icon' => 'fa-file-alt', 'color' => 'text-info', 'slug' => 'text-comparision'],
+                    ['title' => 'Text Compare', 'description' => 'Compare two texts side-by-side and highlight differences instantly.', 'icon' => 'fa-file-alt', 'color' => 'text-info', 'slug' => 'text-comparison'],
                 ];
                 foreach ($trendingTools as $tool) {
                     $iconPrefix = in_array($tool['icon'], $brandIcons) ? 'fab' : 'fas';
@@ -490,7 +490,7 @@ include 'includes/header.php';
                     ['title' => 'Find & Replace', 'description' => 'Replace text.', 'icon' => 'fa-search-plus', 'color' => 'text-primary', 'slug' => 'find-replace-text'],
                     ['title' => 'Reverse Text', 'description' => 'Reverse text.', 'icon' => 'fa-exchange-alt', 'color' => 'text-danger', 'slug' => 'reverse-text'],
                     ['title' => 'Text to Slug', 'description' => 'Create URL slugs.', 'icon' => 'fa-link', 'color' => 'text-secondary', 'slug' => 'text-to-slug'],
-                    ['title' => 'Text Compare', 'description' => 'Compare texts.', 'icon' => 'fa-file-alt', 'color' => 'text-info', 'slug' => 'text-comparision'],
+                    ['title' => 'Text Compare', 'description' => 'Compare texts.', 'icon' => 'fa-file-alt', 'color' => 'text-info', 'slug' => 'text-comparison'],
                 ];
 
                 foreach ($textTools as $tool) {

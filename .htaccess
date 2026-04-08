@@ -40,6 +40,11 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(about|contact|privacy|disclaimer)/?$ views/$1.php [L,NC]
 
+# Text Comparison Cluster
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(compare-two-text-files-online|compare-text-line-by-line|compare-json-files-online|compare-xml-files-online|compare-html-files-online|compare-css-files-online|compare-code-files-online|online-text-diff-tool|text-difference-checker|compare-text-documents)/?$ views/tools/text-comparison.php [L,NC]
+
 # Second - Route tool pages (pdf-to-csv, etc.)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

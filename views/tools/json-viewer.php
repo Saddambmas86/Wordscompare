@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Viewer · Perfect Left-Aligned</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #eef5f9 0%, #dce6ed 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            padding: 12px;
+        }
+
+        .main-container {
+            max-width: 100%;
+            width: 100%;
+            height: 98vh;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 20px 24px 18px;
+            box-shadow: 0 30px 60px -20px rgba(0, 30, 40, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            flex-shrink: 0;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #0b232f;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header h1 i {
+            color: #1f7a7a;
+            font-size: 26px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .badge-btn {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(200, 215, 225, 0.3);
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #1b3f4e;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: default;
+            transition: all 0.2s;
+        }
+
+        .badge-btn i {
+            color: #2a7a7a;
+            font-size: 13px;
+        }
+
+        .badge-btn:hover {
+            background: white;
+            box-shadow: 0 6px 16px -8px rgba(20, 70, 90, 0.2);
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            flex: 1;
+            min-height: 0;
+        }
+
+        @media (max-width: 860px) {
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+        }
+
+        .panel {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(6px);
+            border-radius: 16px;
+            padding: 12px 14px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        .panel-title {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: #3c6b7a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .panel-title i {
+            font-size: 13px;
+        }
+
+        #jsonInput {
+            width: 100%;
+            flex: 1;
+            background: transparent;
+            border: none;
+            resize: none;
+            font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+            font-size: 13px;
+            line-height: 1.5;
+            padding: 4px 2px;
+            color: #0b232f;
+            outline: none;
+            min-height: 0;
+        }
+
+        #jsonInput::placeholder {
+            color: #a0bcc8;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 400;
+        }
+
+        .tree-output {
+            flex: 1;
+            overflow: auto;
+            font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: #0a202b;
+            padding: 4px 2px;
+            cursor: default;
+            min-height: 0;
+        }
+
+        .tree-output::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .tree-output::-webkit-scrollbar-thumb {
+            background: #c5dae3;
+            border-radius: 4px;
+        }
+        .tree-output::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .tree-output .tree-node {
+            display: block;
+            padding: 0;
+            cursor: pointer;
+            user-select: none;
+            border-radius: 2px;
+            transition: background 0.08s;
+        }
+
+        .tree-output .tree-node:hover {
+            background: rgba(30, 110, 120, 0.04);
+        }
+
+        .tree-output .tree-node .node-content {
+            display: inline;
+        }
+
+        .tree-output .tree-node .toggle-icon {
+            display: inline-block;
+            width: 14px;
+            font-size: 9px;
+            color: #3f8590;
+            text-align: left;
+            transition: transform 0.12s;
+            font-weight: 700;
+        }
+
+        .tree-output .tree-node .toggle-icon.collapsed {
+            transform: rotate(-90deg);
+        }
+
+        .tree-output .tree-node.collapsed > .node-children {
+            display: none;
+        }
+
+        .tree-output .tree-node .node-children {
+            padding-left: 24px;
+        }
+
+        .tree-output .tree-leaf {
+            display: block;
+            padding: 0 0 0 4px;
+            border-radius: 2px;
+            transition: background 0.08s;
+            cursor: pointer;
+        }
+
+        .tree-output .tree-leaf:hover {
+            background: rgba(30, 110, 120, 0.04);
+        }
+
+        .tree-output .json-key {
+            color: #006b7a;
+            font-weight: 600;
+        }
+
+        .tree-output .json-string {
+            color: #156b3c;
+        }
+
+        .tree-output .json-number {
+            color: #a55d2b;
+        }
+
+        .tree-output .json-boolean {
+            color: #a53f6b;
+            font-weight: 500;
+        }
+
+        .tree-output .json-null {
+            color: #8a6e8a;
+            font-weight: 500;
+        }
+
+        .tree-output .json-punctuation {
+            color: #3f5f6b;
+        }
+
+        .tree-output .json-bracket {
+            color: #1a6d7a;
+            font-weight: 500;
+        }
+
+        .tree-output .json-type-badge {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 600;
+            color: #5f7e8a;
+            background: rgba(60, 107, 122, 0.08);
+            padding: 0 5px;
+            border-radius: 6px;
+            margin-left: 2px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .tree-output .json-array-badge {
+            color: #a55d2b;
+            background: rgba(165, 93, 43, 0.08);
+        }
+
+        .tree-output .json-index {
+            color: #8a6e8a;
+            font-weight: 500;
+        }
+
+        .empty-tree {
+            color: #8da5b0;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            height: 100%;
+            opacity: 0.7;
+            font-size: 13px;
+        }
+
+        .empty-tree i {
+            font-size: 24px;
+            color: #b8d0da;
+        }
+
+        .path-display {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            border-radius: 10px;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            margin-top: 8px;
+            font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace;
+            font-size: 11.5px;
+            color: #1f4c5a;
+            min-height: 32px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+
+        .path-display .path-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: #3c6b7a;
+            background: rgba(60, 107, 122, 0.08);
+            padding: 1px 8px;
+            border-radius: 12px;
+        }
+
+        .path-display .path-value {
+            color: #0b2f3a;
+            word-break: break-all;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .path-display .path-value .path-segment {
+            color: #006b7a;
+            font-weight: 500;
+        }
+
+        .path-display .path-value .path-segment-array {
+            color: #a55d2b;
+        }
+
+        .stats-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 30px;
+            padding: 8px 0 10px;
+            border-top: 1px solid rgba(180, 200, 210, 0.25);
+            border-bottom: 1px solid rgba(180, 200, 210, 0.25);
+            margin-bottom: 10px;
+            font-size: 12px;
+            color: #1f4c5a;
+            flex-shrink: 0;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .stat-item i {
+            color: #3f8590;
+            width: 14px;
+            font-size: 12px;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            color: #0b2f3a;
+        }
+
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px 10px;
+            margin-top: 4px;
+            margin-bottom: 10px;
+            flex-shrink: 0;
+        }
+
+        .toolbar .btn {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(200, 215, 225, 0.25);
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-size: 11.5px;
+            font-weight: 500;
+            color: #1b3f4e;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .toolbar .btn i {
+            color: #2a6e7a;
+            font-size: 12px;
+        }
+
+        .toolbar .btn:hover {
+            background: white;
+            box-shadow: 0 4px 12px -6px rgba(20, 70, 90, 0.15);
+            border-color: rgba(30, 110, 120, 0.2);
+        }
+
+        .toolbar .btn-primary {
+            background: #1b6f7a;
+            border-color: #1b6f7a;
+            color: white;
+        }
+
+        .toolbar .btn-primary i {
+            color: white;
+        }
+
+        .toolbar .btn-primary:hover {
+            background: #135a63;
+            border-color: #135a63;
+        }
+
+        .toolbar .btn-success {
+            background: #1f8a6b;
+            border-color: #1f8a6b;
+            color: white;
+        }
+
+        .toolbar .btn-success i {
+            color: white;
+        }
+
+        .toolbar .btn-success:hover {
+            background: #16755a;
+            border-color: #16755a;
+        }
+
+        .btn-purple {
+            background: #7c3aed;
+            border-color: #7c3aed;
+            color: white;
+        }
+
+        .btn-purple i {
+            color: white;
+        }
+
+        .btn-purple:hover {
+            background: #6d28d9;
+            border-color: #6d28d9;
+        }
+
+        .status-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(180, 200, 210, 0.2);
+            color: #1f4c5a;
+            flex-shrink: 0;
+        }
+
+        .status-bar i {
+            font-size: 14px;
+        }
+
+        .status-valid {
+            color: #1f8a6b;
+        }
+
+        .status-invalid {
+            color: #bf6a5a;
+        }
+
+        @media (max-width: 600px) {
+            .main-container { padding: 12px; height: 100vh; }
+            .header h1 { font-size: 20px; }
+            .stats-bar { gap: 10px; }
+            .badge-btn { font-size: 11px; padding: 4px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <div class="header">
+        <h1><i class="fas fa-code-branch"></i> JSON VIEWER</h1>
+        <div class="header-actions">
+            <span class="badge-btn"><i class="fas fa-paste"></i> Paste</span>
+            <span class="badge-btn"><i class="fas fa-check-circle"></i> Validate</span>
+            <span class="badge-btn"><i class="fas fa-magic"></i> Format</span>
+            <span class="badge-btn"><i class="fas fa-chart-simple"></i> Analyze</span>
+            <span class="badge-btn"><i class="fas fa-download"></i> Download</span>
+        </div>
+    </div>
+
+    <div class="two-col">
+        <div class="panel">
+            <div class="panel-title"><i class="fas fa-pen-to-square"></i> JSON Input</div>
+            <textarea id="jsonInput" spellcheck="false" placeholder='Paste your JSON here …'></textarea>
+        </div>
+
+        <div class="panel">
+            <div class="panel-title"><i class="fas fa-diagram-project"></i> JSON Tree</div>
+            <div id="treeOutput" class="tree-output">
+                <div class="empty-tree"><i class="fas fa-tree"></i><span>Tree will appear here</span></div>
+            </div>
+            <div class="path-display" id="pathDisplay">
+                <span class="path-label"><i class="fas fa-location-dot"></i> Path</span>
+                <span class="path-value" id="pathValue">Click any element to see its path</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-bar" id="statsBar">
+        <div class="stat-item"><i class="fas fa-key"></i> Keys: <span class="stat-value" id="keysCount">0</span></div>
+        <div class="stat-item"><i class="fas fa-tag"></i> Values: <span class="stat-value" id="valuesCount">0</span></div>
+        <div class="stat-item"><i class="fas fa-layer-group"></i> Depth: <span class="stat-value" id="depthCount">0</span></div>
+        <div class="stat-item"><i class="fas fa-weight-hanging"></i> Size: <span class="stat-value" id="sizeDisplay">0 B</span></div>
+    </div>
+
+    <div class="toolbar">
+        <button class="btn" id="viewBtn"><i class="fas fa-eye"></i> View</button>
+        <button class="btn" id="formatBtn"><i class="fas fa-magic"></i> Format</button>
+        <button class="btn" id="minifyBtn"><i class="fas fa-compress"></i> Minify</button>
+        <button class="btn" id="validateBtn"><i class="fas fa-check-double"></i> Validate</button>
+        <button class="btn" id="expandBtn"><i class="fas fa-expand"></i> Expand All</button>
+        <button class="btn btn-purple" id="partialExpandBtn"><i class="fas fa-expand-arrows-alt"></i> Partly Expand</button>
+        <button class="btn" id="collapseBtn"><i class="fas fa-compress"></i> Collapse All</button>
+        <button class="btn btn-success" id="downloadBtn"><i class="fas fa-download"></i> Download</button>
+        <button class="btn" id="copyBtn"><i class="fas fa-copy"></i> Copy</button>
+        <button class="btn" id="clearBtn"><i class="fas fa-eraser"></i> Clear</button>
+    </div>
+
+    <div class="status-bar" id="statusBar">
+        <i class="fas fa-circle-check" style="color: #1f8a6b;"></i>
+        <span id="statusText">✓ Valid JSON</span>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const inputArea = document.getElementById('jsonInput');
+        const treeDiv = document.getElementById('treeOutput');
+        const pathValue = document.getElementById('pathValue');
+        const keysSpan = document.getElementById('keysCount');
+        const valuesSpan = document.getElementById('valuesCount');
+        const depthSpan = document.getElementById('depthCount');
+        const sizeSpan = document.getElementById('sizeDisplay');
+        const statusText = document.getElementById('statusText');
+        const statusIcon = document.querySelector('#statusBar i');
+
+        let nodeCounter = 0;
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function computeStats(obj, depth = 0) {
+            let keys = 0, values = 0, maxDepth = depth;
+            if (obj === null || typeof obj !== 'object') {
+                return { keys: 0, values: 1, depth: depth };
+            }
+            if (Array.isArray(obj)) {
+                values = obj.length;
+                for (let item of obj) {
+                    const sub = computeStats(item, depth + 1);
+                    keys += sub.keys;
+                    values += sub.values;
+                    maxDepth = Math.max(maxDepth, sub.depth);
+                }
+                return { keys, values, depth: maxDepth };
+            }
+            const entries = Object.entries(obj);
+            keys = entries.length;
+            values = entries.length;
+            for (let [k, v] of entries) {
+                const sub = computeStats(v, depth + 1);
+                keys += sub.keys;
+                values += sub.values;
+                maxDepth = Math.max(maxDepth, sub.depth);
+            }
+            return { keys, values, depth: maxDepth };
+        }
+
+        function getSize(obj) {
+            const str = JSON.stringify(obj);
+            const bytes = new Blob([str]).size;
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / 1048576).toFixed(1) + ' MB';
+        }
+
+        // Render tree with level tracking
+        function renderTree(obj, path = '$', level = 0) {
+            if (obj === null) {
+                return `<span class="json-null">null</span>`;
+            }
+            if (typeof obj === 'boolean') {
+                return `<span class="json-boolean">${obj}</span>`;
+            }
+            if (typeof obj === 'number') {
+                return `<span class="json-number">${obj}</span>`;
+            }
+            if (typeof obj === 'string') {
+                return `<span class="json-string">"${escapeHtml(obj)}"</span>`;
+            }
+
+            const nodeId = 'node-' + (++nodeCounter);
+
+            if (Array.isArray(obj)) {
+                if (obj.length === 0) {
+                    return `<span class="json-bracket">[]</span>`;
+                }
+                let childrenHtml = '';
+                for (let i = 0; i < obj.length; i++) {
+                    const childPath = path + '[' + i + ']';
+                    const child = renderTree(obj[i], childPath, level + 1);
+                    childrenHtml += `<div class="tree-leaf" data-path="${escapeHtml(childPath)}" data-level="${level + 1}"><span class="json-index">${i}</span> : ${child}</div>`;
+                }
+                const typeBadge = `<span class="json-type-badge json-array-badge">[${obj.length}]</span>`;
+                return `<div class="tree-node" data-path="${escapeHtml(path)}" data-nodeid="${nodeId}" data-level="${level}">
+                            <span class="toggle-icon">▼</span>
+                            <span class="node-content"><span class="json-bracket">[</span>${typeBadge}</span>
+                            <div class="node-children">${childrenHtml}</div>
+                            <span class="node-content"><span class="json-bracket">]</span></span>
+                        </div>`;
+            }
+
+            const keys = Object.keys(obj);
+            if (keys.length === 0) {
+                return `<span class="json-bracket">{}</span>`;
+            }
+            let childrenHtml = '';
+            for (let i = 0; i < keys.length; i++) {
+                const k = keys[i];
+                const val = obj[k];
+                const childPath = path + '.' + k;
+                const renderedVal = renderTree(val, childPath, level + 1);
+                childrenHtml += `<div class="tree-leaf" data-path="${escapeHtml(childPath)}" data-level="${level + 1}"><span class="json-key">${escapeHtml(k)}</span> : ${renderedVal}</div>`;
+            }
+            const typeBadge = `<span class="json-type-badge">{${keys.length}}</span>`;
+            return `<div class="tree-node" data-path="${escapeHtml(path)}" data-nodeid="${nodeId}" data-level="${level}">
+                        <span class="toggle-icon">▼</span>
+                        <span class="node-content"><span class="json-bracket">{</span>${typeBadge}</span>
+                        <div class="node-children">${childrenHtml}</div>
+                        <span class="node-content"><span class="json-bracket">}</span></span>
+                    </div>`;
+        }
+
+        function renderJSON(raw) {
+            const trimmed = raw.trim();
+            if (!trimmed) {
+                treeDiv.innerHTML = `<div class="empty-tree"><i class="fas fa-tree"></i><span>Tree will appear here</span></div>`;
+                pathValue.textContent = 'Click any element to see its path';
+                keysSpan.textContent = '0';
+                valuesSpan.textContent = '0';
+                depthSpan.textContent = '0';
+                sizeSpan.textContent = '0 B';
+                statusText.textContent = '⏳ Waiting for input';
+                statusIcon.className = 'fas fa-circle-info';
+                statusIcon.style.color = '#8ba3ae';
+                return;
+            }
+
+            try {
+                const parsed = JSON.parse(trimmed);
+                nodeCounter = 0;
+                const treeHtml = renderTree(parsed);
+                treeDiv.innerHTML = treeHtml;
+                attachClickListeners();
+
+                const stats = computeStats(parsed);
+                keysSpan.textContent = stats.keys;
+                valuesSpan.textContent = stats.values;
+                depthSpan.textContent = stats.depth;
+                sizeSpan.textContent = getSize(parsed);
+
+                statusText.textContent = '✓ Valid JSON';
+                statusIcon.className = 'fas fa-circle-check';
+                statusIcon.style.color = '#1f8a6b';
+                
+                // Default: Expand all
+                expandAllNodes();
+            } catch (e) {
+                treeDiv.innerHTML = `<div style="color:#b34a4a; padding:6px 0; font-family:'Segoe UI',sans-serif; font-size:12px;">
+                    <i class="fas fa-exclamation-triangle" style="margin-right:6px;"></i> 
+                    <span>Invalid JSON · ${escapeHtml(e.message)}</span>
+                </div>`;
+                keysSpan.textContent = '—';
+                valuesSpan.textContent = '—';
+                depthSpan.textContent = '—';
+                sizeSpan.textContent = '—';
+                statusText.textContent = '✗ Invalid JSON';
+                statusIcon.className = 'fas fa-circle-exclamation';
+                statusIcon.style.color = '#bf6a5a';
+                pathValue.textContent = 'Click any element to see its path';
+            }
+        }
+
+        function attachClickListeners() {
+            const nodes = treeDiv.querySelectorAll('.tree-node');
+            nodes.forEach(node => {
+                node.removeEventListener('click', nodeClickHandler);
+                node.addEventListener('click', nodeClickHandler);
+            });
+
+            const leaves = treeDiv.querySelectorAll('.tree-leaf');
+            leaves.forEach(leaf => {
+                leaf.removeEventListener('click', leafClickHandler);
+                leaf.addEventListener('click', leafClickHandler);
+            });
+        }
+
+        function nodeClickHandler(e) {
+            e.stopPropagation();
+            const node = this;
+            const children = node.querySelector('.node-children');
+            const toggleIcon = node.querySelector('.toggle-icon');
+            if (children) {
+                node.classList.toggle('collapsed');
+                if (toggleIcon) {
+                    toggleIcon.classList.toggle('collapsed');
+                }
+            }
+            const path = node.getAttribute('data-path');
+            if (path) {
+                showPath(path);
+            }
+        }
+
+        function leafClickHandler(e) {
+            e.stopPropagation();
+            const path = this.getAttribute('data-path');
+            if (path) {
+                showPath(path);
+            }
+        }
+
+        function showPath(path) {
+            let display = '';
+            const parts = path.split(/[\.\[\]]/).filter(p => p !== '');
+            for (let i = 0; i < parts.length; i++) {
+                const part = parts[i];
+                if (i === 0) {
+                    display += `<span class="path-segment">${part}</span>`;
+                } else if (path.includes('[' + part + ']')) {
+                    display += `<span class="path-segment-array">[${part}]</span>`;
+                } else {
+                    display += `<span class="path-segment">.${part}</span>`;
+                }
+            }
+            pathValue.innerHTML = display || '<span style="color:#8ba3ae;">$</span>';
+        }
+
+        // ===== EXPAND FUNCTIONS =====
+        
+        // Expand all nodes
+        function expandAllNodes() {
+            const nodes = treeDiv.querySelectorAll('.tree-node');
+            nodes.forEach(node => {
+                node.classList.remove('collapsed');
+                const icon = node.querySelector('.toggle-icon');
+                if (icon) icon.classList.remove('collapsed');
+            });
+        }
+
+        // Collapse all nodes
+        function collapseAllNodes() {
+            const nodes = treeDiv.querySelectorAll('.tree-node');
+            nodes.forEach(node => {
+                const isRoot = !node.parentElement.closest('.tree-node');
+                if (!isRoot) {
+                    node.classList.add('collapsed');
+                    const icon = node.querySelector('.toggle-icon');
+                    if (icon) icon.classList.add('collapsed');
+                }
+            });
+        }
+
+        // ===== PARTLY EXPAND - Expand first 2 levels =====
+        function partialExpandNodes() {
+            // First, collapse all nodes
+            const allNodes = treeDiv.querySelectorAll('.tree-node');
+            allNodes.forEach(node => {
+                node.classList.add('collapsed');
+                const icon = node.querySelector('.toggle-icon');
+                if (icon) icon.classList.add('collapsed');
+            });
+
+            // Then expand nodes at level 0 and 1 (first and second hierarchy)
+            const nodes = treeDiv.querySelectorAll('.tree-node');
+            nodes.forEach(node => {
+                const level = parseInt(node.getAttribute('data-level') || '0');
+                // Expand level 0 (root) and level 1 (first children)
+                if (level === 0 || level === 1) {
+                    node.classList.remove('collapsed');
+                    const icon = node.querySelector('.toggle-icon');
+                    if (icon) icon.classList.remove('collapsed');
+                }
+            });
+        }
+
+        // Button actions
+        document.getElementById('viewBtn').addEventListener('click', function() {
+            renderJSON(inputArea.value);
+        });
+        document.getElementById('formatBtn').addEventListener('click', function() {
+            const raw = inputArea.value.trim();
+            if (!raw) return;
+            try {
+                const parsed = JSON.parse(raw);
+                const pretty = JSON.stringify(parsed, null, 2);
+                inputArea.value = pretty;
+                renderJSON(pretty);
+            } catch (e) {}
+        });
+        document.getElementById('minifyBtn').addEventListener('click', function() {
+            const raw = inputArea.value.trim();
+            if (!raw) return;
+            try {
+                const parsed = JSON.parse(raw);
+                const min = JSON.stringify(parsed);
+                inputArea.value = min;
+                renderJSON(min);
+            } catch (e) {}
+        });
+        document.getElementById('validateBtn').addEventListener('click', function() {
+            const raw = inputArea.value.trim();
+            if (!raw) { alert('Paste some JSON first.'); return; }
+            try {
+                JSON.parse(raw);
+                alert('✅ Valid JSON!');
+            } catch (e) {
+                alert('❌ Invalid JSON: ' + e.message);
+            }
+        });
+        document.getElementById('expandBtn').addEventListener('click', expandAllNodes);
+        document.getElementById('collapseBtn').addEventListener('click', collapseAllNodes);
+        document.getElementById('partialExpandBtn').addEventListener('click', partialExpandNodes);
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            const raw = inputArea.value.trim();
+            if (!raw) { alert('Nothing to download.'); return; }
+            try {
+                const parsed = JSON.parse(raw);
+                const pretty = JSON.stringify(parsed, null, 2);
+                const blob = new Blob([pretty], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'data.json';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            } catch (e) {
+                alert('Cannot download invalid JSON.');
+            }
+        });
+        document.getElementById('copyBtn').addEventListener('click', function() {
+            const raw = inputArea.value.trim();
+            if (!raw) { alert('Nothing to copy.'); return; }
+            navigator.clipboard.writeText(raw).then(() => {
+                const btn = document.getElementById('copyBtn');
+                const orig = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => btn.innerHTML = orig, 1200);
+            }).catch(() => alert('Unable to copy.'));
+        });
+        document.getElementById('clearBtn').addEventListener('click', function() {
+            inputArea.value = '';
+            treeDiv.innerHTML = `<div class="empty-tree"><i class="fas fa-tree"></i><span>Tree will appear here</span></div>`;
+            pathValue.textContent = 'Click any element to see its path';
+            keysSpan.textContent = '0';
+            valuesSpan.textContent = '0';
+            depthSpan.textContent = '0';
+            sizeSpan.textContent = '0 B';
+            statusText.textContent = '⏳ Waiting for input';
+            statusIcon.className = 'fas fa-circle-info';
+            statusIcon.style.color = '#8ba3ae';
+        });
+
+        let timer = null;
+        inputArea.addEventListener('input', function() {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                renderJSON(inputArea.value);
+            }, 350);
+        });
+
+        // Load example
+        function loadExample() {
+            const example = {
+                "person": {
+                    "name": "John Doe",
+                    "age": 30,
+                    "email": "john@example.com",
+                    "address": {
+                        "city": "New York",
+                        "zip": 10001,
+                        "coordinates": {
+                            "lat": 40.7128,
+                            "lng": -74.0060
+                        }
+                    },
+                    "skills": ["JavaScript", "Python", "SQL"],
+                    "active": true,
+                    "metadata": null
+                }
+            };
+            const pretty = JSON.stringify(example, null, 2);
+            inputArea.value = pretty;
+            renderJSON(pretty);
+        }
+
+        loadExample();
+    })();
+</script>
+
+</body>
+</html>

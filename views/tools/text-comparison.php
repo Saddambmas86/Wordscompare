@@ -897,21 +897,4 @@ include '../../includes/header.php';
 
 </script>
 
-<?php include '../../includes/sharer.php'; ?>
-
-<!-- Content -->
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-8 border shadow-sm">
-            <article>
-                <header class="mb-5 text-center">
-                    <h2 class="display-5"><?php echo $page_title; ?></h2>
-                    <p class="lead"><?php echo $page_description; ?></p>
-                </header>
-                <?php include '../../views/content/text-comparison-content.php'; ?>
-            </article>
-        </div>
-    </div>
-</div>
-
-<?php include '../../includes/footer.php'; ?>
+<?php include '../../includes/toolsfooter.php'; ?>

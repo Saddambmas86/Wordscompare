@@ -46,6 +46,61 @@ include_once __DIR__ . '/config.php';
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/style.css">
     <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/homepage.css">
+    
+    <style>
+        /* Remove dropdown arrows from navigation - Bootstrap 5
+        #developerToolsDropdown.dropdown-toggle::after,
+        #developerToolsDropdown.dropdown-toggle::before,
+        #pdfToolsDropdown.dropdown-toggle::after,
+        #pdfToolsDropdown.dropdown-toggle::before,
+        #calculatorDropdown.dropdown-toggle::after,
+        #calculatorDropdown.dropdown-toggle::before {
+            display: none !important;
+            content: none !important;
+            border: none !important;
+        } */
+        
+        /* Also target by data attribute */
+        a[data-bs-toggle="dropdown"]::after {
+            display: none !important;
+            content: none !important;
+            border: none !important;
+        }
+        
+        /* Fix navbar alignment */
+        .navbar {
+            align-items: center !important;
+        }
+        
+        .navbar-brand {
+            margin-right: 0 !important;
+            padding-right: 0 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            height: auto !important;
+        }
+        
+        .navbar .nav-link {
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            height: auto !important;
+        }
+        
+        .navbar .container-fluid {
+            display: flex !important;
+            align-items: center !important;
+            flex-wrap: nowrap !important;
+        }
+        
+        /* Ensure Home link aligns properly with brand */
+        .navbar > .container-fluid > a[href="<?php echo $base_url; ?>"]:first-child {
+            display: inline-flex !important;
+            align-items: center !important;
+            margin-right: 8px !important;
+        }
+    </style>
 
     <!-- Favicon -->
     <link rel="icon" href="<?php echo $base_url; ?>assets/img/logo.ico" type="image/x-icon">
@@ -77,33 +132,33 @@ include_once __DIR__ . '/config.php';
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?php echo $base_url; ?>">
-                <i class="fas fa-toolbox me-2"></i><?php echo $site_name; ?>
-            </a>
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand" href="<?php echo $base_url; ?>">
+                    <i class="fas fa-toolbox me-2"></i><?php echo $site_name; ?>
+                </a>
+                <a class="nav-link text-white me-2" href="<?php echo $base_url; ?>">
+                    <i class="fas fa-home"></i> Home
+                </a>
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $base_url; ?>">
-                            <i class="fas fa-home me-1"></i>Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
+                    <li class="nav-item">  
                         <a class="nav-link" href="<?php echo $base_url; ?>about">
                             <i class="fas fa-info-circle me-1"></i>About
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $base_url; ?>privacy">
-                            <i class="fas fa-user-shield me-1"></i>Privacy Policy
+                            <i class="fas fa-user-shield me-1"></i>Privacy
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $base_url; ?>contact">
-                            <i class="fas fa-envelope me-1"></i>Contact Us
+                            <i class="fas fa-envelope me-1"></i>Contact
                         </a>
                     </li>
                 </ul>

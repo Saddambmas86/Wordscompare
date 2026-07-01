@@ -53,10 +53,10 @@ include 'includes/header.php';
                 <a class="nav-link active rounded-pill px-4 fw-bold shadow-sm" style="background:#dc3545; color:white;"
                     href="#">All</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link rounded-pill px-4 border text-dark fw-bold"
                     style="border-color:#e0e0e0; background: #f8f9fa;" href="#trending-tools">Trending</a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link rounded-pill px-4 border text-dark fw-medium" style="border-color:#d1d1d1;"
                     href="#pdf-editor-tools">PDF Editor</a>
@@ -77,10 +77,10 @@ include 'includes/header.php';
                 <a class="nav-link rounded-pill px-4 border text-dark fw-medium" style="border-color:#d1d1d1;"
                     href="#developer-tools">Developer Tools</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link rounded-pill px-4 border text-dark fw-medium" style="border-color:#d1d1d1;"
                     href="#web-tools">Web</a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link rounded-pill px-4 border text-dark fw-medium" style="border-color:#d1d1d1;"
                     href="#calculators">Calculators</a>
@@ -113,7 +113,7 @@ include 'includes/header.php';
 
     <?php $brandIcons = ['fa-html5', 'fa-dev', 'fa-whatsapp', 'fa-facebook']; ?>
 
-    <!-- Trending Tools Section -->
+    <!-- Trending Tools Section
     <section class="tools-section bg-light py-4" id="trending-tools">
         <div class="container">
             <h2 class="mb-5">Trending Tools <span class="emoji">🔥</span></h2>
@@ -127,6 +127,36 @@ include 'includes/header.php';
                     $iconPrefix = in_array($tool['icon'], $brandIcons) ? 'fab' : 'fas';
                     $url = isset($tool['url']) ? $tool['url'] : $base_url . $tool['slug'];
                     echo '<div><a href="' . $url . '" class="card-link"><div class="card tool-card h-100"><div class="card-body"><i class="' . $iconPrefix . ' ' . $tool['icon'] . ' ' . $tool['color'] . '"></i><h3 class="card-title h5">' . $tool['title'] . '</h3><p class="card-text">' . $tool['description'] . '</p></div></div></a></div>';
+                }
+                ?>
+            </div>
+        </div>
+    </section> -->
+
+    
+
+    <!-- Developer Tools Section -->
+    <section class="tools-section bg-white" id="developer-tools">
+        <div class="container">
+            <h2 class="mb-5">Developer Tools <span class="emoji">👨‍</span></h2>
+            <div class="tools-grid">
+                <?php
+                $devTools = [
+                    ['title' => 'Text Compare', 'description' => 'Compare texts.', 'icon' => 'fa-file-alt', 'color' => 'text-info', 'slug' => 'text-comparison'],
+                    ['title' => 'Time Stamp', 'description' => 'Convert between Unix timestamp and human-readable date', 'icon' => 'fa-clock', 'color' => 'text-warning', 'slug' => 'json-formatter'],
+                    ['title' => 'Base64 Encoder', 'description' => 'Encode/Decode Base64.', 'icon' => 'fa-lock', 'color' => 'text-success', 'slug' => 'base64-encoder'],
+                    ['title' => 'URL Encoder', 'description' => 'Safely Encode/Decode URLs.', 'icon' => 'fa-link', 'color' => 'text-primary', 'slug' => 'url-encoder'],
+                    ['title' => 'Hash Generator', 'description' => 'Generate MD5, SHA-1 etc.', 'icon' => 'fa-fingerprint', 'color' => 'text-info', 'slug' => 'hash-generator'],
+                    ['title' => 'JWT Decoder', 'description' => 'Decode and view JWT claims.', 'icon' => 'fa-key', 'color' => 'text-danger', 'slug' => 'jwt-decoder'],
+                    ['title' => 'JSON Viewer', 'description' => 'View and analyze JSON with syntax highlighting.', 'icon' => 'fa-eye', 'color' => 'text-secondary', 'slug' => 'json-viewer'],
+                    ['title' => 'Password Generator', 'description' => 'Create passwords.', 'icon' => 'fa-lock', 'color' => 'text-success', 'slug' => 'password-generator'],
+                    ['title' => 'QR Code Generator', 'description' => 'Create QR codes.', 'icon' => 'fa-qrcode', 'color' => 'text-purple', 'slug' => 'qr-code-generator'],
+                    ['title' => 'Color Picker', 'description' => 'Pick colors.', 'icon' => 'fa-palette', 'color' => 'text-info', 'slug' => 'color-picker'],
+                    ];
+
+                foreach ($devTools as $tool) {
+                    $iconPrefix = in_array($tool['icon'], $brandIcons) ? 'fab' : 'fas';
+                    echo '<div><a href="' . $base_url . $tool['slug'] . '" class="card-link"><div class="card tool-card h-100"><div class="card-body"><i class="' . $iconPrefix . ' ' . $tool['icon'] . ' ' . $tool['color'] . '"></i><h3 class="card-title h5">' . $tool['title'] . '</h3><p class="card-text">' . $tool['description'] . '</p></div></div></a></div>';
                 }
                 ?>
             </div>
@@ -270,6 +300,8 @@ include 'includes/header.php';
                         'color' => 'text-warning',
                         'slug' => 'jpg-to-pdf'
                     ],
+                    // ==================== LOW PRIORITY PDF CONVERSION TOOLS ====================
+                    /*
                     [
                         'title' => 'PDF to PPT',
                         'description' => 'Convert PDF documents to PowerPoint presentations.',
@@ -466,6 +498,7 @@ include 'includes/header.php';
                         'color' => 'text-primary',
                         'slug' => 'shreelipi-to-pdf'
                     ],
+                    */
                 ];
 
                 foreach ($pdfTools as $tool) {
@@ -551,30 +584,7 @@ include 'includes/header.php';
     </section>
 
 
-
-    <!-- Developer Tools Section -->
-    <section class="tools-section bg-white" id="developer-tools">
-        <div class="container">
-            <h2 class="mb-5">Developer Tools <span class="emoji">👨‍</span></h2>
-            <div class="tools-grid">
-                <?php
-                $devTools = [
-                    ['title' => 'JSON Formatter', 'description' => 'Format JSON.', 'icon' => 'fa-code', 'color' => 'text-warning', 'slug' => 'json-formatter'],
-                    ['title' => 'Base64 Encoder', 'description' => 'Encode/Decode Base64.', 'icon' => 'fa-lock', 'color' => 'text-success', 'slug' => 'base64-encoder'],
-                    ['title' => 'URL Encoder', 'description' => 'Safely Encode/Decode URLs.', 'icon' => 'fa-link', 'color' => 'text-primary', 'slug' => 'url-encoder'],
-                    ['title' => 'Hash Generator', 'description' => 'Generate MD5, SHA-1 etc.', 'icon' => 'fa-fingerprint', 'color' => 'text-info', 'slug' => 'hash-generator'],
-                    ['title' => 'JWT Decoder', 'description' => 'Decode and view JWT claims.', 'icon' => 'fa-key', 'color' => 'text-danger', 'slug' => 'jwt-decoder'],
-                ];
-
-                foreach ($devTools as $tool) {
-                    $iconPrefix = in_array($tool['icon'], $brandIcons) ? 'fab' : 'fas';
-                    echo '<div><a href="' . $base_url . $tool['slug'] . '" class="card-link"><div class="card tool-card h-100"><div class="card-body"><i class="' . $iconPrefix . ' ' . $tool['icon'] . ' ' . $tool['color'] . '"></i><h3 class="card-title h5">' . $tool['title'] . '</h3><p class="card-text">' . $tool['description'] . '</p></div></div></a></div>';
-                }
-                ?>
-            </div>
-        </div>
-    </section>
-
+<!-- 
     <!-- Web Tools Section -->
     <section class="tools-section bg-light" id="web-tools">
         <div class="container">
@@ -594,7 +604,7 @@ include 'includes/header.php';
                 ?>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Calculator Tools Section -->
     <section class="tools-section bg-white" id="calculators">
@@ -673,6 +683,8 @@ include 'includes/header.php';
                         'color' => 'text-warning',
                         'slug' => 'mutual-fund-returns-calculator'
                     ],
+                    // ==================== LOW PRIORITY CALCULATOR TOOLS ====================
+                    /*
                     [
                         'title' => 'Sukanya Samriddhi Yojana (SSY) Calculator',
                         'description' => 'Calculate returns for SSY savings.',
@@ -918,6 +930,7 @@ include 'includes/header.php';
                         'color' => 'text-danger',
                         'slug' => 'unit-converter'
                     ],
+                    */
                 ];
 
                 foreach ($calcTools as $tool) {

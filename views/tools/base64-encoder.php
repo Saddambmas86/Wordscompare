@@ -1,184 +1,88 @@
 <?php
-// SEO and Page Metadata
-$page_title = "Base64 Encoder & Decoder - Free Online Tool";
-$page_description = "Free online Base64 encode and decode tool. Securely convert string to Base64 format and vice versa. 100% client-side processing for privacy.";
-$page_keywords = "base64 encoder, base64 decoder, base64 converter, encode base64, decode base64, online base64 tool";
-
-// Include common header
+$page_title = "Base64 Encoder/Decoder - Encode Decode Base64 Online Free";
+$page_description = "Free online Base64 encoder and decoder. Encode text to Base64 or decode Base64 strings. Simple, fast, and secure tool for developers.";
+$page_keywords = "base64 encoder, base64 decoder, encode base64, decode base64, developer tools, text tools";
 include '../../includes/header.php';
 ?>
 
-<!-- TOOL -->
-<div class="container">
+<div class="container" style="max-width: 1200px; margin-top: 30px;">
     <div class="row justify-content-center">
-        
-        <div class="d-lg-none mb-3">
-            <button class="btn btn-outline-danger w-100 d-flex justify-content-between align-items-center collapsed" 
-                    type="button" 
-                    data-bs-toggle="collapse" 
-                    data-bs-target="#toolsSidebar" 
-                    aria-expanded="false">
-                <span>Browse Tools</span>
-                <i class="fas fa-chevron-down"></i>
-            </button>
-        </div>
-
-
-        <div class="col-lg-2">
-            <div class="collapse d-lg-block h-100" id="toolsSidebar">
-                <div class="card h-100">
-                    <div class="card-body p-2">
-                        <input type="text" id="searchTools" class="form-control border-danger mb-3" placeholder="Search tools...">
-                        
-                        <div class="list-group list-group-flush overflow-auto" style="max-height: calc(200vh - 150px);">
-                            <div id="toolsList"></div>
-                        </div>
+        <div class="col-12">
+            <div class="card" style="background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border-radius: 28px; padding: 30px; box-shadow: 0 30px 60px -20px rgba(0,30,40,0.3);">
+                <h1 class="text-center mb-4"><i class="fas fa-lock" style="color: #1f7a7a;"></i> Base64 Encoder / Decoder</h1>
+                <div class="toolbar text-center mb-4" style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; justify-content: center;">
+                    <button class="btn btn-primary" onclick="encode()" style="padding: 10px 20px; border: none; border-radius: 30px; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; background: #1b6f7a; color: white;"><i class="fas fa-arrow-up"></i> Encode</button>
+                    <button class="btn btn-success" onclick="decode()" style="padding: 10px 20px; border: none; border-radius: 30px; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; background: #1f8a6b; color: white;"><i class="fas fa-arrow-down"></i> Decode</button>
+                    <button class="btn btn-secondary" onclick="clearAll()" style="padding: 10px 20px; border: none; border-radius: 30px; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.6); color: #1b3f4e;"><i class="fas fa-eraser"></i> Clear</button>
+                    <button class="btn btn-secondary" onclick="copyResult()" style="padding: 10px 20px; border: none; border-radius: 30px; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.6); color: #1b3f4e;"><i class="fas fa-copy"></i> Copy Result</button>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="label" style="font-weight: 600; color: #3c6b7a; margin-bottom: 8px; display: block;"><i class="fas fa-edit"></i> Input</label>
+                        <textarea id="base64Input" placeholder="Enter text or Base64 string..." style="width: 100%; min-height: 200px; padding: 15px; border: 1px solid rgba(200,215,225,0.3); border-radius: 16px; font-family: 'SF Mono', monospace; font-size: 14px; background: rgba(255,255,255,0.5); backdrop-filter: blur(4px); resize: vertical; outline: none;"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="label" style="font-weight: 600; color: #3c6b7a; margin-bottom: 8px; display: block;"><i class="fas fa-result"></i> Output</label>
+                        <textarea id="base64Output" placeholder="Result will appear here..." readonly style="width: 100%; min-height: 200px; padding: 15px; border: 1px solid rgba(200,215,225,0.3); border-radius: 16px; font-family: 'SF Mono', monospace; font-size: 14px; background: rgba(255,255,255,0.5); backdrop-filter: blur(4px); resize: vertical; outline: none;"></textarea>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="col-lg-7 border shadow-sm">
-            <div class="tool-container rounded-3 p-4 p-md-5">
-                <header class="text-center mb-4">
-                    <h1 class="h2">Base64 Encoder / Decoder <i class="fas fa-lock text-success ms-2"></i></h1>
-                    <p class="lead text-muted">Encode or decode text instantly using Base64.</p>
-                </header>
-
-                <div class="options-card card mb-4">
-                    <div class="card-header bg-light d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0"><i class="fas fa-keyboard me-2"></i>Input</h5>
-                        <div class="btn-group" role="group">
-                            <input type="radio" class="btn-check" name="mode" id="modeEncode" value="encode" checked>
-                            <label class="btn btn-outline-success btn-sm" for="modeEncode">Encode</label>
-
-                            <input type="radio" class="btn-check" name="mode" id="modeDecode" value="decode">
-                            <label class="btn btn-outline-success btn-sm" for="modeDecode">Decode</label>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <label for="textInput" class="form-label">Enter text to process</label>
-                            <textarea class="form-control font-monospace" id="textInput" rows="6" placeholder="Type or paste your text here..."></textarea>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                           <span class="small text-muted" id="charCount">0 characters</span>
-                           <button class="btn btn-secondary btn-sm" id="clearBtn"><i class="fas fa-eraser me-1"></i> Clear</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="statusArea" class="text-center mb-4"></div>
-
-                <div class="preview-area card">
-                    <div class="card-header bg-light d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0"><i class="fas fa-clipboard-list me-2"></i>Output</h5>
-                        <button class="btn btn-success btn-sm" id="copyBtn" disabled>
-                            <i class="fas fa-copy me-1"></i> Copy Result
-                        </button>
-                    </div>
-                    <div class="card-body p-0">
-                        <textarea class="form-control font-monospace border-0 bg-light p-3" id="textOutput" rows="6" readonly placeholder="Result will appear here..."></textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<?php include '../../includes/sharer.php'; ?>
-
-<!-- Content -->
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-8 border shadow-sm">
-            <article>
-                <header class="mb-5 text-center">
-                    <h2 class="display-5"><?php echo $page_title; ?></h2>
-                    <p class="lead"><?php echo $page_description; ?></p>
-                </header>
-                <?php include '../../views/content/base64-encoder-content.php'; ?>
-            </article>
         </div>
     </div>
 </div>
 
 <script>
-// Main logic for Base64 Encoder/Decoder
-document.addEventListener('DOMContentLoaded', () => {
-    const textInput = document.getElementById('textInput');
-    const textOutput = document.getElementById('textOutput');
-    const modeRadios = document.querySelectorAll('input[name="mode"]');
-    const clearBtn = document.getElementById('clearBtn');
-    const copyBtn = document.getElementById('copyBtn');
-    const charCount = document.getElementById('charCount');
-    const statusArea = document.getElementById('statusArea');
-
-    function processText() {
-        const input = textInput.value;
-        const mode = document.querySelector('input[name="mode"]:checked').value;
-        
-        charCount.textContent = `${input.length} characters`;
-
-        if (!input) {
-            textOutput.value = '';
-            copyBtn.disabled = true;
-            statusArea.textContent = '';
-            statusArea.className = 'text-center';
-            return;
-        }
-
+    function encode() {
+        const input = document.getElementById('base64Input').value;
+        document.getElementById('base64Output').value = btoa(unescape(encodeURIComponent(input)));
+    }
+    function decode() {
+        const input = document.getElementById('base64Input').value;
         try {
-            if (mode === 'encode') {
-                // btoa handles ASCII, for UTF-8 we need text encoding
-                textOutput.value = btoa(unescape(encodeURIComponent(input)));
-                showStatus('Text successfully encoded to Base64!', 'success');
-            } else {
-                textOutput.value = decodeURIComponent(escape(atob(input)));
-                showStatus('Base64 successfully decoded to text!', 'success');
-            }
-            copyBtn.disabled = false;
-        } catch (e) {
-            textOutput.value = '';
-            copyBtn.disabled = true;
-            showStatus(`Error: Invalid ${mode === 'encode' ? 'input' : 'Base64 string'}`, 'danger');
+            document.getElementById('base64Output').value = decodeURIComponent(escape(atob(input)));
+        } catch(e) {
+            document.getElementById('base64Output').value = 'Error: Invalid Base64 string';
         }
     }
-
-    function showStatus(message, type) {
-        statusArea.textContent = message;
-        statusArea.className = `text-center text-${type} small fw-bold`;
+    function clearAll() {
+        document.getElementById('base64Input').value = '';
+        document.getElementById('base64Output').value = '';
+    }
+    function copyResult() {
+        const output = document.getElementById('base64Output');
+        navigator.clipboard.writeText(output.value).then(() => {
+            alert('Copied to clipboard!');
+        });
     }
 
-    textInput.addEventListener('input', processText);
-    
-    modeRadios.forEach(radio => {
-        radio.addEventListener('change', () => {
-            // Swap input and output creatively if applicable, or just reprocess
-            if (textOutput.value && !statusArea.classList.contains('text-danger')) {
-                textInput.value = textOutput.value;
-            }
-            processText();
-        });
-    });
+         <!-- Contextual Navigation Block for SEO -->
+        <div class="row mt-4 pt-4 border-top">
+            <div class="col-12 text-center">
+                <p class="text-muted small">
+                    WordsCompare provides a comprehensive suite of free utilities.
+                    Use our <a href="<?php echo $base_url; ?>pdf-to-word"
+                        class="text-muted text-decoration-underline">PDF to Word Converter</a>,
+                    <a href="<?php echo $base_url; ?>age-calculator" class="text-muted text-decoration-underline">Age
+                        Calculator</a>,
+                    <a href="<?php echo $base_url; ?>word-counter" class="text-muted text-decoration-underline">Word
+                        Counter</a>,
+                    <a href="<?php echo $base_url; ?>qr-code-generator" class="text-muted text-decoration-underline">QR
+                        Code Generator</a>,
+                    and <a href="<?php echo $base_url; ?>json-formatter"
+                        class="text-muted text-decoration-underline">JSON Formatter</a>
+                    to streamline your daily tasks.
+                </p>
+            </div>
+        </div>
 
-    clearBtn.addEventListener('click', () => {
-        textInput.value = '';
-        processText();
-    });
-
-    copyBtn.addEventListener('click', () => {
-        textOutput.select();
-        document.execCommand('copy');
-        
-        const originalText = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<i class="fas fa-check me-1"></i> Copied!';
-        setTimeout(() => {
-            copyBtn.innerHTML = originalText;
-        }, 2000);
-    });
-});
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+            <p class="mb-0">© <?= date('Y') ?> <a href="<?= $base_url ?>"
+                    class="text-decoration-none"><?= htmlspecialchars($site_name) ?></a>. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+                <li class="ms-3"><a class="link-dark" href="#"><i class="fab fa-twitter"></i></a></li>
+                <li class="ms-3"><a class="link-dark" href="#"><i class="fab fa-github"></i></a></li>
+                <li class="ms-3"><a class="link-dark" href="#"><i class="fab fa-discord"></i></a></li>
+            </ul>
+        </div>
 </script>
-
-<?php include '../../includes/footer.php'; ?>
+<?php include '../../includes/toolsfooter.php'; ?>
